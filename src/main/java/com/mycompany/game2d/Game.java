@@ -10,6 +10,7 @@ public class Game {
         Gpanel = new GamePanel();
         Gfreme = new GameFreme(Gpanel);
         Gpanel.addKeyListener(new GameInput(Gpanel));
+        Gpanel.requestFocus();
 
 
     }

@@ -10,11 +10,22 @@ public class GamePanel extends JPanel {
 
 
     public GamePanel(){
-        addKeyListener(new GameInput(this));
+
     }
 
-    public void movimentoY(int valole){
-        this.Yposizione += valole;
+    public void movimentoY(int valore){
+        int y = Yposizione;
+        if (y+valore >=5 && y+valore <= 405) {
+            this.Yposizione += valore;
+            repaint();
+        }
+    }
+    public void movimentoX(int valore){
+        int x = Xposizione;
+        if (x+valore >=5 && x+valore <= 725) {
+            this.Xposizione += valore;
+            repaint();
+        }
     }
 
     @Override

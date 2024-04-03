@@ -20,13 +20,16 @@ public class GameInput implements KeyListener {
     public void keyPressed(KeyEvent e) {//questo si fa effeto quando e premuto il tasto
         switch (e.getKeyCode()){
             case KeyEvent.VK_W:
-
+                gamePanel.movimentoY(-5);
                 break;
             case KeyEvent.VK_D:
+                gamePanel.movimentoX(+5);
                 break;
             case KeyEvent.VK_S:
+                gamePanel.movimentoY(+5);
                 break;
             case KeyEvent.VK_A:
+                gamePanel.movimentoX(-5);
                 break;
         }
     }
