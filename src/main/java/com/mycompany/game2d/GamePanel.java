@@ -17,14 +17,13 @@ public class GamePanel extends JPanel {
         int y = Yposizione;
         if (y+valore >=5 && y+valore <= 405) {
             this.Yposizione += valore;
-            repaint();
         }
     }
     public void movimentoX(int valore){
         int x = Xposizione;
         if (x+valore >=5 && x+valore <= 725) {
             this.Xposizione += valore;
-            repaint();
+
         }
     }
 
@@ -32,8 +31,8 @@ public class GamePanel extends JPanel {
     public void paint(Graphics g){
         super.paint(g);
 
-        g.fillOval(50 + Xposizione,50 + Yposizione,50,50);
-
+        g.fillOval( Xposizione,Yposizione,50,50);
+        repaint();
     }
 
 }
