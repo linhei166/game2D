@@ -13,7 +13,6 @@ public class GamePanel extends JPanel {
         addKeyListener(new GameInput(this));
     }
 
-    }
     public void movimentoY(int valole){
         this.Yposizione += valole;
     }
