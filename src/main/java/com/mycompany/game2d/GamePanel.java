@@ -1,18 +1,18 @@
 package com.mycompany.game2d;
 
 import javax.swing.*;
+import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
 
 public class GamePanel extends JPanel {
 
-    private  int Xposizione = 0,Yposizione = 0;
+    private  int Xposizione = 5,Yposizione = 5;
+
 
     public GamePanel(){
         addKeyListener(new GameInput(this));
     }
 
-    public void movimentoX(int valole){
-        this.Xposizione += valole;
     }
     public void movimentoY(int valole){
         this.Yposizione += valole;
