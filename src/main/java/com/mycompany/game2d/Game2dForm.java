@@ -11,12 +11,20 @@ package com.mycompany.game2d;
  */
 public class Game2dForm extends javax.swing.JFrame {
     private int Creation=20;
+    private GameMap Gmap;
+    private GamePanel Gpanel;
     /**
      * Creates new form Game2dForm
      */
     public Game2dForm() {
         initComponents();
         jFrame1.setSize(400, 500);
+        super.setSize(400,300);
+        Gpanel = new GamePanel();
+        Gmap = new GameMap(Gpanel);
+        Gpanel.addKeyListener(new GameInput(Gpanel));
+        Gpanel.requestFocus();
+
     }
 
     /**

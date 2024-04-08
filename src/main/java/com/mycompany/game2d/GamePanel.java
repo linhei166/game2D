@@ -7,6 +7,7 @@ import java.awt.*;
 public class GamePanel extends JPanel {
 
     private  int Xposizione = 5,Yposizione = 5;
+    private int maxY,maxX;
 
 
     public GamePanel(){
@@ -17,23 +18,22 @@ public class GamePanel extends JPanel {
 
     public void movimentoY(int valore){
         int y = Yposizione;
-        if (y+valore >=5 && y+valore <= 405)
+        if (y+valore >=5 && y+valore <= super.getHeight())
             this.Yposizione += valore;
 
     }
     public void movimentoX(int valore){
         int x = Xposizione;
-        if (x+valore >=5 && x+valore <= 725)
+        if (x+valore >=5 && x+valore <= super.getWidth())
             this.Xposizione += valore;
     }
 
     @Override
     public void paint(Graphics g){
         super.paint(g);
-        ImageIcon map = new ImageIcon("IMG/png.png");
-        map.setImage(map.getImage().getScaledInstance(800,500,Image.SCALE_DEFAULT));
-        map.paintIcon(this,g,0,0);
+        g.setColor(Color.red);
         g.fillOval( Xposizione,Yposizione,50,50);
+
         repaint();
     }
 
