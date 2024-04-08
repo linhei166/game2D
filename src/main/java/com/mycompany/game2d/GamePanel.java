@@ -11,6 +11,8 @@ public class GamePanel extends JPanel {
 
     public GamePanel(){
 
+
+
     }
 
     public void movimentoY(int valore){
@@ -28,6 +30,9 @@ public class GamePanel extends JPanel {
     @Override
     public void paint(Graphics g){
         super.paint(g);
+        ImageIcon map = new ImageIcon("IMG/png.png");
+        map.setImage(map.getImage().getScaledInstance(800,500,Image.SCALE_DEFAULT));
+        map.paintIcon(this,g,0,0);
         g.fillOval( Xposizione,Yposizione,50,50);
         repaint();
     }
