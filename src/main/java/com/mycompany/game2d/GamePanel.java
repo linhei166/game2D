@@ -1,17 +1,34 @@
 package com.mycompany.game2d;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class GamePanel extends JPanel {
 
     private  int Xposizione = 5,Yposizione = 5;
     private int maxY,maxX;
-
+    private LoadSeve loadSeve;
+    private BufferedImage IMG;
 
     public GamePanel(){
 
+    importImg();
+
+    }
+
+    private void importImg(){
+        InputStream is = getClass().getResourceAsStream("/prova.jpg");
+        try {
+            IMG = ImageIO.read(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
     }
@@ -30,10 +47,8 @@ public class GamePanel extends JPanel {
 
     @Override
     public void paint(Graphics g){
-        super.paint(g);
-        g.setColor(Color.red);
-        g.fillOval( Xposizione,Yposizione,50,50);
-
+        super.paintComponent(g);
+        g.drawImage(IMG,0,0,null);
         repaint();
     }
 
