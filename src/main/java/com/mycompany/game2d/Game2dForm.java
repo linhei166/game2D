@@ -50,7 +50,7 @@ public class Game2dForm extends javax.swing.JFrame {
 
         jLabel1.setText("Nome:");
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("");
 
         jLabel2.setText("Velocita");
 
