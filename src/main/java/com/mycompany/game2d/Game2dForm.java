@@ -32,6 +32,28 @@ public class Game2dForm extends javax.swing.JFrame {
         Gmap = new GameMap(Gpanel);
         Gpanel.addKeyListener(new GameInput(Gpanel));
         Gpanel.requestFocus();
+        gamestart();
+
+    }
+    private void gamestart(){
+        gameThread = new Thread(this);
+        gameThread.start();
+    }
+    @Override
+    public void run() {
+        double timeFreme = 1000000000.0/gameTime;
+        long lastTime = System.nanoTime();
+        long now = System.nanoTime();
+        while (true){
+            now = System.nanoTime();
+            if(now - lastTime >= timeFreme){
+
+                Gpanel.repaint();
+                lastTime = now;
+
+            }
+
+        }
 
     }
 
