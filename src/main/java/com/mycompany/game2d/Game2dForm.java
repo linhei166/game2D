@@ -1,5 +1,7 @@
 package com.mycompany.game2d;
 
+import java.awt.Color;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -13,12 +15,15 @@ public class Game2dForm extends javax.swing.JFrame {
     private int Creation=20;
     private GameMap Gmap;
     private GamePanel Gpanel;
+    protected Eroe er=null;
     /**
      * Creates new form Game2dForm
      */
     public Game2dForm() {
         initComponents();
         jFrame1.setSize(400, 500);
+        jFrame1.getContentPane().setBackground(Color.BLACK);
+        super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,300);
         Gpanel = new GamePanel();
         Gmap = new GameMap(Gpanel);
@@ -47,15 +52,31 @@ public class Game2dForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
+        jFrame1.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel1.setForeground(new java.awt.Color(232, 232, 232));
         jLabel1.setText("Nome:");
 
-        jTextField1.setText("");
+        jTextField1.setForeground(new java.awt.Color(232, 232, 232));
+        jTextField1.setText("jTextField1");
 
+        jLabel2.setForeground(new java.awt.Color(232, 232, 232));
         jLabel2.setText("Velocita");
 
+        jButton3.setBackground(new java.awt.Color(84, 84, 84));
+        jButton3.setForeground(new java.awt.Color(232, 232, 232));
         jButton3.setText("Conferma");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
+        jButton4.setBackground(new java.awt.Color(84, 84, 84));
+        jButton4.setForeground(new java.awt.Color(232, 232, 232));
         jButton4.setText("-");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,10 +84,12 @@ public class Game2dForm extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(211, 211, 211));
+        jLabel3.setForeground(new java.awt.Color(232, 232, 232));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("0");
 
+        jButton5.setBackground(new java.awt.Color(84, 84, 84));
+        jButton5.setForeground(new java.awt.Color(232, 232, 232));
         jButton5.setText("+");
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
@@ -79,11 +102,11 @@ public class Game2dForm extends javax.swing.JFrame {
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -117,35 +140,64 @@ public class Game2dForm extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("La Terrra dei Fiordalsi");
+        setBackground(Color.BLACK);
 
-        jButton1.setText("New Game");
+        jButton1.setBackground(new java.awt.Color(84, 84, 84));
+        jButton1.setForeground(new java.awt.Color(232, 232, 232));
+        jButton1.setText("Nuova Partita");
+        jButton1.setToolTipText("");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Load Save");
+        jButton2.setBackground(new java.awt.Color(84, 84, 84));
+        jButton2.setForeground(new java.awt.Color(232, 232, 232));
+        jButton2.setText("Continua Partita");
+
+        jButton6.setBackground(new java.awt.Color(84, 84, 84));
+        jButton6.setForeground(new java.awt.Color(232, 232, 232));
+        jButton6.setText("Opzione");
+
+        jLabel5.setBackground(new java.awt.Color(98, 44, 28));
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("La Terra dei Fiordalisi");
+        jLabel5.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(255, 255, 0)));
+        jLabel5.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(137, 137, 137)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel5))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(101, 101, 101)
+                .addGap(41, 41, 41)
+                .addComponent(jLabel5)
+                .addGap(50, 50, 50)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton6)
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         pack();
@@ -161,6 +213,13 @@ public class Game2dForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int vel=Integer.parseInt(jLabel3.getText());
+        String nom = jTextField1.getText();
+        er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,11 +262,13 @@ public class Game2dForm extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
