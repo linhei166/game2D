@@ -1,6 +1,7 @@
 package com.mycompany.game2d;
 
-import javax.imageio.ImageIO;
+import com.mycompany.game2d.input.LoadSeve;
+import com.mycompany.game2d.personagi.Eroe;
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
@@ -12,13 +13,15 @@ import java.io.InputStream;
 public class GamePanel extends JPanel {
 
     private  int Xposizione = 5,Yposizione = 5;
-    private int maxY,maxX;
-    private LoadSeve loadSeve;
+    private final int maxY = 792,maxX = 1260;
+    private final String FileMap ="materiali_tereni.jpg";
     private BufferedImage IMG;
+    private Eroe pley;
 
     public GamePanel(){
-
-    importImg();
+    pley = new Eroe(null,0,0,0,0,0,0);
+    importImg(FileMap);
+    Dimesione();
 
     }
 
@@ -30,7 +33,15 @@ public class GamePanel extends JPanel {
             e.printStackTrace();
         }
 
+    private void Dimesione(){
+        Dimension size = new Dimension(maxX,maxY);
+        setMaximumSize(size);
+        setMinimumSize(size);
+        setPreferredSize(size);
+    }
 
+    private void importImg(String nomeFile){
+        IMG = LoadSeve.GetFileIMG(nomeFile);
     }
 
     public void movimentoY(int valore){
@@ -48,7 +59,10 @@ public class GamePanel extends JPanel {
     @Override
     public void paint(Graphics g){
         super.paintComponent(g);
-        g.drawImage(IMG,0,0,null);
+        for (int i = 0 ; i <35 ; i++ ) {
+            g.drawImage(IMG.getSubimage(34, 0, 34, 34), i*36, 0, 36, 36, null);
+        }
+        g.drawImage(IMG.getSubimage(34, 0, 34, 34),Xposizione, Yposizione, 36, 36, null);
         repaint();
     }
 
