@@ -8,6 +8,7 @@ import java.awt.Color;
  */
 
 import com.mycompany.game2d.input.GameInput;
+import com.mycompany.game2d.personagi.Eroe;
 
 /**
  *

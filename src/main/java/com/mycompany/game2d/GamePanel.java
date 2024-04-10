@@ -1,6 +1,7 @@
 package com.mycompany.game2d;
 
-import javax.imageio.ImageIO;
+import com.mycompany.game2d.input.LoadSeve;
+import com.mycompany.game2d.personagi.Eroe;
 import javax.swing.*;
 import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
@@ -12,13 +13,15 @@ import java.io.InputStream;
 public class GamePanel extends JPanel {
 
     private  int Xposizione = 5,Yposizione = 5;
-    private int maxY,maxX;
-    private LoadSeve loadSeve;
+    private final int maxY = 792,maxX = 1260;
+    private final String FileMap ="materiali_tereni.jpg";
     private BufferedImage IMG;
+    private Eroe pley;
 
     public GamePanel(){
-
-    importImg();
+    pley = new Eroe(null,0,0,0,0,0,0);
+    importImg(FileMap);
+    Dimesione();
 
     }
 
