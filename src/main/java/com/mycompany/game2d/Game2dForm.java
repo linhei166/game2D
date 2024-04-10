@@ -60,8 +60,10 @@ public class Game2dForm extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(232, 232, 232));
         jLabel1.setText("Nome:");
 
-        jTextField1.setForeground(new java.awt.Color(232, 232, 232));
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setForeground(new java.awt.Color(0, 0, 0));
         jTextField1.setText("jTextField1");
+        jTextField1.setMaximumSize(new java.awt.Dimension(150, 26));
 
         jLabel2.setForeground(new java.awt.Color(232, 232, 232));
         jLabel2.setText("Velocita");
@@ -91,6 +93,13 @@ public class Game2dForm extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(84, 84, 84));
         jButton5.setForeground(new java.awt.Color(232, 232, 232));
         jButton5.setText("+");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setForeground(new java.awt.Color(232, 232, 232));
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -106,15 +115,14 @@ public class Game2dForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -211,6 +219,13 @@ public class Game2dForm extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        int vel;
+        if(Integer.parseInt(jLabel3.getText())>0){
+            vel=Integer.parseInt(jLabel3.getText())-1;
+            jLabel3.setText(String.valueOf(vel));
+            Creation++;
+            jLabel4.setText(String.valueOf(Creation));
+        }
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -220,6 +235,17 @@ public class Game2dForm extends javax.swing.JFrame {
         String nom = jTextField1.getText();
         er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         int vel;
+         if(Creation>0){
+             vel=Integer.parseInt(jLabel3.getText())+1;
+            jLabel3.setText(String.valueOf(vel));
+            Creation--;
+            jLabel4.setText(String.valueOf(Creation));
+         }
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
