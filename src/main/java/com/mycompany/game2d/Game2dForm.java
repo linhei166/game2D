@@ -7,6 +7,8 @@ import java.awt.Color;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import com.mycompany.game2d.input.GameInput;
+
 /**
  *
  * @author Esposito.Lorenzo

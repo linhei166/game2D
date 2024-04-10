@@ -30,7 +30,15 @@ public class GamePanel extends JPanel {
             e.printStackTrace();
         }
 
+    private void Dimesione(){
+        Dimension size = new Dimension(maxX,maxY);
+        setMaximumSize(size);
+        setMinimumSize(size);
+        setPreferredSize(size);
+    }
 
+    private void importImg(String nomeFile){
+        IMG = LoadSeve.GetFileIMG(nomeFile);
     }
 
     public void movimentoY(int valore){
@@ -48,7 +56,10 @@ public class GamePanel extends JPanel {
     @Override
     public void paint(Graphics g){
         super.paintComponent(g);
-        g.drawImage(IMG,0,0,null);
+        for (int i = 0 ; i <35 ; i++ ) {
+            g.drawImage(IMG.getSubimage(34, 0, 34, 34), i*36, 0, 36, 36, null);
+        }
+        g.drawImage(IMG.getSubimage(34, 0, 34, 34),Xposizione, Yposizione, 36, 36, null);
         repaint();
     }
 
