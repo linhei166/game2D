@@ -1,4 +1,4 @@
-package com.mycompany.game2d.personagi;
+package com.mycompany.game2d;
 
 public class Entita {
     protected String nome;

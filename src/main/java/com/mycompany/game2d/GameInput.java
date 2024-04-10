@@ -1,4 +1,4 @@
-package com.mycompany.game2d.input;
+package com.mycompany.game2d;
 
 import com.mycompany.game2d.GamePanel;
 

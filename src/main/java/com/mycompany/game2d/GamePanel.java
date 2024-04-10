@@ -1,12 +1,9 @@
 package com.mycompany.game2d;
 
-import com.mycompany.game2d.input.LoadSeve;
-import com.mycompany.game2d.personagi.Eroe;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.event.MouseInputAdapter;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -25,14 +22,14 @@ public class GamePanel extends JPanel {
 
     }
 
-    private void importImg(){
+    private void importImg() {
         InputStream is = getClass().getResourceAsStream("/images/png.png");
         try {
             IMG = ImageIO.read(is);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+    }
     private void Dimesione(){
         Dimension size = new Dimension(maxX,maxY);
         setMaximumSize(size);
@@ -66,4 +63,5 @@ public class GamePanel extends JPanel {
         repaint();
     }
 
-}
+    }
+

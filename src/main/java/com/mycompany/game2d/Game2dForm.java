@@ -1,24 +1,24 @@
 package com.mycompany.game2d;
 
+import javax.swing.*;
 import java.awt.Color;
-
+import java.lang.Thread;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-import com.mycompany.game2d.input.GameInput;
-import com.mycompany.game2d.personagi.Eroe;
-
 /**
  *
  * @author Esposito.Lorenzo
  */
-public class Game2dForm extends javax.swing.JFrame {
+public class Game2dForm extends JFrame implements Runnable{
     private int Creation=20;
     private GameMap Gmap;
     private GamePanel Gpanel;
     protected Eroe er=null;
+    private Thread gameThread;
+    private final int gameTime = 120;
     /**
      * Creates new form Game2dForm
      */

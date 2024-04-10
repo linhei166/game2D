@@ -1,5 +1,4 @@
-package com.mycompany.game2d.personagi;
-import com.mycompany.game2d.personagi.Entita;
+package com.mycompany.game2d;
 
 import java.util.Scanner;
 public class Eroe extends Entita{
