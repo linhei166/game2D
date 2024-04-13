@@ -11,7 +11,7 @@ public class GamePanel extends JPanel {
 
     private  int Xposizione = 5,Yposizione = 5;
     private final int maxY = 792,maxX = 1260;
-    private final String FileMap ="materiali_tereni.jpg";
+    private final String FileMap ="materiali_map.jpg";
     private BufferedImage IMG;
     private Eroe pley;
 
