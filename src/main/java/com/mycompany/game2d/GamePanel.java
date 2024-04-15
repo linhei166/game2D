@@ -16,10 +16,13 @@ public class GamePanel extends JPanel {
     private Eroe pley;
 
     public GamePanel(){
-    pley = new Eroe(null,0,0,0,0,0,0);
-    importImg(FileMap);
-    Dimesione();
+        pley= null;
+        importImg(FileMap);
+        Dimesione();
+    }
 
+    public void addEroe(Eroe pley){
+        this.pley = pley;
     }
 
     private void importImg() {
@@ -41,21 +44,10 @@ public class GamePanel extends JPanel {
         IMG = LoadSeve.GetFileIMG(nomeFile);
     }
 
-    public void movimentoY(int valore){
-        int y = Yposizione;
-        if (y+valore >=5 && y+valore <= super.getHeight())
-            this.Yposizione += valore;
 
-    }
-    public void movimentoX(int valore){
-        int x = Xposizione;
-        if (x+valore >=5 && x+valore <= super.getWidth())
-            this.Xposizione += valore;
-    }
+    public void paint(){
+        Graphics g = this.getGraphics();
 
-    @Override
-    public void paint(Graphics g){
-        super.paintComponent(g);
         for (int i = 0 ; i <35 ; i++ ) {
             g.drawImage(IMG.getSubimage(34, 0, 34, 34), i*36, 0, 36, 36, null);
         }

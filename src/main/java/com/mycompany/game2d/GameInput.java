@@ -7,10 +7,10 @@ import java.awt.event.KeyListener;
 
 public class GameInput implements KeyListener {
 
-    GamePanel gamePanel;
+    Eroe pley;
 
-    public GameInput(GamePanel Gpanel){
-        gamePanel = Gpanel;
+    public GameInput(Eroe pley){
+        this.pley = pley;
     }
 
     @Override
@@ -22,19 +22,19 @@ public class GameInput implements KeyListener {
     public void keyPressed(KeyEvent e) {//questo si fa effeto quando e premuto il tasto
         switch (e.getKeyCode()){
             case KeyEvent.VK_W:
-                gamePanel.movimentoY(-5);
+                pley.movimentoY(-5);
                 System.out.println("peromuto");
                 break;
             case KeyEvent.VK_D:
-                gamePanel.movimentoX(+5);
+                pley.movimentoX(+5);
                 System.out.println("peromuto");
                 break;
             case KeyEvent.VK_S:
-                gamePanel.movimentoY(+5);
+                pley.movimentoY(+5);
                 System.out.println("peromuto");
                 break;
             case KeyEvent.VK_A:
-                gamePanel.movimentoX(-5);
+                pley.movimentoX(-5);
                 System.out.println("peromuto");
                 break;
         }

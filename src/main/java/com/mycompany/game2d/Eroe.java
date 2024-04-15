@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class Eroe extends Entita{
 
     Scanner in = new Scanner(System.in);
+    private int Yposizione;
+    private int Xposizione;
+
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
     }
@@ -35,6 +38,16 @@ public class Eroe extends Entita{
         }
         }
         System.out.println("Out of for");
+    }
+
+    public void movimentoY(int valore ){
+        int y = Yposizione;
+        this.Yposizione += valore;
+
+    }
+    public void movimentoX(int valore){
+        int x = Xposizione;
+        this.Xposizione += valore;
     }
 
 }

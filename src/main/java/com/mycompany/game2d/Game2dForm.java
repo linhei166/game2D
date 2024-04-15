@@ -32,7 +32,6 @@ public class Game2dForm extends JFrame implements Runnable{
         FrameOpzione.getContentPane().setBackground(Color.BLACK);
         Gpanel = new GamePanel();
         Gmap = new GameMap(Gpanel);
-        Gpanel.addKeyListener(new GameInput(Gpanel));
         Gpanel.requestFocus();
         gamestart();
 
@@ -49,10 +48,8 @@ public class Game2dForm extends JFrame implements Runnable{
         while (true){
             now = System.nanoTime();
             if(now - lastTime >= timeFreme){
-
                 Gpanel.repaint();
                 lastTime = now;
-
             }
 
         }
@@ -497,6 +494,7 @@ public class Game2dForm extends JFrame implements Runnable{
         int vel=Integer.parseInt(LabelValVel.getText());
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
+        Gpanel.addEroe(er);
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
