@@ -1,18 +1,21 @@
 package com.mycompany.game2d;
 
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.Scanner;
 public class Eroe extends Entita{
 
     Scanner in = new Scanner(System.in);
-    private int Yposizione;
-    private int Xposizione;
+    private int Yposizione = 50;
+    private int Xposizione = 50;
+    private BufferedImage IMG;
+    private final String FileMap ="materiali_map.jpg";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
+        IMG = LoadSeve.GetFileIMG(FileMap);
+
     }
-
-
-
     public void levelup(){
         for(int a=5;a>0;a--){
         int car = in.nextInt();
@@ -41,13 +44,16 @@ public class Eroe extends Entita{
     }
 
     public void movimentoY(int valore ){
-        int y = Yposizione;
         this.Yposizione += valore;
 
     }
     public void movimentoX(int valore){
-        int x = Xposizione;
         this.Xposizione += valore;
+    }
+
+    public void getIMGpley(Graphics g){
+        g.drawImage(IMG.getSubimage(34, 0, 34, 34),Xposizione, Yposizione, 36, 36, null);
+
     }
 
 }

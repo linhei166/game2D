@@ -1,38 +1,24 @@
 package com.mycompany.game2d;
 
-import javax.imageio.ImageIO;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
+
 
 public class GamePanel extends JPanel {
 
-    private  int Xposizione = 5,Yposizione = 5;
     private final int maxY = 792,maxX = 1260;
     private final String FileMap ="materiali_map.jpg";
     private BufferedImage IMG;
-    private Eroe pley;
+    private Game2dForm game;
 
-    public GamePanel(){
-        pley= null;
+    public GamePanel(Game2dForm game){
         importImg(FileMap);
         Dimesione();
+        this.game = game;
     }
 
-    public void addEroe(Eroe pley){
-        this.pley = pley;
-    }
-
-    private void importImg() {
-        InputStream is = getClass().getResourceAsStream("/images/png.png");
-        try {
-            IMG = ImageIO.read(is);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     private void Dimesione(){
         Dimension size = new Dimension(maxX,maxY);
         setMaximumSize(size);
@@ -44,15 +30,16 @@ public class GamePanel extends JPanel {
         IMG = LoadSeve.GetFileIMG(nomeFile);
     }
 
-
-    public void paint(){
-        Graphics g = this.getGraphics();
+    @Override
+    public void paint(Graphics g){
+        super.paint(g);
 
         for (int i = 0 ; i <35 ; i++ ) {
-            g.drawImage(IMG.getSubimage(34, 0, 34, 34), i*36, 0, 36, 36, null);
+            g.drawImage(IMG.getSubimage(32, 0, 32, 32), i*36, 0, 36, 36, null);
         }
-        g.drawImage(IMG.getSubimage(34, 0, 34, 34),Xposizione, Yposizione, 36, 36, null);
-        repaint();
+        game.gameRead(g);
+
+        g.fillRect(10,this.maxY-50,50,10);
     }
 
     }

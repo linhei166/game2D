@@ -1,7 +1,7 @@
 package com.mycompany.game2d;
 
 import javax.swing.*;
-import java.awt.Color;
+import java.awt.*;
 import java.lang.Thread;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -16,7 +16,7 @@ public class Game2dForm extends JFrame implements Runnable{
     private int Creation=20;
     private GameMap Gmap;
     private GamePanel Gpanel;
-    protected Eroe er=null;
+    protected Eroe er;
     private Thread gameThread;
     private final int gameTime = 120;
     /**
@@ -25,14 +25,14 @@ public class Game2dForm extends JFrame implements Runnable{
     public Game2dForm() {
         initComponents();
         FrameCreazione.setSize(400, 500);
+        er = new Eroe(null,0,0,0,0,0,0);
         FrameCreazione.getContentPane().setBackground(Color.BLACK);
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,300);
         FrameOpzione.setSize(300,200);
         FrameOpzione.getContentPane().setBackground(Color.BLACK);
-        Gpanel = new GamePanel();
+        Gpanel = new GamePanel(this);
         Gmap = new GameMap(Gpanel);
-        Gpanel.requestFocus();
         gamestart();
 
     }
@@ -40,6 +40,11 @@ public class Game2dForm extends JFrame implements Runnable{
         gameThread = new Thread(this);
         gameThread.start();
     }
+
+    public void gameRead(Graphics g){
+        er.getIMGpley(g);
+    }
+
     @Override
     public void run() {
         double timeFreme = 1000000000.0/gameTime;
@@ -494,7 +499,9 @@ public class Game2dForm extends JFrame implements Runnable{
         int vel=Integer.parseInt(LabelValVel.getText());
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
-        Gpanel.addEroe(er);
+        Gpanel.addKeyListener(new GameInput(er));
+        Gmap.setVisible(true);
+        Gpanel.requestFocus();
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

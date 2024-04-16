@@ -10,8 +10,11 @@ public class GameMap extends JFrame {
         super.pack();
         super.setLocationRelativeTo(null);
         super.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        super.setVisible(false);
     }
 
-
-    
+    @Override
+    public void setVisible(boolean b) {
+        super.setVisible(b);
+    }
 }
