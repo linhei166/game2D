@@ -9,7 +9,7 @@ public class Eroe extends Entita{
     private int Yposizione = 50;
     private int Xposizione = 50;
     private BufferedImage IMG;
-    private final String FileMap ="materiali_map.jpg";
+    private final String FileMap ="personagi.png";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
@@ -52,8 +52,7 @@ public class Eroe extends Entita{
     }
 
     public void getIMGpley(Graphics g){
-        g.drawImage(IMG.getSubimage(34, 0, 34, 34),Xposizione, Yposizione, 36, 36, null);
-
+        g.drawImage(IMG.getSubimage(0, 0, 16, 16),Xposizione, Yposizione, 36, 36, null);
     }
 
 }

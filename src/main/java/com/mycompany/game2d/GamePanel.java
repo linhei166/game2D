@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 public class GamePanel extends JPanel {
 
     private final int maxY = 792,maxX = 1260;
-    private final String FileMap ="materiali_map.jpg";
+    private final String FileMap ="colored_packed.png";
     private BufferedImage IMG;
     private Game2dForm game;
 
@@ -34,11 +34,11 @@ public class GamePanel extends JPanel {
     public void paint(Graphics g){
         super.paint(g);
 
-        for (int i = 0 ; i <35 ; i++ ) {
-            g.drawImage(IMG.getSubimage(32, 0, 32, 32), i*36, 0, 36, 36, null);
-        }
-        game.gameRead(g);
+        for (int i = 0 ; i <35 ; i++ )
+            for (int k=0 ; k < 18 ; k++)
+                g.drawImage(IMG.getSubimage(0, 0, 16, 16), i*36, k*36, 36, 36, null);
 
+        game.gameRead(g);
         g.fillRect(10,this.maxY-50,50,10);
     }
 
