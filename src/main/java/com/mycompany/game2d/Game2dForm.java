@@ -25,7 +25,6 @@ public class Game2dForm extends JFrame implements Runnable{
     public Game2dForm() {
         initComponents();
         FrameCreazione.setSize(400, 500);
-        er = new Eroe(null,0,0,0,0,0,0);
         FrameCreazione.getContentPane().setBackground(Color.BLACK);
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,300);
@@ -533,10 +532,15 @@ public class Game2dForm extends JFrame implements Runnable{
 
     private void ButtonConfremaCreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConfremaCreaActionPerformed
         // TODO add your handling code here:
+        int forz=Integer.parseInt(LabelValFor.getText());
         int vel=Integer.parseInt(LabelValVel.getText());
-        
+        int arc=Integer.parseInt(LabelValArc.getText());
+        int des=Integer.parseInt(LabelValDes.getText());
+        int hp=Integer.parseInt(LabelValHP.getText());
+        int mana=Integer.parseInt(LabelValMana.getText());
+
         String nom = TextFieldNome.getText();
-        er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
+        er = new Eroe(nom,forz,vel,arc,des,hp,mana);
         Gpanel.addKeyListener(new GameInput(er));
         Gmap.setVisible(true);
         Gpanel.requestFocus();
