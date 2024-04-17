@@ -78,27 +78,27 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenVel = new javax.swing.JButton();
         LabelValVel = new javax.swing.JLabel();
         ButtonpiuVel = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        LabelVelocita1 = new javax.swing.JLabel();
-        ButtonMenVel1 = new javax.swing.JButton();
-        LabelValVel1 = new javax.swing.JLabel();
-        ButtonpiuVel1 = new javax.swing.JButton();
-        LabelValVel2 = new javax.swing.JLabel();
-        ButtonpiuVel2 = new javax.swing.JButton();
-        ButtonMenVel2 = new javax.swing.JButton();
-        LabelVelocita2 = new javax.swing.JLabel();
-        LabelValVel3 = new javax.swing.JLabel();
-        ButtonMenVel3 = new javax.swing.JButton();
-        LabelVelocita3 = new javax.swing.JLabel();
-        ButtonpiuVel3 = new javax.swing.JButton();
-        ButtonpiuVel4 = new javax.swing.JButton();
-        LabelValVel4 = new javax.swing.JLabel();
-        ButtonMenVel4 = new javax.swing.JButton();
-        LabelVelocita4 = new javax.swing.JLabel();
-        LabelValVel5 = new javax.swing.JLabel();
-        ButtonpiuVel5 = new javax.swing.JButton();
-        LabelVelocita5 = new javax.swing.JLabel();
-        ButtonMenVel5 = new javax.swing.JButton();
+        LabelCreazione = new javax.swing.JLabel();
+        LabelForza = new javax.swing.JLabel();
+        ButtonMenFor = new javax.swing.JButton();
+        LabelValFor = new javax.swing.JLabel();
+        ButtonpiuFor = new javax.swing.JButton();
+        LabelValArc = new javax.swing.JLabel();
+        ButtonpiuArc = new javax.swing.JButton();
+        ButtonMenArc = new javax.swing.JButton();
+        LabelArcana = new javax.swing.JLabel();
+        LabelValDes = new javax.swing.JLabel();
+        ButtonMenDes = new javax.swing.JButton();
+        LabelDestrzza = new javax.swing.JLabel();
+        ButtonpiuDes = new javax.swing.JButton();
+        ButtonpiuHP = new javax.swing.JButton();
+        LabelValHP = new javax.swing.JLabel();
+        ButtonMenHP = new javax.swing.JButton();
+        LabelHP = new javax.swing.JLabel();
+        LabelValMana = new javax.swing.JLabel();
+        ButtonpiuMana = new javax.swing.JButton();
+        LabelMana = new javax.swing.JLabel();
+        ButtonMenMana = new javax.swing.JButton();
         FrameOpzione = new javax.swing.JFrame();
         LabelLingua = new javax.swing.JLabel();
         ComboLingue = new javax.swing.JComboBox<>();
@@ -110,12 +110,14 @@ public class Game2dForm extends JFrame implements Runnable{
         LabelTitolo = new javax.swing.JLabel();
 
         FrameCreazione.setBackground(new java.awt.Color(0, 0, 0));
+        FrameCreazione.setPreferredSize(new java.awt.Dimension(400, 500));
 
         LabelNome.setForeground(new java.awt.Color(232, 232, 232));
         LabelNome.setText("Nome:");
 
+        TextFieldNome.setBackground(new java.awt.Color(0, 0, 0));
         TextFieldNome.setForeground(new java.awt.Color(232, 232, 232));
-        TextFieldNome.setText("jTextField1");
+        TextFieldNome.setText(" ");
 
         LabelVelocita.setForeground(new java.awt.Color(232, 232, 232));
         LabelVelocita.setText("Velocita");
@@ -140,109 +142,142 @@ public class Game2dForm extends JFrame implements Runnable{
 
         LabelValVel.setForeground(new java.awt.Color(232, 232, 232));
         LabelValVel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel.setText("0");
+        LabelValVel.setText("5");
 
         ButtonpiuVel.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuVel.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuVel.setText("+");
-
-        LabelVelocita1.setForeground(new java.awt.Color(232, 232, 232));
-        LabelVelocita1.setText("Forza");
-
-        ButtonMenVel1.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonMenVel1.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonMenVel1.setText("-");
-        ButtonMenVel1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonpiuVel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonMenVel1ActionPerformed(evt);
+                ButtonpiuVelActionPerformed(evt);
             }
         });
 
-        LabelValVel1.setForeground(new java.awt.Color(232, 232, 232));
-        LabelValVel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel1.setText("0");
+        LabelCreazione.setBackground(new java.awt.Color(0, 0, 0));
+        LabelCreazione.setForeground(new java.awt.Color(232, 232, 232));
 
-        ButtonpiuVel1.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonpiuVel1.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonpiuVel1.setText("+");
+        LabelForza.setForeground(new java.awt.Color(232, 232, 232));
+        LabelForza.setText("Forza");
 
-        LabelValVel2.setForeground(new java.awt.Color(232, 232, 232));
-        LabelValVel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel2.setText("0");
-
-        ButtonpiuVel2.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonpiuVel2.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonpiuVel2.setText("+");
-
-        ButtonMenVel2.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonMenVel2.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonMenVel2.setText("-");
-        ButtonMenVel2.addActionListener(new java.awt.event.ActionListener() {
+        ButtonMenFor.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonMenFor.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonMenFor.setText("-");
+        ButtonMenFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonMenVel2ActionPerformed(evt);
+                ButtonMenForActionPerformed(evt);
             }
         });
 
-        LabelVelocita2.setForeground(new java.awt.Color(232, 232, 232));
-        LabelVelocita2.setText("Arcana");
+        LabelValFor.setForeground(new java.awt.Color(232, 232, 232));
+        LabelValFor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelValFor.setText("5");
 
-        LabelValVel3.setForeground(new java.awt.Color(232, 232, 232));
-        LabelValVel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel3.setText("0");
-
-        ButtonMenVel3.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonMenVel3.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonMenVel3.setText("-");
-        ButtonMenVel3.addActionListener(new java.awt.event.ActionListener() {
+        ButtonpiuFor.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonpiuFor.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonpiuFor.setText("+");
+        ButtonpiuFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonMenVel3ActionPerformed(evt);
+                ButtonpiuForActionPerformed(evt);
             }
         });
 
-        LabelVelocita3.setForeground(new java.awt.Color(232, 232, 232));
-        LabelVelocita3.setText("Destrzza");
+        LabelValArc.setForeground(new java.awt.Color(232, 232, 232));
+        LabelValArc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelValArc.setText("5");
 
-        ButtonpiuVel3.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonpiuVel3.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonpiuVel3.setText("+");
-
-        ButtonpiuVel4.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonpiuVel4.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonpiuVel4.setText("+");
-
-        LabelValVel4.setForeground(new java.awt.Color(232, 232, 232));
-        LabelValVel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel4.setText("0");
-
-        ButtonMenVel4.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonMenVel4.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonMenVel4.setText("-");
-        ButtonMenVel4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonpiuArc.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonpiuArc.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonpiuArc.setText("+");
+        ButtonpiuArc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonMenVel4ActionPerformed(evt);
+                ButtonpiuArcActionPerformed(evt);
             }
         });
 
-        LabelVelocita4.setForeground(new java.awt.Color(232, 232, 232));
-        LabelVelocita4.setText("HP");
-
-        LabelValVel5.setForeground(new java.awt.Color(232, 232, 232));
-        LabelValVel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        LabelValVel5.setText("0");
-
-        ButtonpiuVel5.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonpiuVel5.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonpiuVel5.setText("+");
-
-        LabelVelocita5.setForeground(new java.awt.Color(232, 232, 232));
-        LabelVelocita5.setText("Mana");
-
-        ButtonMenVel5.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonMenVel5.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonMenVel5.setText("-");
-        ButtonMenVel5.addActionListener(new java.awt.event.ActionListener() {
+        ButtonMenArc.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonMenArc.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonMenArc.setText("-");
+        ButtonMenArc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonMenVel5ActionPerformed(evt);
+                ButtonMenArcActionPerformed(evt);
+            }
+        });
+
+        LabelArcana.setForeground(new java.awt.Color(232, 232, 232));
+        LabelArcana.setText("Arcana");
+
+        LabelValDes.setForeground(new java.awt.Color(232, 232, 232));
+        LabelValDes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelValDes.setText("5");
+
+        ButtonMenDes.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonMenDes.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonMenDes.setText("-");
+        ButtonMenDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMenDesActionPerformed(evt);
+            }
+        });
+
+        LabelDestrzza.setForeground(new java.awt.Color(232, 232, 232));
+        LabelDestrzza.setText("Destrzza");
+
+        ButtonpiuDes.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonpiuDes.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonpiuDes.setText("+");
+        ButtonpiuDes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonpiuDesActionPerformed(evt);
+            }
+        });
+
+        ButtonpiuHP.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonpiuHP.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonpiuHP.setText("+");
+        ButtonpiuHP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonpiuHPActionPerformed(evt);
+            }
+        });
+
+        LabelValHP.setForeground(new java.awt.Color(232, 232, 232));
+        LabelValHP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelValHP.setText("10");
+
+        ButtonMenHP.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonMenHP.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonMenHP.setText("-");
+        ButtonMenHP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMenHPActionPerformed(evt);
+            }
+        });
+
+        LabelHP.setForeground(new java.awt.Color(232, 232, 232));
+        LabelHP.setText("HP");
+
+        LabelValMana.setForeground(new java.awt.Color(232, 232, 232));
+        LabelValMana.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelValMana.setText("10");
+
+        ButtonpiuMana.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonpiuMana.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonpiuMana.setText("+");
+        ButtonpiuMana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonpiuManaActionPerformed(evt);
+            }
+        });
+
+        LabelMana.setForeground(new java.awt.Color(232, 232, 232));
+        LabelMana.setText("Mana");
+
+        ButtonMenMana.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonMenMana.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonMenMana.setText("-");
+        ButtonMenMana.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonMenManaActionPerformed(evt);
             }
         });
 
@@ -251,70 +286,67 @@ public class Game2dForm extends JFrame implements Runnable{
         FrameCreazioneLayout.setHorizontalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ButtonConfremaCrea)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createSequentialGroup()
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelNome)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 238, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19))
+                        .addGap(40, 40, 40))
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(ButtonConfremaCrea)
-                        .addContainerGap())
-                    .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(LabelVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelForza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelDestrzza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelArcana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelHP, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelMana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                        .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createSequentialGroup()
                                 .addComponent(ButtonMenVel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelValVel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(ButtonpiuVel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonMenVel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonpiuVel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonMenVel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonpiuVel2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonMenVel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel3, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonpiuVel3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonMenVel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel4, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonpiuVel4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                                .addComponent(LabelVelocita5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonMenVel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelValVel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonpiuVel5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                            .addComponent(TextFieldNome))
+                        .addGap(119, 119, 119)
+                        .addComponent(LabelCreazione, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                            .addComponent(ButtonMenDes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(LabelValDes, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(ButtonpiuDes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ButtonMenMana, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonMenHP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonMenArc, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LabelValArc, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(LabelValHP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LabelValMana, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(ButtonpiuArc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonpiuHP, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ButtonpiuMana, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                        .addComponent(ButtonMenFor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelValFor, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ButtonpiuFor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19))
         );
         FrameCreazioneLayout.setVerticalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,44 +355,55 @@ public class Game2dForm extends JFrame implements Runnable{
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelNome)
                     .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelCreazione, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita1)
-                    .addComponent(ButtonMenVel1)
-                    .addComponent(LabelValVel1)
-                    .addComponent(ButtonpiuVel1))
-                .addGap(4, 4, 4)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita)
-                    .addComponent(ButtonMenVel)
-                    .addComponent(LabelValVel)
-                    .addComponent(ButtonpiuVel))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenVel)
+                        .addComponent(LabelVelocita))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonpiuVel)
+                        .addComponent(LabelValVel)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita2)
-                    .addComponent(ButtonMenVel2)
-                    .addComponent(LabelValVel2)
-                    .addComponent(ButtonpiuVel2))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenFor)
+                        .addComponent(LabelForza))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonpiuFor)
+                        .addComponent(LabelValFor)))
+                .addGap(5, 5, 5)
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenArc)
+                        .addComponent(LabelArcana))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonpiuArc)
+                        .addComponent(LabelValArc)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita3)
-                    .addComponent(ButtonMenVel3)
-                    .addComponent(LabelValVel3)
-                    .addComponent(ButtonpiuVel3))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ButtonpiuDes)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenDes)
+                        .addComponent(LabelValDes)
+                        .addComponent(LabelDestrzza)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita4)
-                    .addComponent(ButtonMenVel4)
-                    .addComponent(LabelValVel4)
-                    .addComponent(ButtonpiuVel4))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonpiuHP)
+                        .addComponent(LabelValHP))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenHP)
+                        .addComponent(LabelHP)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelVelocita5)
-                    .addComponent(ButtonMenVel5)
-                    .addComponent(LabelValVel5)
-                    .addComponent(ButtonpiuVel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonpiuMana)
+                        .addComponent(LabelValMana))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ButtonMenMana)
+                        .addComponent(LabelMana)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 246, Short.MAX_VALUE)
                 .addComponent(ButtonConfremaCrea)
                 .addContainerGap())
         );
@@ -478,25 +521,20 @@ public class Game2dForm extends JFrame implements Runnable{
 
     private void ButtonNuovaPartitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonNuovaPartitaActionPerformed
         // TODO add your handling code here:
-        jLabel4.setText(String.valueOf(Creation));
+        LabelCreazione.setText(String.valueOf(Creation));
         FrameCreazione.setVisible(true);
     }//GEN-LAST:event_ButtonNuovaPartitaActionPerformed
 
     private void ButtonMenVelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVelActionPerformed
         // TODO add your handling code here:
-        int vel;
-        if(Integer.parseInt(LabelValVel.getText())>0){
-            vel=Integer.parseInt(LabelValVel.getText())-1;
-            LabelValVel.setText(String.valueOf(vel));
-            Creation++;
-            jLabel4.setText(String.valueOf(Creation));
-        }
+        diminuisci(LabelValVel);
         
     }//GEN-LAST:event_ButtonMenVelActionPerformed
 
     private void ButtonConfremaCreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConfremaCreaActionPerformed
         // TODO add your handling code here:
         int vel=Integer.parseInt(LabelValVel.getText());
+        
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,vel,vel,vel,vel,vel,vel);
         Gpanel.addKeyListener(new GameInput(er));
@@ -511,7 +549,7 @@ public class Game2dForm extends JFrame implements Runnable{
              vel=Integer.parseInt(LabelValVel.getText())+1;
             LabelValVel.setText(String.valueOf(vel));
             Creation--;
-            jLabel4.setText(String.valueOf(Creation));
+            LabelCreazione.setText(String.valueOf(Creation));
          }
     }//GEN-LAST:event_jButton5ActionPerformed
 
@@ -520,26 +558,98 @@ public class Game2dForm extends JFrame implements Runnable{
         FrameOpzione.setVisible(true);
     }//GEN-LAST:event_ButtonOpzioneActionPerformed
 
-    private void ButtonMenVel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVel1ActionPerformed
+    private void ButtonMenForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenForActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonMenVel1ActionPerformed
+        diminuisci(LabelValFor);
+    }//GEN-LAST:event_ButtonMenForActionPerformed
 
-    private void ButtonMenVel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVel2ActionPerformed
+    private void ButtonMenArcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenArcActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonMenVel2ActionPerformed
+        diminuisci(LabelValArc);
+    }//GEN-LAST:event_ButtonMenArcActionPerformed
 
-    private void ButtonMenVel3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVel3ActionPerformed
+    private void ButtonMenDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenDesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonMenVel3ActionPerformed
+        diminuisci(LabelValDes);
+    }//GEN-LAST:event_ButtonMenDesActionPerformed
 
-    private void ButtonMenVel4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVel4ActionPerformed
+    private void ButtonMenHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenHPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonMenVel4ActionPerformed
+        diminuisci10(LabelValHP);
+    }//GEN-LAST:event_ButtonMenHPActionPerformed
 
-    private void ButtonMenVel5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenVel5ActionPerformed
+    private void ButtonMenManaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonMenManaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonMenVel5ActionPerformed
+        diminuisci10(LabelValMana);
+    }//GEN-LAST:event_ButtonMenManaActionPerformed
 
+    private void ButtonpiuForActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuForActionPerformed
+         // TODO add your handling code here:
+         aumenta(LabelValFor);
+    }//GEN-LAST:event_ButtonpiuForActionPerformed
+
+    private void ButtonpiuVelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuVelActionPerformed
+        // TODO add your handling code here:
+        aumenta(LabelValVel);
+    }//GEN-LAST:event_ButtonpiuVelActionPerformed
+
+    private void ButtonpiuHPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuHPActionPerformed
+        // TODO add your handling code here:
+        aumenta10(LabelValHP);
+    }//GEN-LAST:event_ButtonpiuHPActionPerformed
+
+    private void ButtonpiuManaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuManaActionPerformed
+         // TODO add your handling code here:
+         aumenta10(LabelValMana);
+    }//GEN-LAST:event_ButtonpiuManaActionPerformed
+
+    private void ButtonpiuArcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuArcActionPerformed
+        // TODO add your handling code here:
+        aumenta(LabelValArc);
+    }//GEN-LAST:event_ButtonpiuArcActionPerformed
+
+    private void ButtonpiuDesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonpiuDesActionPerformed
+        // TODO add your handling code here:
+        aumenta(LabelValDes);
+    }//GEN-LAST:event_ButtonpiuDesActionPerformed
+    private void aumenta(javax.swing.JLabel la){
+        if(Creation>0){
+            int a = Integer.parseInt(la.getText());
+            a++;
+            Creation--;
+            la.setText(String.valueOf(a));
+            LabelCreazione.setText(String.valueOf(Creation));
+        }
+    }
+    private void aumenta10(javax.swing.JLabel la){
+        int a;
+        if(Creation>0){
+            a = Integer.parseInt(la.getText());
+            a=a+10;
+            Creation--;
+            la.setText(String.valueOf(a));
+            LabelCreazione.setText(String.valueOf(Creation));
+        }
+    }
+    private void diminuisci(javax.swing.JLabel la){
+        int a = Integer.parseInt(la.getText());
+        if(a>5){
+            a--;
+            Creation++;
+            la.setText(String.valueOf(a));
+            LabelCreazione.setText(String.valueOf(Creation));
+        }
+    }
+    private void diminuisci10(javax.swing.JLabel la){
+        int a = Integer.parseInt(la.getText());
+        if(a>10){
+            a=a-10;
+            Creation++;
+            la.setText(String.valueOf(a));
+            LabelCreazione.setText(String.valueOf(Creation));
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -578,41 +688,41 @@ public class Game2dForm extends JFrame implements Runnable{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonConfremaCrea;
     private javax.swing.JButton ButtonContinuaPartita;
+    private javax.swing.JButton ButtonMenArc;
+    private javax.swing.JButton ButtonMenDes;
+    private javax.swing.JButton ButtonMenFor;
+    private javax.swing.JButton ButtonMenHP;
+    private javax.swing.JButton ButtonMenMana;
     private javax.swing.JButton ButtonMenVel;
-    private javax.swing.JButton ButtonMenVel1;
-    private javax.swing.JButton ButtonMenVel2;
-    private javax.swing.JButton ButtonMenVel3;
-    private javax.swing.JButton ButtonMenVel4;
-    private javax.swing.JButton ButtonMenVel5;
     private javax.swing.JButton ButtonNuovaPartita;
     private javax.swing.JButton ButtonOpzione;
     private javax.swing.JButton ButtonSelezionaLIngua;
+    private javax.swing.JButton ButtonpiuArc;
+    private javax.swing.JButton ButtonpiuDes;
+    private javax.swing.JButton ButtonpiuFor;
+    private javax.swing.JButton ButtonpiuHP;
+    private javax.swing.JButton ButtonpiuMana;
     private javax.swing.JButton ButtonpiuVel;
-    private javax.swing.JButton ButtonpiuVel1;
-    private javax.swing.JButton ButtonpiuVel2;
-    private javax.swing.JButton ButtonpiuVel3;
-    private javax.swing.JButton ButtonpiuVel4;
-    private javax.swing.JButton ButtonpiuVel5;
     private javax.swing.JComboBox<String> ComboLingue;
     private javax.swing.JFrame FrameCreazione;
     private javax.swing.JFrame FrameOpzione;
+    private javax.swing.JLabel LabelArcana;
+    private javax.swing.JLabel LabelCreazione;
+    private javax.swing.JLabel LabelDestrzza;
+    private javax.swing.JLabel LabelForza;
+    private javax.swing.JLabel LabelHP;
     private javax.swing.JLabel LabelLingua;
+    private javax.swing.JLabel LabelMana;
     private javax.swing.JLabel LabelNome;
     private javax.swing.JLabel LabelTitolo;
     private javax.swing.JLabel LabelTitoloOpzione;
+    private javax.swing.JLabel LabelValArc;
+    private javax.swing.JLabel LabelValDes;
+    private javax.swing.JLabel LabelValFor;
+    private javax.swing.JLabel LabelValHP;
+    private javax.swing.JLabel LabelValMana;
     private javax.swing.JLabel LabelValVel;
-    private javax.swing.JLabel LabelValVel1;
-    private javax.swing.JLabel LabelValVel2;
-    private javax.swing.JLabel LabelValVel3;
-    private javax.swing.JLabel LabelValVel4;
-    private javax.swing.JLabel LabelValVel5;
     private javax.swing.JLabel LabelVelocita;
-    private javax.swing.JLabel LabelVelocita1;
-    private javax.swing.JLabel LabelVelocita2;
-    private javax.swing.JLabel LabelVelocita3;
-    private javax.swing.JLabel LabelVelocita4;
-    private javax.swing.JLabel LabelVelocita5;
     private javax.swing.JTextField TextFieldNome;
-    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

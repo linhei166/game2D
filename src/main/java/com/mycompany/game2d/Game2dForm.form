@@ -7,87 +7,93 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[400, 500]"/>
+        </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="ButtonConfremaCrea" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="LabelNome" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="TextFieldNome" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="238" max="32767" attributes="0"/>
-                          <Component id="jLabel4" min="-2" pref="20" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="ButtonConfremaCrea" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelVelocita" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="LabelForza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="LabelDestrzza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="LabelArcana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="LabelHP" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              <Component id="LabelMana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
                                   <Component id="ButtonMenVel" min="-2" pref="45" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel" min="-2" pref="17" max="-2" attributes="0"/>
+                                  <Component id="LabelValVel" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="ButtonpiuVel" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita1" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonMenVel1" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel1" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonpiuVel1" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="TextFieldNome" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                          <Component id="LabelCreazione" min="-2" pref="20" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="ButtonMenDes" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="LabelValDes" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="ButtonpiuDes" min="-2" pref="45" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ButtonMenMana" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="ButtonMenHP" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="ButtonMenArc" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita2" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonMenVel2" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel2" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonpiuVel2" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="LabelValArc" min="-2" pref="50" max="-2" attributes="0"/>
+                                      <Component id="LabelValHP" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="LabelValMana" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita3" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonMenVel3" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel3" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonpiuVel3" min="-2" pref="45" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita4" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonMenVel4" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel4" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonpiuVel4" min="-2" pref="45" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="LabelVelocita5" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonMenVel5" min="-2" pref="45" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="LabelValVel5" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="ButtonpiuVel5" min="-2" pref="45" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ButtonpiuArc" alignment="1" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="ButtonpiuHP" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="ButtonpiuMana" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="ButtonMenFor" min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="LabelValFor" min="-2" pref="50" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ButtonpiuFor" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,51 +104,73 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="LabelNome" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="TextFieldNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel4" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="LabelCreazione" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenVel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelVelocita" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="ButtonpiuVel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValVel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelForza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="ButtonpiuFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValFor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenArc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelArcana" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonpiuArc" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValArc" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="ButtonpiuDes" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValDes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelDestrzza" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonpiuHP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValHP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenHP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelHP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="LabelVelocita5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonMenVel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelValVel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="ButtonpiuVel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonpiuMana" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelValMana" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                          <Component id="ButtonMenMana" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelMana" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <EmptySpace pref="246" max="32767" attributes="0"/>
                   <Component id="ButtonConfremaCrea" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -160,10 +188,13 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldNome">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
+            <Property name="text" type="java.lang.String" value=" "/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="LabelVelocita">
@@ -208,7 +239,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="ButtonpiuVel">
@@ -221,10 +252,21 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuVelActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="LabelCreazione">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="0" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e8" green="e8" red="e8" type="rgb"/>
+            </Property>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelVelocita1">
+        <Component class="javax.swing.JLabel" name="LabelForza">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
@@ -232,7 +274,7 @@
             <Property name="text" type="java.lang.String" value="Forza"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonMenVel1">
+        <Component class="javax.swing.JButton" name="ButtonMenFor">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -243,19 +285,19 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVel1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenForActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelValVel1">
+        <Component class="javax.swing.JLabel" name="LabelValFor">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonpiuVel1">
+        <Component class="javax.swing.JButton" name="ButtonpiuFor">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -265,17 +307,20 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuForActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelValVel2">
+        <Component class="javax.swing.JLabel" name="LabelValArc">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonpiuVel2">
+        <Component class="javax.swing.JButton" name="ButtonpiuArc">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -285,8 +330,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuArcActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonMenVel2">
+        <Component class="javax.swing.JButton" name="ButtonMenArc">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -297,10 +345,10 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVel2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenArcActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelVelocita2">
+        <Component class="javax.swing.JLabel" name="LabelArcana">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
@@ -308,16 +356,16 @@
             <Property name="text" type="java.lang.String" value="Arcana"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelValVel3">
+        <Component class="javax.swing.JLabel" name="LabelValDes">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="5"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonMenVel3">
+        <Component class="javax.swing.JButton" name="ButtonMenDes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -328,10 +376,10 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVel3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenDesActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelVelocita3">
+        <Component class="javax.swing.JLabel" name="LabelDestrzza">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
@@ -339,7 +387,7 @@
             <Property name="text" type="java.lang.String" value="Destrzza"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonpiuVel3">
+        <Component class="javax.swing.JButton" name="ButtonpiuDes">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -349,8 +397,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuDesActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonpiuVel4">
+        <Component class="javax.swing.JButton" name="ButtonpiuHP">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -360,17 +411,20 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuHPActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelValVel4">
+        <Component class="javax.swing.JLabel" name="LabelValHP">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonMenVel4">
+        <Component class="javax.swing.JButton" name="ButtonMenHP">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -381,10 +435,10 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVel4ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenHPActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelVelocita4">
+        <Component class="javax.swing.JLabel" name="LabelHP">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
@@ -392,16 +446,16 @@
             <Property name="text" type="java.lang.String" value="HP"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelValVel5">
+        <Component class="javax.swing.JLabel" name="LabelValMana">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="0"/>
+            <Property name="text" type="java.lang.String" value="10"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonpiuVel5">
+        <Component class="javax.swing.JButton" name="ButtonpiuMana">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -411,8 +465,11 @@
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuManaActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelVelocita5">
+        <Component class="javax.swing.JLabel" name="LabelMana">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
@@ -420,7 +477,7 @@
             <Property name="text" type="java.lang.String" value="Mana"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ButtonMenVel5">
+        <Component class="javax.swing.JButton" name="ButtonMenMana">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="54" green="54" red="54" type="rgb"/>
@@ -431,7 +488,7 @@
             <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVel5ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenManaActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
