@@ -8,7 +8,7 @@ import java.io.InputStream;
 public class LoadSeve {
         public static BufferedImage GetFileIMG(String nome) {
             BufferedImage img = null;
-            InputStream is = LoadSeve.class.getResourceAsStream("/Images/"+nome);
+            InputStream is = LoadSeve.class.getResourceAsStream("/imag/"+nome);
             try {
                 img = ImageIO.read(is);
             } catch (IOException e) {

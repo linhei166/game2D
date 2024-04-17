@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 public class GamePanel extends JPanel {
 
     private final int maxY = 792,maxX = 1260;
-    private final String FileMap ="colored_packed.png";
+    private final String FileMap ="/terreni/terra_01.png";
     private BufferedImage IMG;
     private Game2dForm game;
 
