@@ -14,7 +14,6 @@ public class Eroe extends Entita{
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
         IMG = LoadSeve.GetFileIMG(FileMap);
-
     }
     public void levelup(){
         for(int a=5;a>0;a--){
