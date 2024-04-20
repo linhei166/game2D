@@ -19,7 +19,6 @@ public class FrameMappa extends javax.swing.JFrame {
      */
     public FrameMappa(Game2dForm game2dForm) {
         this.game2dForm = game2dForm;
-        super.setLocationRelativeTo(null);
         initComponents();
     }
 
@@ -37,6 +36,7 @@ public class FrameMappa extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new GamePanel(game2dForm);
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,17 +51,25 @@ public class FrameMappa extends javax.swing.JFrame {
             .addGap(0, 194, Short.MAX_VALUE)
         );
 
+        jButton1.setText("ENTRA");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 106, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(0, 65, Short.MAX_VALUE))
         );
 
         pack();
@@ -98,6 +106,7 @@ public class FrameMappa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 
 public class GamePanel extends JPanel {
 
-    private final int maxY = 792,maxX = 1260;
+    private final int maxY = 648,maxX = 1260;
     private final String FileMap ="/terreni/terra_01.png";
     private BufferedImage IMG;
     private Game2dForm game;
@@ -39,7 +39,6 @@ public class GamePanel extends JPanel {
                 g.drawImage(IMG.getSubimage(0, 0, 16, 16), i*36, k*36, 36, 36, null);
 
         game.gameRead(g);
-        g.fillRect(10,this.maxY-50,50,10);
     }
 
     }
