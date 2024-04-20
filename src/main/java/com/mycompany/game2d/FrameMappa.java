@@ -5,6 +5,7 @@
 package com.mycompany.game2d;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  *
@@ -19,6 +20,7 @@ public class FrameMappa extends javax.swing.JFrame {
      */
     public FrameMappa(Game2dForm game2dForm) {
         this.game2dForm = game2dForm;
+        super.getContentPane().setBackground(Color.BLACK);
         initComponents();
     }
 
