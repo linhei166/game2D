@@ -46,7 +46,7 @@ public class Game2dForm extends JFrame implements Runnable{
     public void run() {
         double timeFreme = 1000000000.0/gameTime;
         long lastTime = System.nanoTime();
-        long now = System.nanoTime();
+        long now;
         while (true){
             now = System.nanoTime();
             if(now - lastTime >= timeFreme){
