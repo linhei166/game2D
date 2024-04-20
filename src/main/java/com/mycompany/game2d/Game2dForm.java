@@ -14,9 +14,8 @@ import java.lang.Thread;
  */
 public class Game2dForm extends JFrame implements Runnable{
     private int Creation=20;
-    private GameMap Gmap;
-    private GamePanel Gpanel;
     protected Eroe er;
+    private FrameMappa mappa;
     private Thread gameThread;
     private final int gameTime = 120;
     /**
@@ -30,8 +29,7 @@ public class Game2dForm extends JFrame implements Runnable{
         super.setSize(400,300);
         FrameOpzione.setSize(300,200);
         FrameOpzione.getContentPane().setBackground(Color.BLACK);
-        Gpanel = new GamePanel(this);
-        Gmap = new GameMap(Gpanel);
+        mappa = new FrameMappa(this);
         gamestart();
 
     }
@@ -52,7 +50,7 @@ public class Game2dForm extends JFrame implements Runnable{
         while (true){
             now = System.nanoTime();
             if(now - lastTime >= timeFreme){
-                Gpanel.repaint();
+                mappa.repaint();
                 lastTime = now;
             }
 
@@ -538,12 +536,13 @@ public class Game2dForm extends JFrame implements Runnable{
         int des=Integer.parseInt(LabelValDes.getText());
         int hp=Integer.parseInt(LabelValHP.getText());
         int mana=Integer.parseInt(LabelValMana.getText());
-
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,forz,vel,arc,des,hp,mana);
-        Gpanel.addKeyListener(new GameInput(er));
-        Gmap.setVisible(true);
-        Gpanel.requestFocus();
+        mappa.addKeyListener(new GameInput(er));
+        mappa.setVisible(true);
+        mappa.requestFocus();
+
+        
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
