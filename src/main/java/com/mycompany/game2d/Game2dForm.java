@@ -105,6 +105,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonOpzione = new javax.swing.JButton();
         LabelTitolo = new javax.swing.JLabel();
 
+        FrameCreazione.setTitle("La Terrra dei Fiordalsi");
         FrameCreazione.setBackground(new java.awt.Color(0, 0, 0));
         FrameCreazione.setPreferredSize(new java.awt.Dimension(400, 500));
 
@@ -407,16 +408,28 @@ public class Game2dForm extends JFrame implements Runnable{
                 .addContainerGap())
         );
 
+        FrameOpzione.setTitle("La Terrra dei Fiordalsi");
         FrameOpzione.setBackground(new java.awt.Color(0, 0, 0));
 
         LabelLingua.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        LabelLingua.setForeground(new java.awt.Color(232, 232, 232));
         LabelLingua.setText("Lingue");
 
+        ComboLingue.setBackground(new java.awt.Color(84, 84, 84));
+        ComboLingue.setForeground(new java.awt.Color(232, 232, 232));
         ComboLingue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Italiano", "English" }));
 
+        ButtonSelezionaLIngua.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonSelezionaLIngua.setForeground(new java.awt.Color(232, 232, 232));
         ButtonSelezionaLIngua.setText("Seleziona");
+        ButtonSelezionaLIngua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSelezionaLInguaActionPerformed(evt);
+            }
+        });
 
         LabelTitoloOpzione.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        LabelTitoloOpzione.setForeground(new java.awt.Color(232, 232, 232));
         LabelTitoloOpzione.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelTitoloOpzione.setText("Opzioni Lingua");
 
@@ -619,6 +632,10 @@ public class Game2dForm extends JFrame implements Runnable{
         // TODO add your handling code here:
         aumenta(LabelValDes);
     }//GEN-LAST:event_ButtonpiuDesActionPerformed
+
+    private void ButtonSelezionaLInguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSelezionaLInguaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ButtonSelezionaLInguaActionPerformed
     private void aumenta(javax.swing.JLabel la){
         if(Creation>0){
             int a = Integer.parseInt(la.getText());

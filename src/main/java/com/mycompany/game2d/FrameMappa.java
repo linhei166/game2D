@@ -23,9 +23,11 @@ public class FrameMappa extends javax.swing.JFrame {
         this.er = er;
         super.getContentPane().setBackground(Color.BLACK);
         initComponents();
-        jLabel5.setText(er.nome);
-        jProgressBar1.setMaximum(er.hp);
-        jProgressBar2.setMaximum(er.arcana);
+        LabelNomeEroe.setText(er.nome);
+        ProgressBarMana.setMaximum(er.hp);
+        ProgressBarHP.setMaximum(er.arcana);
+        ProgressBarMana.setValue(er.hp);
+        ProgressBarHP.setValue(er.arcana);
     }
 
 //    public JPanel getPanel(){
@@ -41,156 +43,154 @@ public class FrameMappa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new GamePanel(game2dForm);
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jProgressBar1 = new javax.swing.JProgressBar();
-        jLabel4 = new javax.swing.JLabel();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jButton3 = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jProgressBar4 = new javax.swing.JProgressBar();
+        PanelfGioco = new GamePanel(game2dForm);
+        ButtonDoungeon = new javax.swing.JButton();
+        LabelName = new javax.swing.JLabel();
+        LabelMana = new javax.swing.JLabel();
+        LabelHP = new javax.swing.JLabel();
+        ButtonInventario = new javax.swing.JButton();
+        ProgressBarMana = new javax.swing.JProgressBar();
+        LabelEXP = new javax.swing.JLabel();
+        ProgressBarHP = new javax.swing.JProgressBar();
+        ButtonOpzioni = new javax.swing.JButton();
+        LabelNomeEroe = new javax.swing.JLabel();
+        ProgressBarEXP = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("La Terrra dei Fiordalsi");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout PanelfGiocoLayout = new javax.swing.GroupLayout(PanelfGioco);
+        PanelfGioco.setLayout(PanelfGiocoLayout);
+        PanelfGiocoLayout.setHorizontalGroup(
+            PanelfGiocoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        PanelfGiocoLayout.setVerticalGroup(
+            PanelfGiocoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 194, Short.MAX_VALUE)
         );
 
-        jButton1.setBackground(new java.awt.Color(84, 84, 84));
-        jButton1.setForeground(new java.awt.Color(232, 232, 232));
-        jButton1.setText("ENTRA");
-        jButton1.setFocusable(false);
-        jButton1.setMaximumSize(new java.awt.Dimension(95, 23));
-        jButton1.setMinimumSize(new java.awt.Dimension(95, 23));
-        jButton1.setPreferredSize(new java.awt.Dimension(95, 23));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonDoungeon.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonDoungeon.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonDoungeon.setText("ENTRA");
+        ButtonDoungeon.setFocusable(false);
+        ButtonDoungeon.setMaximumSize(new java.awt.Dimension(95, 23));
+        ButtonDoungeon.setMinimumSize(new java.awt.Dimension(95, 23));
+        ButtonDoungeon.setPreferredSize(new java.awt.Dimension(95, 23));
+        ButtonDoungeon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButtonDoungeonActionPerformed(evt);
             }
         });
 
-        jLabel1.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel1.setText("Nome");
+        LabelName.setForeground(new java.awt.Color(232, 232, 232));
+        LabelName.setText("NOME:");
 
-        jLabel2.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel2.setText("MANA");
+        LabelMana.setForeground(new java.awt.Color(232, 232, 232));
+        LabelMana.setText("MANA");
 
-        jLabel3.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("HP");
+        LabelHP.setForeground(new java.awt.Color(232, 232, 232));
+        LabelHP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelHP.setText("HP");
 
-        jButton2.setBackground(new java.awt.Color(84, 84, 84));
-        jButton2.setForeground(new java.awt.Color(232, 232, 232));
-        jButton2.setText("INVENTARIO");
-        jButton2.setFocusable(false);
+        ButtonInventario.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonInventario.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonInventario.setText("INVENTARIO");
+        ButtonInventario.setFocusable(false);
 
-        jProgressBar1.setBackground(new java.awt.Color(84, 84, 84));
-        jProgressBar1.setForeground(new java.awt.Color(0, 0, 204));
-        jProgressBar1.setToolTipText("");
-        jProgressBar1.setValue(100);
-        jProgressBar1.setStringPainted(true);
+        ProgressBarMana.setBackground(new java.awt.Color(84, 84, 84));
+        ProgressBarMana.setForeground(new java.awt.Color(0, 0, 204));
+        ProgressBarMana.setToolTipText("");
+        ProgressBarMana.setValue(100);
+        ProgressBarMana.setStringPainted(true);
 
-        jLabel4.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("EXP");
+        LabelEXP.setForeground(new java.awt.Color(232, 232, 232));
+        LabelEXP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LabelEXP.setText("EXP");
 
-        jProgressBar2.setBackground(new java.awt.Color(84, 84, 84));
-        jProgressBar2.setForeground(new java.awt.Color(204, 0, 0));
-        jProgressBar2.setToolTipText("");
-        jProgressBar2.setValue(100);
-        jProgressBar2.setStringPainted(true);
+        ProgressBarHP.setBackground(new java.awt.Color(84, 84, 84));
+        ProgressBarHP.setForeground(new java.awt.Color(204, 0, 0));
+        ProgressBarHP.setToolTipText("");
+        ProgressBarHP.setValue(100);
+        ProgressBarHP.setStringPainted(true);
 
-        jButton3.setBackground(new java.awt.Color(84, 84, 84));
-        jButton3.setForeground(new java.awt.Color(232, 232, 232));
-        jButton3.setText("OPZIONI");
-        jButton3.setFocusable(false);
+        ButtonOpzioni.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonOpzioni.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonOpzioni.setText("OPZIONI");
+        ButtonOpzioni.setFocusable(false);
 
-        jLabel5.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel5.setText("jLabel5");
+        LabelNomeEroe.setForeground(new java.awt.Color(232, 232, 232));
+        LabelNomeEroe.setText("jLabel5");
 
-        jProgressBar4.setBackground(new java.awt.Color(255, 255, 255));
-        jProgressBar4.setForeground(new java.awt.Color(153, 212, 0));
-        jProgressBar4.setToolTipText("");
-        jProgressBar4.setValue(3);
-        jProgressBar4.setStringPainted(true);
+        ProgressBarEXP.setBackground(new java.awt.Color(255, 255, 255));
+        ProgressBarEXP.setForeground(new java.awt.Color(153, 212, 0));
+        ProgressBarEXP.setToolTipText("");
+        ProgressBarEXP.setStringPainted(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(PanelfGioco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ButtonOpzioni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ButtonDoungeon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LabelEXP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LabelMana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LabelName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LabelHP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ProgressBarHP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(ProgressBarEXP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ProgressBarMana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LabelNomeEroe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(PanelfGioco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ButtonDoungeon, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)
+                        .addComponent(ButtonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3)
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addComponent(ButtonOpzioni, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel5))
+                            .addComponent(LabelName)
+                            .addComponent(LabelNomeEroe))
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LabelMana)
+                            .addComponent(ProgressBarMana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                            .addComponent(LabelHP)
+                            .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jProgressBar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(12, Short.MAX_VALUE))
+                            .addComponent(ProgressBarEXP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelEXP))))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ButtonDoungeonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDoungeonActionPerformed
         // TODO add your handling code here:
-        jProgressBar4.setValue(23);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        ProgressBarEXP.setValue(23);
+    }//GEN-LAST:event_ButtonDoungeonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,17 +223,17 @@ public class FrameMappa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JProgressBar jProgressBar1;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar4;
+    private javax.swing.JButton ButtonDoungeon;
+    private javax.swing.JButton ButtonInventario;
+    private javax.swing.JButton ButtonOpzioni;
+    private javax.swing.JLabel LabelEXP;
+    private javax.swing.JLabel LabelHP;
+    private javax.swing.JLabel LabelMana;
+    private javax.swing.JLabel LabelName;
+    private javax.swing.JLabel LabelNomeEroe;
+    private javax.swing.JPanel PanelfGioco;
+    private javax.swing.JProgressBar ProgressBarEXP;
+    private javax.swing.JProgressBar ProgressBarHP;
+    private javax.swing.JProgressBar ProgressBarMana;
     // End of variables declaration//GEN-END:variables
 }
