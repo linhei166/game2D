@@ -8,13 +8,17 @@ public class Eroe extends Entita{
     Scanner in = new Scanner(System.in);
     private int Yposizione = 50;
     private int Xposizione = 50;
+    private final int grandeza=36 ,alteza=36;
     private BufferedImage IMG;
     private final String FileMap ="/personagi/personaggi_01.png";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
         IMG = LoadSeve.GetFileIMG(FileMap);
+
     }
+
+
     public void levelup(){
         for(int a=5;a>0;a--){
         int car = in.nextInt();
@@ -42,8 +46,11 @@ public class Eroe extends Entita{
         System.out.println("Out of for");
     }
 
+
     public void movimentoY(int valore ){
+
         this.Yposizione += valore;
+
 
     }
     public void movimentoX(int valore){
