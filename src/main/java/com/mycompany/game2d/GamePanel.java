@@ -70,6 +70,16 @@ public class GamePanel extends JPanel {
                     case 5:
                         codeMap[i][k].setImg(LoadSeve.GetFileIMG("/terreni/terra_05.png"));
                         break;
+                    case 6:
+                        codeMap[i][k].setImg(LoadSeve.GetFileIMG("/mare/mare_05.png"));
+                        break;
+                    case 7:
+                        codeMap[i][k].setImg(LoadSeve.GetFileIMG("/mare/mare_08.png"));
+                        break;
+                    case 8:
+                        codeMap[i][k].setImg(LoadSeve.GetFileIMG("/mare/mare_06.png"));
+                        break;
+
                 }
 
 
