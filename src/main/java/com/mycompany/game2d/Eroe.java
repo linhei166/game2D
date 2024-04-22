@@ -9,12 +9,20 @@ public class Eroe extends Entita{
     private int Yposizione = 50;
     private int Xposizione = 50;
     private final int maxPanelY = 648,maxPanelX = 1260;
+    private int[][] calesa_pesonagio;
     private final int grandeza = 36;
     private BufferedImage IMG;
     private final String FileMap ="/personagi/personaggi_01.png";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                calesa_pesonagio[i][j] = 0;
+            }
+
+        }
         IMG = LoadSeve.GetFileIMG(FileMap);
     }
 
