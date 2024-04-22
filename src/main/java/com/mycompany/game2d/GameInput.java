@@ -37,6 +37,15 @@ public class GameInput implements KeyListener {
                 pley.movimentoX(-5);
                 System.out.println("peromuto");
                 break;
+            case KeyEvent.VK_ESCAPE:
+                System.out.println("esc");
+                break;
+            case KeyEvent.VK_B:
+                System.out.println("inventerio");
+                break;
+            case KeyEvent.VK_E:
+                System.out.println("effetua la movimento");
+                break;
         }
     }
 
