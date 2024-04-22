@@ -4,17 +4,26 @@ package com.mycompany.game2d;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
 
 
 public class GamePanel extends JPanel {
 
     private final int maxY = 648,maxX = 1260;
-    private final String FileMap ="/terreni/terra_01.png";
+    private final int caselaY =18,caselaX = 35;
     private BufferedImage IMG;
     private Game2dForm game;
-
+    private File f ;
+    private BufferedReader br;
+    private ArrayList<Integer>CodeMap;
     public GamePanel(Game2dForm game){
-        importImg(FileMap);
+        CodeMap =new ArrayList<>();
+        f = new File("/MapCode/map0001.txt");
+        br = LoadSeve.GetFile(f);
+        importImg();
         Dimesione();
         this.game = game;
     }
@@ -26,17 +35,22 @@ public class GamePanel extends JPanel {
         setPreferredSize(size);
     }
 
-    private void importImg(String nomeFile){
-        IMG = LoadSeve.GetFileIMG(nomeFile);
+    private void importImg(){
+        for (int i = 0 ; i < caselaY ; i++)
+            for (int k = 0 ; k < caselaX ; k++) {
+
+
+            }
+
     }
 
     @Override
     public void paint(Graphics g){
         super.paint(g);
 
-        for (int i = 0 ; i <35 ; i++ )
-            for (int k=0 ; k < 18 ; k++)
-                g.drawImage(IMG.getSubimage(0, 0, 16, 16), i*36, k*36, 36, 36, null);
+        for (int i = 0 ; i <caselaY ; i++ )
+            for (int k=0 ; k < caselaX ; k++)
+                g.drawImage(IMG.getSubimage(0, 0, 16, 16), k*36, i*36, 36, 36, null);
 
         game.gameRead(g);
     }

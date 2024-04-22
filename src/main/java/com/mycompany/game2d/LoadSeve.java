@@ -2,8 +2,7 @@ package com.mycompany.game2d;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 public class LoadSeve {
         public static BufferedImage GetFileIMG(String nome) {
@@ -15,6 +14,15 @@ public class LoadSeve {
                 throw new RuntimeException(e);
             }
             return img;
+        }
+        public static BufferedReader GetFile(File file) {
+            BufferedReader br = null;
+            try {
+                br = new BufferedReader(new FileReader(file));
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            return br;
         }
 
 }
