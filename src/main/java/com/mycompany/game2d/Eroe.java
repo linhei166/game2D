@@ -8,14 +8,14 @@ public class Eroe extends Entita{
     Scanner in = new Scanner(System.in);
     private int Yposizione = 50;
     private int Xposizione = 50;
-    private final int grandeza=36 ,alteza=36;
+    private final int maxPanelY = 648,maxPanelX = 1260;
+    private final int grandeza = 36;
     private BufferedImage IMG;
     private final String FileMap ="/personagi/personaggi_01.png";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
         IMG = LoadSeve.GetFileIMG(FileMap);
-
     }
 
 
@@ -48,13 +48,18 @@ public class Eroe extends Entita{
 
 
     public void movimentoY(int valore ){
-
-        this.Yposizione += valore;
-
-
+        int area = Yposizione + grandeza;
+        int posizione = Yposizione;
+        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY) {
+            this.Yposizione += valore;
+        }
     }
     public void movimentoX(int valore){
-        this.Xposizione += valore;
+        int area = Xposizione + grandeza;
+        int posizione = Xposizione;
+        if((posizione+=valore) > 0 && (area+=valore) < maxPanelX) {
+            this.Xposizione += valore;
+        }
     }
 
     public void getIMGpley(Graphics g){

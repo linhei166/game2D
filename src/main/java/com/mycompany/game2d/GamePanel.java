@@ -39,8 +39,9 @@ public class GamePanel extends JPanel {
     private void importImg(){
         for (int i = 0 ; i < caselaY ; i++)
             for (int k = 0 ; k < caselaX ; k++) {
-                codeMap[i][k].setImg(LoadSeve.GetFileIMG("/terreni/terra_01.png"));
-                codeMap[i][k].settipo(1);
+//                codeMap[i][k].setImg(LoadSeve.GetFileIMG("/terreni/terra_01.png"));
+//                codeMap[i][k].settipo(1);
+
             }
     }
 

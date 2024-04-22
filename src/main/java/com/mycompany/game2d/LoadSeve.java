@@ -15,14 +15,16 @@ public class LoadSeve {
             }
             return img;
         }
-        public static BufferedReader GetFile(File file) {
-            BufferedReader br = null;
+        public static int GetFile(String nome) {
+
+            File f = new File("/MapCode"+nome);
+            BufferedReader br;
             try {
-                br = new BufferedReader(new FileReader(file));
+                br = new BufferedReader(new FileReader(f));
             } catch (FileNotFoundException e) {
                 throw new RuntimeException(e);
             }
-            return br;
+            return 0;
         }
 
 }
