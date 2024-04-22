@@ -20,6 +20,10 @@ public class GamePanel extends JPanel {
     private CadiceMap[][] codeMap;
     public GamePanel(Game2dForm game){
         codeMap = new CadiceMap[caselaY][caselaX];
+        for (int i = 0 ; i < caselaY ; i++)
+            for (int k = 0 ; k < caselaX ; k++) {
+                codeMap[i][k] = new CadiceMap();
+            }
         importImg();
         Dimesione();
         this.game = game;
@@ -33,12 +37,11 @@ public class GamePanel extends JPanel {
     }
 
     private void importImg(){
-//        for (int i = 0 ; i < caselaY ; i++)
-//            for (int k = 0 ; k < caselaX ; k++) {
-//
-//            }
-        IMG = LoadSeve.GetFileIMG("/terreni/terra_01.png");
-
+        for (int i = 0 ; i < caselaY ; i++)
+            for (int k = 0 ; k < caselaX ; k++) {
+                codeMap[i][k].setImg(LoadSeve.GetFileIMG("/terreni/terra_01.png"));
+                codeMap[i][k].settipo(1);
+            }
     }
 
     @Override
@@ -47,8 +50,7 @@ public class GamePanel extends JPanel {
 
         for (int i = 0 ; i <caselaY ; i++ )
             for (int k=0 ; k < caselaX ; k++) {
-
-                g.drawImage(IMG.getSubimage(0, 0, 16, 16), k * 36, i * 36, 36, 36, null);
+                g.drawImage(codeMap[i][k].getImg().getSubimage(0, 0, 16, 16), k * 36, i * 36, 36, 36, null);
             }
         game.gameRead(g);
     }
