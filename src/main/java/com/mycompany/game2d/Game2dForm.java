@@ -29,8 +29,7 @@ public class Game2dForm extends JFrame implements Runnable{
         super.setSize(400,300);
         FrameOpzione.setSize(300,200);
         FrameOpzione.getContentPane().setBackground(Color.BLACK);
-        mappa = new FrameMappa(this);
-        gamestart();
+
 
     }
     private void gamestart(){
@@ -351,10 +350,11 @@ public class Game2dForm extends JFrame implements Runnable{
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FrameCreazioneLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelNome)
-                    .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelCreazione, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelCreazione, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(LabelNome)
+                        .addComponent(TextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -540,9 +540,11 @@ public class Game2dForm extends JFrame implements Runnable{
         int mana=Integer.parseInt(LabelValMana.getText());
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,forz,vel,arc,des,hp,mana);
+        mappa = new FrameMappa(this,er);
         mappa.addKeyListener(new GameInput(er));
         mappa.setVisible(true);
         mappa.requestFocus();
+        gamestart();
 
         
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed

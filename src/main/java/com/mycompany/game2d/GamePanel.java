@@ -7,6 +7,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -16,13 +17,9 @@ public class GamePanel extends JPanel {
     private final int caselaY =18,caselaX = 35;
     private BufferedImage IMG;
     private Game2dForm game;
-    private File f ;
-    private BufferedReader br;
-    private ArrayList<Integer>CodeMap;
+    private CadiceMap[][] codeMap;
     public GamePanel(Game2dForm game){
-        CodeMap =new ArrayList<>();
-        f = new File("/MapCode/map0001.txt");
-        br = LoadSeve.GetFile(f);
+        codeMap = new CadiceMap[caselaY][caselaX];
         importImg();
         Dimesione();
         this.game = game;
@@ -36,11 +33,11 @@ public class GamePanel extends JPanel {
     }
 
     private void importImg(){
-        for (int i = 0 ; i < caselaY ; i++)
-            for (int k = 0 ; k < caselaX ; k++) {
-
-
-            }
+//        for (int i = 0 ; i < caselaY ; i++)
+//            for (int k = 0 ; k < caselaX ; k++) {
+//
+//            }
+        IMG = LoadSeve.GetFileIMG("/terreni/terra_01.png");
 
     }
 
@@ -49,9 +46,10 @@ public class GamePanel extends JPanel {
         super.paint(g);
 
         for (int i = 0 ; i <caselaY ; i++ )
-            for (int k=0 ; k < caselaX ; k++)
-                g.drawImage(IMG.getSubimage(0, 0, 16, 16), k*36, i*36, 36, 36, null);
+            for (int k=0 ; k < caselaX ; k++) {
 
+                g.drawImage(IMG.getSubimage(0, 0, 16, 16), k * 36, i * 36, 36, 36, null);
+            }
         game.gameRead(g);
     }
 
