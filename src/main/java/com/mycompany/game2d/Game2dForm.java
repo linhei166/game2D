@@ -36,9 +36,11 @@ public class Game2dForm extends JFrame implements Runnable{
         gameThread = new Thread(this);
         gameThread.start();
     }
-    public void getCodeMap(CadiceMap[][] cadiceMap) {
-        er.getCodeMap(cadiceMap);
+
+    public void setCodeMap(CadiceMap[][] codeMap){
+        er.setCodeMap(codeMap);
     }
+
     public void gameRead(Graphics g){
         er.getIMGpley(g);
     }
