@@ -49,9 +49,10 @@ public class CadiceMap {
         return tipo;
     }
     public void settipo(int tipo) {
-        if (tipo == 6 || tipo == 7 || tipo == 8 || tipo == 2)
+        if (tipo == 6  || tipo == 8 || tipo == 2 || tipo == 7)
             nonPassa = false;
-        this.tipo = tipo;
+
+            this.tipo = tipo;
     }
     public boolean isNonPassa() {
         return nonPassa;

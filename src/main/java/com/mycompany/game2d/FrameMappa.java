@@ -203,8 +203,8 @@ public class FrameMappa extends javax.swing.JFrame {
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         // TODO add your handling code here:
-        Spada sp = new Spada("a",3);
-        jLabel1.setIcon(new ImageIcon(sp.getTexture()));
+//        Spada sp = new Spada("a",3);
+//        jLabel1.setIcon(new ImageIcon(sp.getTexture()));
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     /**
