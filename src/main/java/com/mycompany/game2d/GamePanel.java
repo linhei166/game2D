@@ -89,8 +89,8 @@ public class GamePanel extends JPanel {
 
 
             }
+            game.setCodeMap(codeMap);
         }
-        game.getCodeMap(codeMap);
     }
 
     @Override

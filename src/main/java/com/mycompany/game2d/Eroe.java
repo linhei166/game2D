@@ -6,16 +6,18 @@ import java.util.Scanner;
 public class Eroe extends Entita{
 
     Scanner in = new Scanner(System.in);
-    private int Yposizione = 50;
-    private int Xposizione = 50;
+    private final int Yposizione = 50;
+    private final int Xposizione = 50;
     private final int maxPanelY = 648,maxPanelX = 1260;
     private final int grandeza = 36;
     private BufferedImage IMG;
-    private CadiceMap cotrolaHitBox[][];
+    private Rectangle hitbox;
+    private CadiceMap[][] codemap;
     private final String FileMap ="/personagi/personaggi_01.png";
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
+        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
         IMG = LoadSeve.GetFileIMG(FileMap);
     }
 
@@ -46,35 +48,33 @@ public class Eroe extends Entita{
         }
         System.out.println("Out of for");
     }
-    public void getCodeMap(CadiceMap[][] cadiceMap) {
-        cotrolaHitBox = cadiceMap;
-    }
     public void movimentoY(int valore ){
-        int area = Yposizione + grandeza;
-        int posizione = Yposizione;
-
-        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY /*&& controla()*/) {
-            this.Yposizione += valore;
+        int area = hitbox.y + hitbox.height;
+        int posizione = hitbox.y;
+        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY) {
+            hitbox.y += valore;
         }
     }
     public void movimentoX(int valore){
-        int area = Xposizione + grandeza;
-        int posizione = Xposizione;
-            if ((posizione += valore) > 0 && (area += valore) < maxPanelX /*&& controla()*/ ){
-                this.Xposizione += valore;
+        int area = hitbox.x + hitbox.width;
+        int posizione = hitbox.x;
+            if ((posizione += valore) > 0 && (area += valore) < maxPanelX){
+                hitbox.x += valore;
             }
+    }
+
+    public void setCodeMap(CadiceMap[][] codeMap){
+        this.codemap = codeMap;
+    }
+
+    private void toca(){
+
+
 
     }
 
-//    private boolean controla() {
-//        int posizioneX = Xposizione / 36;
-//        int posizioneY = Yposizione / 36;
-//
-//
-//
-//    }
     public void getIMGpley(Graphics g){
-        g.drawImage(IMG.getSubimage(0, 0, 16, 16),Xposizione, Yposizione, 36, 36, null);
+        g.drawImage(IMG.getSubimage(0, 0, 16, 16),hitbox.x, hitbox.y, 36, 36, null);
     }
 
 }
