@@ -9,20 +9,13 @@ public class Eroe extends Entita{
     private int Yposizione = 50;
     private int Xposizione = 50;
     private final int maxPanelY = 648,maxPanelX = 1260;
-    private int[][] calesa_pesonagio;
     private final int grandeza = 36;
     private BufferedImage IMG;
+    private CadiceMap cotrolaHitBox[][];
     private final String FileMap ="/personagi/personaggi_01.png";
 
-    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana) {
+    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
-
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                calesa_pesonagio[i][j] = 0;
-            }
-
-        }
         IMG = LoadSeve.GetFileIMG(FileMap);
     }
 
@@ -53,23 +46,33 @@ public class Eroe extends Entita{
         }
         System.out.println("Out of for");
     }
-
-
+    public void getCodeMap(CadiceMap[][] cadiceMap) {
+        cotrolaHitBox = cadiceMap;
+    }
     public void movimentoY(int valore ){
         int area = Yposizione + grandeza;
         int posizione = Yposizione;
-        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY) {
+
+        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY /*&& controla()*/) {
             this.Yposizione += valore;
         }
     }
     public void movimentoX(int valore){
         int area = Xposizione + grandeza;
         int posizione = Xposizione;
-        if((posizione+=valore) > 0 && (area+=valore) < maxPanelX) {
-            this.Xposizione += valore;
-        }
+            if ((posizione += valore) > 0 && (area += valore) < maxPanelX /*&& controla()*/ ){
+                this.Xposizione += valore;
+            }
+
     }
 
+//    private boolean controla() {
+//        int posizioneX = Xposizione / 36;
+//        int posizioneY = Yposizione / 36;
+//
+//
+//
+//    }
     public void getIMGpley(Graphics g){
         g.drawImage(IMG.getSubimage(0, 0, 16, 16),Xposizione, Yposizione, 36, 36, null);
     }

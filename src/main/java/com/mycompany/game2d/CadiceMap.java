@@ -5,6 +5,36 @@ import java.awt.image.BufferedImage;
 public class CadiceMap {
     private int tipo;
     private BufferedImage img;
+    private int posizioneX ,posizioneY;
+    private final int grandeza=36;
+
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public int getPosizioneY() {
+        return posizioneY;
+    }
+
+    public void setPosizioneY(int posizioneY) {
+        this.posizioneY = posizioneY;
+    }
+
+    public int getPosizioneX() {
+        return posizioneX;
+    }
+
+    public void setPosizioneX(int posizioneX) {
+        this.posizioneX = posizioneX;
+    }
+
+    public int getGrandeza() {
+        return grandeza;
+    }
 
     public BufferedImage getImg() {
         return img;

@@ -36,7 +36,9 @@ public class Game2dForm extends JFrame implements Runnable{
         gameThread = new Thread(this);
         gameThread.start();
     }
-
+    public void getCodeMap(CadiceMap[][] cadiceMap) {
+        er.getCodeMap(cadiceMap);
+    }
     public void gameRead(Graphics g){
         er.getIMGpley(g);
     }
@@ -552,7 +554,7 @@ public class Game2dForm extends JFrame implements Runnable{
         int hp=Integer.parseInt(LabelValHP.getText());
         int mana=Integer.parseInt(LabelValMana.getText());
         String nom = TextFieldNome.getText();
-        er = new Eroe(nom,forz,vel,arc,des,hp,mana);
+        er = new Eroe(nom,forz,vel,arc,des,hp,mana,this);
         mappa = new FrameMappa(this,er);
         mappa.addKeyListener(new GameInput(er));
         mappa.setVisible(true);
@@ -673,6 +675,8 @@ public class Game2dForm extends JFrame implements Runnable{
             LabelCreazione.setText(String.valueOf(Creation));
         }
     }
+
+
     
     /**
      * @param args the command line arguments

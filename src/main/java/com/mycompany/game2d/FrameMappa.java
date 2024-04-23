@@ -30,9 +30,6 @@ public class FrameMappa extends javax.swing.JFrame {
         ProgressBarHP.setValue(er.arcana);
     }
 
-//    public JPanel getPanel(){
-//        return jPanel1;
-//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

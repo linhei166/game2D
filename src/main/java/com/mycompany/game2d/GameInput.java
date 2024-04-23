@@ -23,19 +23,15 @@ public class GameInput implements KeyListener {
         switch (e.getKeyCode()){
             case KeyEvent.VK_W:
                 pley.movimentoY(-5);
-                System.out.println("peromuto");
                 break;
             case KeyEvent.VK_D:
                 pley.movimentoX(+5);
-                System.out.println("peromuto");
                 break;
             case KeyEvent.VK_S:
                 pley.movimentoY(+5);
-                System.out.println("peromuto");
                 break;
             case KeyEvent.VK_A:
                 pley.movimentoX(-5);
-                System.out.println("peromuto");
                 break;
             case KeyEvent.VK_ESCAPE:
                 System.out.println("esc");

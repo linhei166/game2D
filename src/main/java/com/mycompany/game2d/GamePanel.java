@@ -29,9 +29,11 @@ public class GamePanel extends JPanel {
             for (int k = 0 ; k < caselaX ; k++) {
                 codeMap[i][k] = new CadiceMap();
             }
+        this.game = game;
         importImg();
         Dimesione();
-        this.game = game;
+
+
     }
 
     private void Dimesione(){
@@ -52,6 +54,9 @@ public class GamePanel extends JPanel {
             for (int k = 0 ; k < caselaX ; k++) {
 
                 codeMap[i][k].settipo(Integer.parseInt(String.valueOf(line.charAt(k))));
+                codeMap[i][k].setPosizioneX(k*36);
+                codeMap[i][k].setPosizioneY(i*36);
+
 
                 switch (codeMap[i][k].gettipo()){
 
@@ -85,6 +90,7 @@ public class GamePanel extends JPanel {
 
             }
         }
+        game.getCodeMap(codeMap);
     }
 
     @Override
