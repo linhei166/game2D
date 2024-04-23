@@ -52,6 +52,7 @@ public class FrameMappa extends javax.swing.JFrame {
         ButtonOpzioni = new javax.swing.JButton();
         LabelNomeEroe = new javax.swing.JLabel();
         ProgressBarEXP = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("La Terrra dei Fiordalsi");
@@ -95,6 +96,11 @@ public class FrameMappa extends javax.swing.JFrame {
         ButtonInventario.setForeground(new java.awt.Color(232, 232, 232));
         ButtonInventario.setText("INVENTARIO");
         ButtonInventario.setFocusable(false);
+        ButtonInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonInventarioActionPerformed(evt);
+            }
+        });
 
         ProgressBarMana.setBackground(new java.awt.Color(84, 84, 84));
         ProgressBarMana.setForeground(new java.awt.Color(0, 0, 204));
@@ -125,6 +131,9 @@ public class FrameMappa extends javax.swing.JFrame {
         ProgressBarEXP.setToolTipText("");
         ProgressBarEXP.setStringPainted(true);
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/albero/albero_01.png"))); // NOI18N
+        jLabel1.setText("           ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -148,7 +157,9 @@ public class FrameMappa extends javax.swing.JFrame {
                     .addComponent(ProgressBarEXP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ProgressBarMana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LabelNomeEroe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addComponent(jLabel1)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +184,8 @@ public class FrameMappa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelHP)
-                            .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ProgressBarEXP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,6 +200,12 @@ public class FrameMappa extends javax.swing.JFrame {
         // TODO add your handling code here:
         ProgressBarEXP.setValue(23);
     }//GEN-LAST:event_ButtonDoungeonActionPerformed
+
+    private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
+        // TODO add your handling code here:
+        Spada sp = new Spada("a",3);
+        jLabel1.setIcon(new ImageIcon(sp.getTexture()));
+    }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,5 +250,6 @@ public class FrameMappa extends javax.swing.JFrame {
     private javax.swing.JProgressBar ProgressBarEXP;
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
