@@ -18,6 +18,7 @@ public class Game2dForm extends JFrame implements Runnable{
     private FrameMappa mappa;
     private Thread gameThread;
     private final int gameTime = 120;
+    private final int gameSistema = 200;
     /**
      * Creates new form Game2dForm
      */
@@ -48,13 +49,23 @@ public class Game2dForm extends JFrame implements Runnable{
     @Override
     public void run() {
         double timeFreme = 1000000000.0/gameTime;
+        double timeSistema = 1000000000.0/gameSistema;
         long lastTime = System.nanoTime();
-        long now;
+        double deltaU = 0;
+        double deltaF = 0;
         while (true){
-            now = System.nanoTime();
-            if(now - lastTime >= timeFreme){
+            long currentTime = System.nanoTime();
+
+            deltaU += (currentTime - lastTime)/timeSistema;
+            deltaF += (currentTime - lastTime)/timeFreme;
+            if (deltaU >= 1){
+                deltaU--;
+            }
+
+
+            if(deltaF >= 1){
                 mappa.repaint();
-                lastTime = now;
+                deltaF--;
             }
 
         }
