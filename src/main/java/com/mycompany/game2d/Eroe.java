@@ -14,6 +14,7 @@ public class Eroe extends Entita{
     private Rectangle hitbox;
     private CadiceMap[][] codemap;
     private final String FileMap ="/personagi/personaggi_01.png";
+    private int posizioneX,posizioneY;
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana);
@@ -49,34 +50,37 @@ public class Eroe extends Entita{
         System.out.println("Out of for");
     }
     public void movimentoY(int valore ){
-        if((valore+hitbox.y) > 0 &&(valore+hitbox.y+ hitbox.height) < maxPanelY&& toca(valore)) {
+        posizioneY = valore;
+        if((valore+hitbox.y) > 0 &&(valore+hitbox.y+ hitbox.height) < maxPanelY&& toca()) {
             hitbox.y += valore;
         }
+        posizioneY = 0;
     }
     public void movimentoX(int valore){
-
-            if ((valore+hitbox.x) > 5 &&(valore+hitbox.x+ hitbox.width) < (maxPanelX-5) &&toca(valore)){
+            posizioneX = valore;
+            if ((valore+hitbox.x) > 5 &&(valore+hitbox.x+ hitbox.width) < (maxPanelX-5) &&toca()){
                 hitbox.x += valore;
             }
+            posizioneX = 0;
     }
 
     public void setCodeMap(CadiceMap[][] codeMap){
         this.codemap = codeMap;
     }
 
-    private boolean toca(int valore){
+    private boolean toca(){
         int areaX = hitbox.x + hitbox.width;
         int areaY = hitbox.y + hitbox.height;
-        if(!codemap[(hitbox.y+valore)/36][(hitbox.x+valore)/36].isNonPassa()){
+        if(!codemap[(hitbox.y+posizioneY)/36][(hitbox.x+posizioneX)/36].isNonPassa()){
             return false;
         }
-        else if(!codemap[(areaY+valore)/36][(hitbox.x+valore)/36].isNonPassa()){
+        else if(!codemap[(areaY+posizioneY)/36][(hitbox.x+posizioneX)/36].isNonPassa()){
             return false;
         }
-        else if(!codemap[(hitbox.y+valore)/36][(areaX+valore)/36].isNonPassa()){
+        else if(!codemap[(hitbox.y+posizioneY)/36][(areaX+posizioneX)/36].isNonPassa()){
             return false;
         }
-        else if(!codemap[(areaY+valore)/36][(areaX+valore)/36].isNonPassa()){
+        else if(!codemap[(areaY+posizioneY)/36][(areaX+posizioneX)/36].isNonPassa()){
             return false;
         }
         return true;
