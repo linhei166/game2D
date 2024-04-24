@@ -16,10 +16,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace pref="33" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="LabelNome" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
@@ -101,6 +101,13 @@
                       </Group>
                   </Group>
               </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="LabelMana1" min="-2" pref="67" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="jComboBox1" min="-2" pref="151" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -178,7 +185,12 @@
                           <Component id="LabelMana" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="266" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="LabelMana1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="200" max="32767" attributes="0"/>
                   <Component id="ButtonConfremaCrea" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -498,6 +510,28 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenManaActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="LabelMana1">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e8" green="e8" red="e8" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Arma"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="jComboBox1">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Spada"/>
+                <StringItem index="1" value="Bachetta"/>
+                <StringItem index="2" value="Arco"/>
+              </StringArray>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>

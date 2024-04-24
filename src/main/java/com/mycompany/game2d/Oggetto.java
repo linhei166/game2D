@@ -4,19 +4,22 @@
  */
 package com.mycompany.game2d;
 
-import java.awt.image.BufferedImage;
-
 /**
  *
  * @author Esposito.Lorenzo
  */
 
-public class Oggetto {
+public abstract class Oggetto {
 
-    public Oggetto(String nome, int quatita) {
+    public Oggetto(String nome, int quatita, String texture) {
         this.nome = nome;
         this.quatita = quatita;
+        this.texture = texture;
     }
     protected String nome;
     protected int quatita;
+    protected final String texture;
+    public String getTexture() {
+        return texture;
+    }
 }

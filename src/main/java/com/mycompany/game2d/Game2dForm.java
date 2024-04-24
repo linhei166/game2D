@@ -99,6 +99,8 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuMana = new javax.swing.JButton();
         LabelMana = new javax.swing.JLabel();
         ButtonMenMana = new javax.swing.JButton();
+        LabelMana1 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         FrameOpzione = new javax.swing.JFrame();
         LabelLingua = new javax.swing.JLabel();
         ComboLingue = new javax.swing.JComboBox<>();
@@ -282,14 +284,19 @@ public class Game2dForm extends JFrame implements Runnable{
             }
         });
 
+        LabelMana1.setForeground(new java.awt.Color(232, 232, 232));
+        LabelMana1.setText("Arma");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Spada", "Bachetta", "Arco" }));
+
         javax.swing.GroupLayout FrameCreazioneLayout = new javax.swing.GroupLayout(FrameCreazione.getContentPane());
         FrameCreazione.getContentPane().setLayout(FrameCreazioneLayout);
         FrameCreazioneLayout.setHorizontalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createSequentialGroup()
+            .addGroup(FrameCreazioneLayout.createSequentialGroup()
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                        .addContainerGap(33, Short.MAX_VALUE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(LabelNome)
                         .addGap(40, 40, 40))
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
@@ -350,6 +357,12 @@ public class Game2dForm extends JFrame implements Runnable{
                                 .addComponent(LabelCreazione, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ButtonConfremaCrea))
                         .addGap(44, 44, 44))))
+            .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LabelMana1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
         );
         FrameCreazioneLayout.setVerticalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,7 +420,11 @@ public class Game2dForm extends JFrame implements Runnable{
                     .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(ButtonMenMana)
                         .addComponent(LabelMana)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelMana1)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(ButtonConfremaCrea)
                 .addContainerGap())
         );
@@ -555,8 +572,23 @@ public class Game2dForm extends JFrame implements Runnable{
         int des=Integer.parseInt(LabelValDes.getText());
         int hp=Integer.parseInt(LabelValHP.getText());
         int mana=Integer.parseInt(LabelValMana.getText());
+        int ogg=jComboBox1.getSelectedIndex();
+        Oggetto og=null;
+        switch(ogg){
+            case 0:
+                og=new Spada("Spada",1);
+                break;
+            case 1:
+                og=new Bachetta("Bachetta",1);
+                break;
+            case 2:
+                og=new Arco("Arco",1);
+                break;
+            case 3:
+                break;
+        }
         String nom = TextFieldNome.getText();
-        er = new Eroe(nom,forz,vel,arc,des,hp,mana,this);
+        er = new Eroe(nom,forz,vel,arc,des,hp,mana,this,og);
         mappa = new FrameMappa(this,er);
         mappa.addKeyListener(new GameInput(er));
         mappa.setVisible(true);
@@ -743,6 +775,7 @@ public class Game2dForm extends JFrame implements Runnable{
     private javax.swing.JLabel LabelHP;
     private javax.swing.JLabel LabelLingua;
     private javax.swing.JLabel LabelMana;
+    private javax.swing.JLabel LabelMana1;
     private javax.swing.JLabel LabelNome;
     private javax.swing.JLabel LabelTitolo;
     private javax.swing.JLabel LabelTitoloOpzione;
@@ -754,5 +787,6 @@ public class Game2dForm extends JFrame implements Runnable{
     private javax.swing.JLabel LabelValVel;
     private javax.swing.JLabel LabelVelocita;
     private javax.swing.JTextField TextFieldNome;
+    private javax.swing.JComboBox<String> jComboBox1;
     // End of variables declaration//GEN-END:variables
 }

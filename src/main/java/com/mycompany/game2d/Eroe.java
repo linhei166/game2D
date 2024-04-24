@@ -15,8 +15,8 @@ public class Eroe extends Entita{
     private CadiceMap[][] codemap;
     private final String FileMap ="/personagi/personaggi_01.png";
 
-    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm) {
-        super(nome, forza, velocita, arcana, destrezza, hp, mana);
+    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm, Oggetto og) {
+        super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
         hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
         IMG = LoadSeve.GetFileIMG(FileMap);
     }

@@ -8,9 +8,9 @@ package com.mycompany.game2d;
  *
  * @author Esposito.Lorenzo
  */
-public class Spada extends Oggetto {
-    public Spada(String nome, int quantita) {
-        super(nome, quantita, "src/main/resources/imag/spada/spada_01.png");
-       
+public class Segretto extends Oggetto {
+
+    public Segretto(String nome, int quatita) {
+        super(nome, quatita, "src/main/resources/imag/segreto/segreto_01.png");
     }
 }
