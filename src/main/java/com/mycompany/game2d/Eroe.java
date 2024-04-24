@@ -49,16 +49,13 @@ public class Eroe extends Entita{
         System.out.println("Out of for");
     }
     public void movimentoY(int valore ){
-        int area = hitbox.y + hitbox.height;
-        int posizione = hitbox.y;
-        if((posizione+=valore) > 0 && (area+=valore) < maxPanelY) {
+        if(toca(valore)) {
             hitbox.y += valore;
         }
     }
     public void movimentoX(int valore){
-        int area = hitbox.x + hitbox.width;
-        int posizione = hitbox.x;
-            if ((posizione += valore) > 0 && (area += valore) < maxPanelX){
+
+            if (toca(valore)){
                 hitbox.x += valore;
             }
     }
@@ -67,10 +64,22 @@ public class Eroe extends Entita{
         this.codemap = codeMap;
     }
 
-    private void toca(){
-
-
-
+    private boolean toca(int valore){
+        int areaX = hitbox.x + hitbox.width;
+        int areaY = hitbox.y + hitbox.height;
+        if(!codemap[(hitbox.y+valore)/36][(hitbox.x+valore)/36].isNonPassa()){
+            return false;
+        }
+        else if(!codemap[(areaY+valore)/36][(hitbox.x+valore)/36].isNonPassa()){
+            return false;
+        }
+        else if(!codemap[(hitbox.y+valore)/36][(areaX+valore)/36].isNonPassa()){
+            return false;
+        }
+        else if(!codemap[(areaY+valore)/36][(areaX+valore)/36].isNonPassa()){
+            return false;
+        }
+        return true;
     }
 
     public void getIMGpley(Graphics g){
