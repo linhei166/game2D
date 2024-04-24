@@ -49,13 +49,13 @@ public class Eroe extends Entita{
         System.out.println("Out of for");
     }
     public void movimentoY(int valore ){
-        if(toca(valore)) {
+        if((valore+hitbox.y) > 0 &&(valore+hitbox.y+ hitbox.height) < maxPanelY&& toca(valore)) {
             hitbox.y += valore;
         }
     }
     public void movimentoX(int valore){
 
-            if (toca(valore)){
+            if ((valore+hitbox.x) > 5 &&(valore+hitbox.x+ hitbox.width) < (maxPanelX-5) &&toca(valore)){
                 hitbox.x += valore;
             }
     }
