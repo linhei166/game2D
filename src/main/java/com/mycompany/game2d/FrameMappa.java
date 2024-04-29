@@ -203,7 +203,11 @@ public class FrameMappa extends javax.swing.JFrame {
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         // TODO add your handling code here:
-        jLabel1.setIcon(new ImageIcon(er.getMano().getTexture()));
+        ImageIcon imageIcon = new ImageIcon(er.getMano().getTexture()); // load the image to a imageIcon
+        //Image image = imageIcon.getImage(); // transform it 
+        //Image newimg = image.getScaledInstance(160, 160,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+        //imageIcon = new ImageIcon(newimg);  // transform it back
+        jLabel1.setIcon(imageIcon);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     /**
