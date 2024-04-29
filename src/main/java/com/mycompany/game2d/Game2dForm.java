@@ -19,12 +19,13 @@ public class Game2dForm extends JFrame implements Runnable{
     private Thread gameThread;
     private final int gameTime = 120;
     private final int gameSistema = 200;
+    boolean secretNo=true;
     /**
      * Creates new form Game2dForm
      */
     public Game2dForm() {
         initComponents();
-        FrameCreazione.setSize(400, 500);
+        FrameCreazione.setSize(420, 500);
         FrameCreazione.getContentPane().setBackground(Color.BLACK);
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,300);
@@ -148,6 +149,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenVel.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenVel.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenVel.setText("-");
+        ButtonMenVel.setToolTipText("k");
         ButtonMenVel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenVelActionPerformed(evt);
@@ -161,6 +163,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuVel.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuVel.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuVel.setText("+");
+        ButtonpiuVel.setToolTipText("c");
         ButtonpiuVel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonpiuVelActionPerformed(evt);
@@ -176,6 +179,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenFor.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenFor.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenFor.setText("-");
+        ButtonMenFor.setToolTipText("o");
         ButtonMenFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenForActionPerformed(evt);
@@ -189,6 +193,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuFor.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuFor.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuFor.setText("+");
+        ButtonpiuFor.setToolTipText("o");
         ButtonpiuFor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonpiuForActionPerformed(evt);
@@ -202,6 +207,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuArc.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuArc.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuArc.setText("+");
+        ButtonpiuArc.setToolTipText("d");
         ButtonpiuArc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonpiuArcActionPerformed(evt);
@@ -211,6 +217,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenArc.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenArc.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenArc.setText("-");
+        ButtonMenArc.setToolTipText("n");
         ButtonMenArc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenArcActionPerformed(evt);
@@ -227,6 +234,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenDes.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenDes.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenDes.setText("-");
+        ButtonMenDes.setToolTipText("a");
         ButtonMenDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenDesActionPerformed(evt);
@@ -239,6 +247,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuDes.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuDes.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuDes.setText("+");
+        ButtonpiuDes.setToolTipText("e");
         ButtonpiuDes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonpiuDesActionPerformed(evt);
@@ -261,6 +270,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenHP.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenHP.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenHP.setText("-");
+        ButtonMenHP.setToolTipText("m");
         ButtonMenHP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenHPActionPerformed(evt);
@@ -289,6 +299,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonMenMana.setBackground(new java.awt.Color(84, 84, 84));
         ButtonMenMana.setForeground(new java.awt.Color(232, 232, 232));
         ButtonMenMana.setText("-");
+        ButtonMenMana.setToolTipText("i");
         ButtonMenMana.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonMenManaActionPerformed(evt);
@@ -298,32 +309,44 @@ public class Game2dForm extends JFrame implements Runnable{
         LabelMana1.setForeground(new java.awt.Color(232, 232, 232));
         LabelMana1.setText("Arma");
 
+        jComboBox1.setBackground(new java.awt.Color(84, 84, 84));
+        jComboBox1.setForeground(new java.awt.Color(232, 232, 232));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Spada", "Bachetta", "Arco" }));
+        jComboBox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jComboBox1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout FrameCreazioneLayout = new javax.swing.GroupLayout(FrameCreazione.getContentPane());
         FrameCreazione.getContentPane().setLayout(FrameCreazioneLayout);
         FrameCreazioneLayout.setHorizontalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrameCreazioneLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createSequentialGroup()
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(LabelNome)
-                        .addGap(40, 40, 40))
+                    .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(LabelNome)
+                            .addGap(40, 40, 40))
+                        .addGroup(FrameCreazioneLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(LabelVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelForza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelDestrzza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelArcana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelHP, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LabelMana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelVelocita, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelForza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelDestrzza, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelArcana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelHP, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelMana, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(LabelMana1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)))
                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(FrameCreazioneLayout.createSequentialGroup()
                         .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(FrameCreazioneLayout.createSequentialGroup()
                                     .addComponent(ButtonMenDes, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -345,7 +368,8 @@ public class Game2dForm extends JFrame implements Runnable{
                                     .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(ButtonpiuArc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(ButtonpiuHP, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(ButtonpiuMana, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(ButtonpiuMana, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(FrameCreazioneLayout.createSequentialGroup()
                                 .addComponent(ButtonMenFor, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -357,7 +381,7 @@ public class Game2dForm extends JFrame implements Runnable{
                         .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(FrameCreazioneLayout.createSequentialGroup()
                                 .addGroup(FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FrameCreazioneLayout.createSequentialGroup()
+                                    .addGroup(FrameCreazioneLayout.createSequentialGroup()
                                         .addComponent(ButtonMenVel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(LabelValVel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,12 +392,6 @@ public class Game2dForm extends JFrame implements Runnable{
                                 .addComponent(LabelCreazione, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ButtonConfremaCrea))
                         .addGap(44, 44, 44))))
-            .addGroup(FrameCreazioneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(LabelMana1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158))
         );
         FrameCreazioneLayout.setVerticalGroup(
             FrameCreazioneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -501,7 +519,6 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonNuovaPartita.setBackground(new java.awt.Color(84, 84, 84));
         ButtonNuovaPartita.setForeground(new java.awt.Color(232, 232, 232));
         ButtonNuovaPartita.setText("Nuova Partita");
-        ButtonNuovaPartita.setToolTipText("");
         ButtonNuovaPartita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonNuovaPartitaActionPerformed(evt);
@@ -596,6 +613,7 @@ public class Game2dForm extends JFrame implements Runnable{
                 og=new Arco("Arco",1);
                 break;
             case 3:
+                og=new Segretto("RPG", 1);
                 break;
         }
         String nom = TextFieldNome.getText();
@@ -683,6 +701,17 @@ public class Game2dForm extends JFrame implements Runnable{
     private void ButtonSelezionaLInguaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSelezionaLInguaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonSelezionaLInguaActionPerformed
+
+    private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
+        // TODO add your handling code here:
+        String text2 = "wwssdadaba";
+        String boh = TextFieldNome.getText();
+        boolean porco2=text2.equalsIgnoreCase(boh);
+        if(porco2&&secretNo){
+            jComboBox1.addItem("RPG");
+            secretNo=false;
+       }
+    }//GEN-LAST:event_jComboBox1MouseClicked
     private void aumenta(javax.swing.JLabel la){
         if(Creation>0){
             int a = Integer.parseInt(la.getText());

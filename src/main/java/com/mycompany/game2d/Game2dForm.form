@@ -16,30 +16,37 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="LabelNome" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="LabelVelocita" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="LabelForza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="LabelDestrzza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="LabelArcana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="LabelHP" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="LabelMana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="LabelNome" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="LabelVelocita" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="LabelForza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="LabelDestrzza" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="LabelArcana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="LabelHP" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                                  <Component id="LabelMana" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="LabelMana1" min="-2" pref="67" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                   <Group type="102" attributes="0">
                                       <Component id="ButtonMenDes" min="-2" pref="45" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
@@ -68,6 +75,7 @@
                                           <Component id="ButtonpiuMana" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
+                                  <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="ButtonMenFor" min="-2" pref="45" max="-2" attributes="0"/>
@@ -83,7 +91,7 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
                                           <Component id="ButtonMenVel" min="-2" pref="45" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="LabelValVel" min="-2" pref="50" max="-2" attributes="0"/>
@@ -100,13 +108,6 @@
                           <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Component id="LabelMana1" min="-2" pref="67" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jComboBox1" min="-2" pref="151" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -248,6 +249,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="k"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenVelActionPerformed"/>
@@ -271,6 +273,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="toolTipText" type="java.lang.String" value="c"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuVelActionPerformed"/>
@@ -303,6 +306,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenForActionPerformed"/>
@@ -326,6 +330,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="toolTipText" type="java.lang.String" value="o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuForActionPerformed"/>
@@ -349,6 +354,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="toolTipText" type="java.lang.String" value="d"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuArcActionPerformed"/>
@@ -363,6 +369,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="n"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenArcActionPerformed"/>
@@ -394,6 +401,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="a"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenDesActionPerformed"/>
@@ -416,6 +424,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="toolTipText" type="java.lang.String" value="e"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuDesActionPerformed"/>
@@ -430,6 +439,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="+"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonpiuHPActionPerformed"/>
@@ -453,6 +463,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="m"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenHPActionPerformed"/>
@@ -506,6 +517,7 @@
               <Color blue="e8" green="e8" red="e8" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="-"/>
+            <Property name="toolTipText" type="java.lang.String" value="i"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ButtonMenManaActionPerformed"/>
@@ -521,6 +533,12 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="jComboBox1">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="54" green="54" red="54" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e8" green="e8" red="e8" type="rgb"/>
+            </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
                 <StringItem index="0" value="Spada"/>
@@ -529,6 +547,9 @@
               </StringArray>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jComboBox1MouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
