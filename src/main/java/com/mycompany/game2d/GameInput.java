@@ -22,31 +22,29 @@ public class GameInput implements KeyListener {
     public void keyPressed(KeyEvent e) {//questo si fa effeto quando e premuto il tasto
         switch (e.getKeyCode()){
             case KeyEvent.VK_W:
-                pley.movimentoY(-5);
+                pley.setComand(0);
                 break;
             case KeyEvent.VK_D:
-                pley.movimentoX(+5);
+                pley.setComand(1);
                 break;
             case KeyEvent.VK_S:
-                pley.movimentoY(+5);
+                pley.setComand(2);
                 break;
             case KeyEvent.VK_A:
-                pley.movimentoX(-5);
-                break;
-            case KeyEvent.VK_ESCAPE:
-                System.out.println("esc");
-                break;
-            case KeyEvent.VK_B:
-                System.out.println("inventerio");
-                break;
-            case KeyEvent.VK_E:
-                System.out.println("effetua la movimento");
+                pley.setComand(3);
                 break;
         }
     }
 
     @Override
     public void keyReleased(KeyEvent e) {//questo si fa effeto dopo lasciato il tasto
-
+        switch (e.getKeyCode()){
+            case KeyEvent.VK_W:
+            case KeyEvent.VK_D:
+            case KeyEvent.VK_S:
+            case KeyEvent.VK_A:
+                pley.setOffComand(false);
+                break;
+        }
     }
 }

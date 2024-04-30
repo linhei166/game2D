@@ -15,6 +15,8 @@ public class Eroe extends Entita{
     private CadiceMap[][] codemap;
     private final String FileMap ="/personagi/personaggi_01.png";
     private int posizioneX,posizioneY;
+    private int comand = -1;
+    private  boolean onComand = false;
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm, Oggetto og) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
@@ -67,6 +69,35 @@ public class Eroe extends Entita{
     public void setCodeMap(CadiceMap[][] codeMap){
         this.codemap = codeMap;
     }
+    public void setComand(int comand){
+        this.comand = comand;
+        onComand = true;
+    }
+
+    public void setOffComand(boolean offComand){
+        onComand = offComand;
+    }
+
+    private void movimeto(){
+
+        if (onComand)
+            switch (comand){
+                case 0:
+                    movimentoY(-5);
+                    break;
+                case 1:
+                    movimentoX(+5);
+                    break;
+                case 2:
+                    movimentoY(+5);
+                    break;
+                case 3:
+                    movimentoX(-5);
+                    break;
+            }
+
+    }
+
 
     private boolean toca(){
         int areaX = hitbox.x + hitbox.width;
@@ -87,6 +118,7 @@ public class Eroe extends Entita{
     }
 
     public void getIMGpley(Graphics g){
+        movimeto();
         g.drawImage(IMG.getSubimage(0, 0, 16, 16),hitbox.x, hitbox.y, 36, 36, null);
     }
 
