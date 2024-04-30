@@ -4,6 +4,8 @@
  */
 package com.mycompany.game2d;
 
+import com.mycompany.game2d.personaggi.Eroe;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -23,11 +25,11 @@ public class FrameMappa extends javax.swing.JFrame {
         this.er = er;
         super.getContentPane().setBackground(Color.BLACK);
         initComponents();
-        LabelNomeEroe.setText(er.nome);
-        ProgressBarMana.setMaximum(er.hp);
-        ProgressBarHP.setMaximum(er.arcana);
-        ProgressBarMana.setValue(er.hp);
-        ProgressBarHP.setValue(er.arcana);
+        LabelNomeEroe.setText(er.getNome());
+        ProgressBarMana.setMaximum(er.getHp());
+        ProgressBarHP.setMaximum(er.getArcana());
+        ProgressBarMana.setValue(er.getHp());
+        ProgressBarHP.setValue(er.getArcana());
     }
 
 

@@ -1,9 +1,14 @@
-package com.mycompany.game2d;
+package com.mycompany.game2d.personaggi;
+
+import com.mycompany.game2d.CadiceMap;
+import com.mycompany.game2d.Game2dForm;
+import com.mycompany.game2d.input.LoadSeve;
+import com.mycompany.game2d.oggetto.Oggetto;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.Scanner;
-public class Eroe extends Entita{
+public class Eroe extends Entita {
 
     Scanner in = new Scanner(System.in);
     private final int Yposizione = 50;
@@ -18,7 +23,7 @@ public class Eroe extends Entita{
     private int comand = -1;
     private  boolean onComand = false;
 
-    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,Game2dForm game2dForm, Oggetto og) {
+    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Game2dForm game2dForm, Oggetto og) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
         hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
         IMG = LoadSeve.GetFileIMG(FileMap);
@@ -116,6 +121,8 @@ public class Eroe extends Entita{
         }
         return true;
     }
+
+
 
     public void getIMGpley(Graphics g){
         movimeto();

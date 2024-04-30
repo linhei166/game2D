@@ -1,6 +1,6 @@
-package com.mycompany.game2d;
+package com.mycompany.game2d.input;
 
-import com.mycompany.game2d.GamePanel;
+import com.mycompany.game2d.personaggi.Eroe;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
