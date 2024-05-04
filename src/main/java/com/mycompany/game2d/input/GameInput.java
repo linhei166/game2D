@@ -17,7 +17,6 @@ public class GameInput implements KeyListener {
     public void keyTyped(KeyEvent e) {//questo si fa effeto quando dopo di essere premuto e mandato la messagio al sistema
 
     }
-
     @Override
     public void keyPressed(KeyEvent e) {//questo si fa effeto quando e premuto il tasto
         switch (e.getKeyCode()){

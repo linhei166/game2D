@@ -86,7 +86,6 @@ public class GamePanel extends JPanel {
             game.setCodeMap(codeMap);
         }
     }
-
     @Override
     public void paint(Graphics g){
         super.paint(g);
