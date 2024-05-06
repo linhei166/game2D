@@ -704,7 +704,7 @@ public class Game2dForm extends JFrame implements Runnable{
 
     private void jComboBox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboBox1MouseClicked
         // TODO add your handling code here:
-        String text2 = "wwssdadaba";
+        String text2 = " wwssdadaba";
         String boh = TextFieldNome.getText();
         boolean porco2=text2.equalsIgnoreCase(boh);
         if(porco2&&secretNo){

@@ -2,10 +2,16 @@ package com.mycompany.game2d;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Eroe extends Entita{
 
+    public ArrayList<Oggetto> getInvetario() {
+        return invetario;
+    }
+
     Scanner in = new Scanner(System.in);
+    ArrayList<Oggetto> invetario=new ArrayList<Oggetto>();
     private final int Yposizione = 50;
     private final int Xposizione = 50;
     private final int maxPanelY = 648,maxPanelX = 1260;
@@ -20,6 +26,7 @@ public class Eroe extends Entita{
         super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
         hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
         IMG = LoadSeve.GetFileIMG(FileMap);
+        invetario.add(new pozionecura("Cura10",10));
     }
 
 
