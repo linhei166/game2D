@@ -58,23 +58,23 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot1" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel6" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot2" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel7" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot3" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel8" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot4" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel9" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot5" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel12" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot6" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel15" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot7" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel13" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot8" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel14" min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="Slot9" min="-2" pref="34" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="23" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -84,15 +84,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace pref="13" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel1" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel7" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel8" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel9" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel12" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel13" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel14" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel15" min="-2" pref="34" max="-2" attributes="0"/>
-                  <Component id="jLabel6" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot4" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot5" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot6" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot8" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot9" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot7" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="Slot2" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="132" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -122,21 +122,25 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="Slot1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
         <Property name="focusTraversalPolicyProvider" type="boolean" value="true"/>
-        <Property name="focusable" type="boolean" value="false"/>
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value=""/>
       </AccessibilityProperties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="Slot1FocusGained"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="Slot1MouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -172,11 +176,12 @@
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
+    <Component class="javax.swing.JLabel" name="Slot2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -185,11 +190,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel7">
+    <Component class="javax.swing.JLabel" name="Slot3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -198,11 +204,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
+    <Component class="javax.swing.JLabel" name="Slot4">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -211,11 +218,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel9">
+    <Component class="javax.swing.JLabel" name="Slot5">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -234,11 +242,12 @@
         <Property name="text" type="java.lang.String" value="jLabel11"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel12">
+    <Component class="javax.swing.JLabel" name="Slot6">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -247,11 +256,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="Slot8">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -260,11 +270,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel14">
+    <Component class="javax.swing.JLabel" name="Slot9">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
@@ -273,11 +284,12 @@
         <Property name="opaque" type="boolean" value="true"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel15">
+    <Component class="javax.swing.JLabel" name="Slot7">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="33" red="66" type="rgb"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="autoscrolls" type="boolean" value="true"/>
         <Property name="doubleBuffered" type="boolean" value="true"/>
         <Property name="focusCycleRoot" type="boolean" value="true"/>
