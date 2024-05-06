@@ -7,17 +7,10 @@ import java.awt.*;
 
 public class FrameCompat extends JFrame {
     private PanelCompat panelCompat;
-    public FrameCompat(){
-        this.panelCompat = new PanelCompat();
+    public FrameCompat(PanelCompat panelCompat){
+        this.panelCompat = panelCompat;
         super.add(panelCompat);
         super.pack();
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
-    public static void main(String args[]) {
-
-        new FrameCompat().setVisible(true);
-
-    }
-
 }
