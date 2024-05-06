@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.game2d.personaggi;
+package com.mycompany.game2d;
+
+import com.mycompany.game2d.personaggi.Eroe;
 
 import java.awt.Color;
 import java.awt.Image;
@@ -23,7 +25,7 @@ public class FrameInventario extends javax.swing.JFrame {
         initComponents();
          this.SlotInventario = new javax.swing.JLabel[]{Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9};
         super.getContentPane().setBackground(Color.BLACK);
-        super.setSize(400,300);
+        super.setSize(400,350);
         this.er = er;
         ImageIcon icona = sclareImagni(er.getMano().getTexture());
         SlotInventario[0].setIcon(icona);

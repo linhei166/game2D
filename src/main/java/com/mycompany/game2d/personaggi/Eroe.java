@@ -4,6 +4,7 @@ import com.mycompany.game2d.CadiceMap;
 import com.mycompany.game2d.Game2dForm;
 import com.mycompany.game2d.input.LoadSeve;
 import com.mycompany.game2d.oggetto.Oggetto;
+import com.mycompany.game2d.oggetto.pozionecura;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
