@@ -1,4 +1,4 @@
-package com.mycompany.game2d;
+package com.mycompany.game2d.input;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

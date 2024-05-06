@@ -52,7 +52,7 @@ public class CadiceMap {
         if (tipo == 6  || tipo == 8 || tipo == 2 || tipo == 7)
             nonPassa = false;
 
-            this.tipo = tipo;
+        this.tipo = tipo;
     }
     public boolean isNonPassa() {
         return nonPassa;

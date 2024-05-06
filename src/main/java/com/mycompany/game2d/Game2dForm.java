@@ -1,5 +1,9 @@
 package com.mycompany.game2d;
 
+import com.mycompany.game2d.input.GameInput;
+import com.mycompany.game2d.oggetto.*;
+import com.mycompany.game2d.personaggi.Eroe;
+
 import javax.swing.*;
 import java.awt.*;
 import java.lang.Thread;

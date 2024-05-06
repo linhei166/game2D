@@ -1,18 +1,17 @@
 package com.mycompany.game2d;
 
 
+import com.mycompany.game2d.input.LoadSeve;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
 
 
 public class GamePanel extends JPanel {
 
     private final int maxY = 648,maxX = 1260;
     private final int caselaY =18,caselaX = 35;
-    private BufferedImage IMG;
     private File file;
     private BufferedReader fileRead;
     private Game2dForm game;
@@ -56,8 +55,6 @@ public class GamePanel extends JPanel {
                 codeMap[i][k].settipo(Integer.parseInt(String.valueOf(line.charAt(k))));
                 codeMap[i][k].setPosizioneX(k*36);
                 codeMap[i][k].setPosizioneY(i*36);
-
-
                 switch (codeMap[i][k].gettipo()){
 
                     case 1:
@@ -84,19 +81,14 @@ public class GamePanel extends JPanel {
                     case 8:
                         codeMap[i][k].setImg(LoadSeve.GetFileIMG("/mare/mare_06.png"));
                         break;
-
                 }
-
-
             }
             game.setCodeMap(codeMap);
         }
     }
-
     @Override
     public void paint(Graphics g){
         super.paint(g);
-
         for (int i = 0 ; i <caselaY ; i++ )
             for (int k=0 ; k < caselaX ; k++) {
                 g.drawImage(codeMap[i][k].getImg().getSubimage(0, 0, 16, 16), k * 36, i * 36, 36, 36, null);

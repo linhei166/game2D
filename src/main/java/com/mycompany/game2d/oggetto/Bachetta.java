@@ -2,15 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.game2d;
+package com.mycompany.game2d.oggetto;
 
 /**
  *
  * @author Esposito.Lorenzo
  */
-public class Segretto extends Oggetto {
+public class Bachetta extends Oggetto {
 
-    public Segretto(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/segreto/segreto_01.png");
+    public Bachetta(String nome, int quatita) {
+        super(nome, quatita, "src/main/resources/imag/bachetta/bachetta_01.png");
     }
+
 }
