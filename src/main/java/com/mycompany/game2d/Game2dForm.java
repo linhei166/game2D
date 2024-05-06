@@ -6,6 +6,7 @@ import com.mycompany.game2d.personaggi.Eroe;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.InputMethodEvent;
 import java.lang.Thread;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -42,13 +43,18 @@ public class Game2dForm extends JFrame implements Runnable{
         gameThread = new Thread(this);
         gameThread.start();
     }
-
     public void setCodeMap(CadiceMap[][] codeMap){
         er.setCodeMap(codeMap);
     }
-
     public void gameRead(Graphics g){
         er.getIMGpley(g);
+    }
+
+    Thread input;
+
+    @Override
+    protected void processInputMethodEvent(InputMethodEvent e) {
+        super.processInputMethodEvent(e);
     }
 
     @Override
@@ -60,10 +66,10 @@ public class Game2dForm extends JFrame implements Runnable{
         double deltaF = 0;
         while (true){
             long currentTime = System.nanoTime();
-
             deltaU += (currentTime - lastTime)/timeSistema;
             deltaF += (currentTime - lastTime)/timeFreme;
             if (deltaU >= 1){
+
                 deltaU--;
             }
 
