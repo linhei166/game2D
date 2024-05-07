@@ -4,6 +4,8 @@
  */
 package com.mycompany.game2d;
 
+import com.mycompany.game2d.Combattimento.FrameCompat;
+import com.mycompany.game2d.Combattimento.PanelCompat;
 import com.mycompany.game2d.personaggi.Eroe;
 
 import javax.swing.*;
@@ -13,10 +15,14 @@ import java.awt.*;
  *
  * @author Esposito.Lorenzo
  */
-public class FrameMappa extends javax.swing.JFrame {
+public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private FrameInventario Inventario;
-    Game2dForm game2dForm;
-    Eroe er;
+    private Game2dForm game2dForm;
+    private Eroe er;
+    private Thread loop;
+    private final int gameTime = 120;
+    private final int gameSistema = 200;
+    private FrameCompat frameCompat;
     /**
      * Creates new form FrameMappa
      */
@@ -32,7 +38,30 @@ public class FrameMappa extends javax.swing.JFrame {
         ProgressBarHP.setValue(er.getArcana());
     }
 
-
+    private void starLoop(){
+        loop = new Thread(this);
+        loop.start();
+    }
+    @Override
+    public void run() {
+        double timeFreme = 1000000000.0/gameTime;
+        double timeSistema = 1000000000.0/gameSistema;
+        long lastTime = System.nanoTime();
+        double deltaU = 0;
+        double deltaF = 0;
+        while (true){
+            long currentTime = System.nanoTime();
+            deltaU += (currentTime - lastTime)/timeSistema;
+            deltaF += (currentTime - lastTime)/timeFreme;
+            if (deltaU >= 1){
+                deltaU--;
+            }
+            if(deltaF >= 1){
+                frameCompat.repaint();
+                deltaF--;
+            }
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -124,6 +153,11 @@ public class FrameMappa extends javax.swing.JFrame {
         ButtonOpzioni.setForeground(new java.awt.Color(232, 232, 232));
         ButtonOpzioni.setText("OPZIONI");
         ButtonOpzioni.setFocusable(false);
+        ButtonOpzioni.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonOpzioniActionPerformed(evt);
+            }
+        });
 
         LabelNomeEroe.setForeground(new java.awt.Color(232, 232, 232));
         LabelNomeEroe.setText("jLabel5");
@@ -214,6 +248,13 @@ public class FrameMappa extends javax.swing.JFrame {
         Inventario.setVisible(true);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
+    private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
+        // TODO add your handling code here:
+        frameCompat = new FrameCompat(new PanelCompat());
+        starLoop();
+        this.setVisible(false);
+    }//GEN-LAST:event_ButtonOpzioniActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -258,5 +299,7 @@ public class FrameMappa extends javax.swing.JFrame {
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
     private javax.swing.JLabel jLabel1;
+
+
     // End of variables declaration//GEN-END:variables
 }

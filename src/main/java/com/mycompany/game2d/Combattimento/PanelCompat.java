@@ -46,7 +46,6 @@ public class PanelCompat extends JPanel {
         g.setColor(Color.blue);
         g.fillRect(300,400,200,25);
 
-
     }
 
 }

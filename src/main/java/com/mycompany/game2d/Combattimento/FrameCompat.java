@@ -12,5 +12,6 @@ public class FrameCompat extends JFrame {
         super.add(panelCompat);
         super.pack();
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        super.setVisible(true);
     }
 }
