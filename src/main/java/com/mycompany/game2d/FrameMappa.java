@@ -54,7 +54,6 @@ public class FrameMappa extends javax.swing.JFrame {
         ButtonOpzioni = new javax.swing.JButton();
         LabelNomeEroe = new javax.swing.JLabel();
         ProgressBarEXP = new javax.swing.JProgressBar();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("La Terrra dei Fiordalsi");
@@ -133,9 +132,6 @@ public class FrameMappa extends javax.swing.JFrame {
         ProgressBarEXP.setToolTipText("");
         ProgressBarEXP.setStringPainted(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imag/albero/albero_01.png"))); // NOI18N
-        jLabel1.setText("           ");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,9 +155,7 @@ public class FrameMappa extends javax.swing.JFrame {
                     .addComponent(ProgressBarEXP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ProgressBarMana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(LabelNomeEroe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47)
-                .addComponent(jLabel1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(132, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,8 +180,7 @@ public class FrameMappa extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelHP)
-                            .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1))
+                            .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(ProgressBarEXP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -257,6 +250,5 @@ public class FrameMappa extends javax.swing.JFrame {
     private javax.swing.JProgressBar ProgressBarEXP;
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,6 +11,22 @@ package com.mycompany.game2d.oggetto;
 
 public abstract class Oggetto {
 
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getQuatita() {
+        return quatita;
+    }
+
+    public void setQuatita(int quatita) {
+        this.quatita = quatita;
+    }
+
     public Oggetto(String nome, int quatita, String texture) {
         this.nome = nome;
         this.quatita = quatita;

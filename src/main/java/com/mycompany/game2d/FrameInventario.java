@@ -4,6 +4,7 @@
  */
 package com.mycompany.game2d;
 
+import com.mycompany.game2d.oggetto.Oggetto;
 import com.mycompany.game2d.personaggi.Eroe;
 
 import java.awt.Color;
@@ -45,30 +46,29 @@ public class FrameInventario extends javax.swing.JFrame {
     private void initComponents() {
 
         Slot1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        LabelDescrizone = new javax.swing.JLabel();
+        ButtonUtilizza = new javax.swing.JButton();
+        ButtonEquipaggia = new javax.swing.JButton();
+        LabelNome = new javax.swing.JLabel();
+        LabelQunatita = new javax.swing.JLabel();
+        LabelQunaitaVal = new javax.swing.JLabel();
         Slot2 = new javax.swing.JLabel();
         Slot3 = new javax.swing.JLabel();
         Slot4 = new javax.swing.JLabel();
         Slot5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        LabelPag = new javax.swing.JLabel();
+        LabelPagVal = new javax.swing.JLabel();
         Slot6 = new javax.swing.JLabel();
         Slot8 = new javax.swing.JLabel();
         Slot9 = new javax.swing.JLabel();
         Slot7 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        ButtonIndietro = new javax.swing.JButton();
+        ButtonAvanti = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Slot1.setBackground(new java.awt.Color(102, 51, 0));
+        Slot1.setBackground(new java.awt.Color(71, 45, 60));
         Slot1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot1.setAutoscrolls(true);
+        Slot1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot1.setDoubleBuffered(true);
         Slot1.setFocusCycleRoot(true);
         Slot1.setFocusTraversalPolicyProvider(true);
@@ -84,104 +84,165 @@ public class FrameInventario extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("jLabel2");
+        LabelDescrizone.setForeground(new java.awt.Color(232, 232, 232));
+        LabelDescrizone.setText(" ");
 
-        jButton1.setText("UTILLIZA");
+        ButtonUtilizza.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonUtilizza.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonUtilizza.setText("UTILLIZA");
 
-        jButton2.setText("EQUIPAGGIA");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        ButtonEquipaggia.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonEquipaggia.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonEquipaggia.setText("EQUIPAGGIA");
+        ButtonEquipaggia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ButtonEquipaggiaActionPerformed(evt);
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(232, 232, 232));
-        jLabel3.setText("jLabel3");
+        LabelNome.setForeground(new java.awt.Color(232, 232, 232));
+        LabelNome.setText(" ");
 
-        jLabel4.setText("Quantita");
+        LabelQunatita.setForeground(new java.awt.Color(232, 232, 232));
+        LabelQunatita.setText("Quantita");
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel5.setText("jLabel5");
+        LabelQunaitaVal.setForeground(new java.awt.Color(232, 232, 232));
+        LabelQunaitaVal.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        LabelQunaitaVal.setText(" ");
 
-        Slot2.setBackground(new java.awt.Color(102, 51, 0));
+        Slot2.setBackground(new java.awt.Color(71, 45, 60));
         Slot2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot2.setAutoscrolls(true);
+        Slot2.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot2.setDoubleBuffered(true);
         Slot2.setFocusCycleRoot(true);
         Slot2.setFocusTraversalPolicyProvider(true);
         Slot2.setFocusable(false);
         Slot2.setOpaque(true);
+        Slot2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot2MouseClicked(evt);
+            }
+        });
 
-        Slot3.setBackground(new java.awt.Color(102, 51, 0));
+        Slot3.setBackground(new java.awt.Color(71, 45, 60));
         Slot3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot3.setAutoscrolls(true);
+        Slot3.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot3.setDoubleBuffered(true);
         Slot3.setFocusCycleRoot(true);
         Slot3.setFocusTraversalPolicyProvider(true);
         Slot3.setFocusable(false);
         Slot3.setOpaque(true);
+        Slot3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot3MouseClicked(evt);
+            }
+        });
 
-        Slot4.setBackground(new java.awt.Color(102, 51, 0));
+        Slot4.setBackground(new java.awt.Color(71, 45, 60));
         Slot4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot4.setAutoscrolls(true);
+        Slot4.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot4.setDoubleBuffered(true);
         Slot4.setFocusCycleRoot(true);
         Slot4.setFocusTraversalPolicyProvider(true);
         Slot4.setFocusable(false);
         Slot4.setOpaque(true);
+        Slot4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot4MouseClicked(evt);
+            }
+        });
 
-        Slot5.setBackground(new java.awt.Color(102, 51, 0));
+        Slot5.setBackground(new java.awt.Color(71, 45, 60));
         Slot5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot5.setAutoscrolls(true);
+        Slot5.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot5.setDoubleBuffered(true);
         Slot5.setFocusCycleRoot(true);
         Slot5.setFocusTraversalPolicyProvider(true);
         Slot5.setFocusable(false);
         Slot5.setOpaque(true);
+        Slot5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot5MouseClicked(evt);
+            }
+        });
 
-        jLabel10.setText("Pag:");
+        LabelPag.setForeground(new java.awt.Color(232, 232, 232));
+        LabelPag.setText("Pag:");
 
-        jLabel11.setText("jLabel11");
+        LabelPagVal.setForeground(new java.awt.Color(232, 232, 232));
+        LabelPagVal.setText("1");
 
-        Slot6.setBackground(new java.awt.Color(102, 51, 0));
+        Slot6.setBackground(new java.awt.Color(71, 45, 60));
         Slot6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot6.setAutoscrolls(true);
+        Slot6.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot6.setDoubleBuffered(true);
         Slot6.setFocusCycleRoot(true);
         Slot6.setFocusTraversalPolicyProvider(true);
         Slot6.setFocusable(false);
         Slot6.setOpaque(true);
+        Slot6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot6MouseClicked(evt);
+            }
+        });
 
-        Slot8.setBackground(new java.awt.Color(102, 51, 0));
+        Slot8.setBackground(new java.awt.Color(71, 45, 60));
         Slot8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot8.setAutoscrolls(true);
+        Slot8.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot8.setDoubleBuffered(true);
         Slot8.setFocusCycleRoot(true);
         Slot8.setFocusTraversalPolicyProvider(true);
         Slot8.setFocusable(false);
         Slot8.setOpaque(true);
+        Slot8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot8MouseClicked(evt);
+            }
+        });
 
-        Slot9.setBackground(new java.awt.Color(102, 51, 0));
+        Slot9.setBackground(new java.awt.Color(71, 45, 60));
         Slot9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot9.setAutoscrolls(true);
+        Slot9.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot9.setDoubleBuffered(true);
         Slot9.setFocusCycleRoot(true);
         Slot9.setFocusTraversalPolicyProvider(true);
         Slot9.setFocusable(false);
         Slot9.setOpaque(true);
+        Slot9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot9MouseClicked(evt);
+            }
+        });
 
-        Slot7.setBackground(new java.awt.Color(102, 51, 0));
+        Slot7.setBackground(new java.awt.Color(71, 45, 60));
         Slot7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot7.setAutoscrolls(true);
+        Slot7.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 0)));
         Slot7.setDoubleBuffered(true);
         Slot7.setFocusCycleRoot(true);
         Slot7.setFocusTraversalPolicyProvider(true);
         Slot7.setFocusable(false);
         Slot7.setOpaque(true);
+        Slot7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Slot7MouseClicked(evt);
+            }
+        });
 
-        jButton3.setText("jButton3");
+        ButtonIndietro.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonIndietro.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonIndietro.setText("<----");
 
-        jButton4.setText("jButton4");
+        ButtonAvanti.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonAvanti.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonAvanti.setText("---->");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -189,83 +250,84 @@ public class FrameInventario extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                            .addComponent(LabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonEquipaggia, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(ButtonUtilizza, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
+                                .addComponent(LabelQunatita)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4)
-                        .addGap(67, 67, 67))))
+                                .addComponent(LabelQunaitaVal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(LabelDescrizone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ButtonIndietro)
+                        .addGap(220, 220, 220)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(Slot1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Slot7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(LabelPag)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LabelPagVal, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(ButtonAvanti))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Slot1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Slot7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(5, 5, 5)
                 .addComponent(Slot8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Slot9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 23, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(13, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Slot1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Slot3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Slot4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Slot5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Slot6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Slot8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Slot9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Slot2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Slot7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Slot2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(132, 132, 132)
+                    .addComponent(Slot8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Slot9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(131, 131, 131)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel10)
-                    .addComponent(jButton4))
+                    .addComponent(ButtonIndietro)
+                    .addComponent(LabelPagVal)
+                    .addComponent(LabelPag)
+                    .addComponent(ButtonAvanti))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                    .addComponent(LabelNome)
+                    .addComponent(LabelQunatita)
+                    .addComponent(LabelQunaitaVal))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(ButtonUtilizza)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2))
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(ButtonEquipaggia))
+                    .addComponent(LabelDescrizone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -274,9 +336,9 @@ public class FrameInventario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ButtonEquipaggiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEquipaggiaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ButtonEquipaggiaActionPerformed
 
     private void Slot1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Slot1FocusGained
         // TODO add your handling code here
@@ -284,15 +346,75 @@ public class FrameInventario extends javax.swing.JFrame {
 
     private void Slot1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot1MouseClicked
         // TODO add your handling code here:
-        Icon tt;
-        tt= Slot1.getIcon();
-        jLabel2.setIcon(tt);
+        if(Slot1.getIcon()!=null){
+            ImagFocus(er.getMano());
+        }
     }//GEN-LAST:event_Slot1MouseClicked
+
+    private void Slot2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot2MouseClicked
+        // TODO add your handling code here:
+         if(Slot2.getIcon()!=null){
+            ImagFocus(er.getInvetario().get(0));
+        }
+    }//GEN-LAST:event_Slot2MouseClicked
+
+    private void Slot3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot3MouseClicked
+        // TODO add your handling code here:
+         if(Slot3.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(1));
+        }
+    }//GEN-LAST:event_Slot3MouseClicked
+
+    private void Slot4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot4MouseClicked
+        // TODO add your handling code here:
+         if(Slot4.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(2));
+        }
+    }//GEN-LAST:event_Slot4MouseClicked
+
+    private void Slot5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot5MouseClicked
+        // TODO add your handling code here:
+        if(Slot5.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(3));
+        }
+    }//GEN-LAST:event_Slot5MouseClicked
+
+    private void Slot6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot6MouseClicked
+        // TODO add your handling code here:
+        if(Slot6.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(4));
+        }
+    }//GEN-LAST:event_Slot6MouseClicked
+
+    private void Slot7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot7MouseClicked
+        // TODO add your handling code here:
+        if(Slot7.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(5));
+        }
+    }//GEN-LAST:event_Slot7MouseClicked
+
+    private void Slot8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot8MouseClicked
+        // TODO add your handling code here:
+        if(Slot7.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(6));
+        }
+    }//GEN-LAST:event_Slot8MouseClicked
+
+    private void Slot9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Slot9MouseClicked
+        // TODO add your handling code here:
+        if(Slot9.getIcon()!=null){
+             ImagFocus(er.getInvetario().get(7));
+        }
+    }//GEN-LAST:event_Slot9MouseClicked
     private ImageIcon sclareImagni(String path){
         ImageIcon icona = new ImageIcon(path); // load the image to a imageIcon
         Image imagineog = icona.getImage(); // transform it 
         Image imagineinven = imagineog.getScaledInstance(32, 32,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
         return icona = new ImageIcon(imagineinven);  // transform it back
+    }
+    private void ImagFocus(Oggetto og){
+        LabelNome.setText(og.getNome());
+        LabelQunaitaVal.setText(String.valueOf(og.getQuatita()));
     }
     /**
      * @param args the command line arguments
@@ -329,6 +451,16 @@ public class FrameInventario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonAvanti;
+    private javax.swing.JButton ButtonEquipaggia;
+    private javax.swing.JButton ButtonIndietro;
+    private javax.swing.JButton ButtonUtilizza;
+    private javax.swing.JLabel LabelDescrizone;
+    private javax.swing.JLabel LabelNome;
+    private javax.swing.JLabel LabelPag;
+    private javax.swing.JLabel LabelPagVal;
+    private javax.swing.JLabel LabelQunaitaVal;
+    private javax.swing.JLabel LabelQunatita;
     private javax.swing.JLabel Slot1;
     private javax.swing.JLabel Slot2;
     private javax.swing.JLabel Slot3;
@@ -338,15 +470,5 @@ public class FrameInventario extends javax.swing.JFrame {
     private javax.swing.JLabel Slot7;
     private javax.swing.JLabel Slot8;
     private javax.swing.JLabel Slot9;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }
