@@ -69,16 +69,12 @@ public class Game2dForm extends JFrame implements Runnable{
             deltaU += (currentTime - lastTime)/timeSistema;
             deltaF += (currentTime - lastTime)/timeFreme;
             if (deltaU >= 1){
-
                 deltaU--;
             }
-
-
             if(deltaF >= 1){
                 mappa.repaint();
                 deltaF--;
             }
-
         }
 
     }
@@ -613,21 +609,13 @@ public class Game2dForm extends JFrame implements Runnable{
         int hp=Integer.parseInt(LabelValHP.getText());
         int mana=Integer.parseInt(LabelValMana.getText());
         int ogg=jComboBox1.getSelectedIndex();
-        Oggetto og=null;
-        switch(ogg){
-            case 0:
-                og=((Oggetto)new Spada("Spada",1));
-                break;
-            case 1:
-                og=((Oggetto)new Bachetta("Bachetta",1));
-                break;
-            case 2:
-                og=((Oggetto)new Arco("Arco",1));
-                break;
-            case 3:
-                og=((Oggetto)new Segretto("RPG", 1));
-                break;
-        }
+        Oggetto og = switch (ogg) {
+            case 0 -> ((Oggetto) new Spada("Spada", 1));
+            case 1 -> ((Oggetto) new Bachetta("Bachetta", 1));
+            case 2 -> ((Oggetto) new Arco("Arco", 1));
+            case 3 -> ((Oggetto) new Segretto("RPG", 1));
+            default -> null;
+        };
         String nom = TextFieldNome.getText();
         er = new Eroe(nom,forz,vel,arc,des,hp,mana,this,og);
         mappa = new FrameMappa(this,er);
@@ -635,6 +623,8 @@ public class Game2dForm extends JFrame implements Runnable{
         mappa.setVisible(true);
         mappa.requestFocus();
         gamestart();
+        this.setVisible(false);
+        FrameCreazione.setVisible(false);
 
         
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed
