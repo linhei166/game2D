@@ -95,6 +95,7 @@ public class FrameInventario extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(232, 232, 232));
         jLabel3.setText("jLabel3");
 
         jLabel4.setText("Quantita");

@@ -267,6 +267,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonpiuHP.setBackground(new java.awt.Color(84, 84, 84));
         ButtonpiuHP.setForeground(new java.awt.Color(232, 232, 232));
         ButtonpiuHP.setText("+");
+        ButtonpiuHP.setToolTipText("");
         ButtonpiuHP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonpiuHPActionPerformed(evt);
@@ -529,6 +530,7 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonNuovaPartita.setBackground(new java.awt.Color(84, 84, 84));
         ButtonNuovaPartita.setForeground(new java.awt.Color(232, 232, 232));
         ButtonNuovaPartita.setText("Nuova Partita");
+        ButtonNuovaPartita.setToolTipText("");
         ButtonNuovaPartita.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonNuovaPartitaActionPerformed(evt);
@@ -614,16 +616,16 @@ public class Game2dForm extends JFrame implements Runnable{
         Oggetto og=null;
         switch(ogg){
             case 0:
-                og=new Spada("Spada",1);
+                og=((Oggetto)new Spada("Spada",1));
                 break;
             case 1:
-                og=new Bachetta("Bachetta",1);
+                og=((Oggetto)new Bachetta("Bachetta",1));
                 break;
             case 2:
-                og=new Arco("Arco",1);
+                og=((Oggetto)new Arco("Arco",1));
                 break;
             case 3:
-                og=new Segretto("RPG", 1);
+                og=((Oggetto)new Segretto("RPG", 1));
                 break;
         }
         String nom = TextFieldNome.getText();
