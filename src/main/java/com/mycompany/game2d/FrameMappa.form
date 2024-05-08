@@ -49,9 +49,7 @@
                   <Component id="ProgressBarMana" max="32767" attributes="0"/>
                   <Component id="LabelNomeEroe" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="32" max="32767" attributes="0"/>
+              <EmptySpace pref="132" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -82,7 +80,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LabelHP" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ProgressBarHP" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -247,14 +244,6 @@
         </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="stringPainted" type="boolean" value="true"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imag/albero/albero_01.png"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="           "/>
       </Properties>
     </Component>
   </SubComponents>
