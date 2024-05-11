@@ -13,9 +13,21 @@ public class Entita {
         this.hp = hp;
         this.mana = mana;
         this.Mano = Mano;
+        this.lv=0;
+    }
+    public void levelUp(int forza, int velocita, int arcana, int destrezza, int hp, int mana){
+        this.forza = forza;
+        this.velocita = velocita;
+        this.arcana = arcana;
+        this.destrezza = destrezza;
+        this.hp = hp;
+        this.mana = mana;
+        lv++;
+
     }
     protected String nome;
     protected int forza,velocita,arcana, destrezza, hp, mana;
+    private int lv;
     protected Oggetto Mano;
    
     public void printShet(){
@@ -91,5 +103,12 @@ public class Entita {
             return 0;
         }
         return hp;
+    }
+    public int getLv() {
+        return lv;
+    }
+
+    public void setLv(int lv) {
+        this.lv = lv;
     }
 }

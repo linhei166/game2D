@@ -28,6 +28,7 @@ public class Eroe extends Entita {
     private final String FileMap ="/personagi/personaggi_01.png";
     private int posizioneX,posizioneY;
     private int comand = -1;
+
     private  boolean onComand = false;
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Game2dForm game2dForm, Oggetto og) {
@@ -37,33 +38,6 @@ public class Eroe extends Entita {
         invetario.add(new pozionecura("Cura10",10));
     }
 
-
-    public void levelup(){
-        for(int a=5;a>0;a--){
-        int car = in.nextInt();
-        switch (car){
-            case 1:
-                this.destrezza++;
-                break;
-            case 2:
-                this.velocita++;
-                break;
-            case 3:
-                this.arcana++;
-                break;
-            case 4:
-                this.hp++;
-                break;
-            case 5:
-                this.mana++;
-                break;
-            case 6:
-                this.forza++;
-                break;
-        }
-        }
-        System.out.println("Out of for");
-    }
     public void movimentoY(int valore ){
         posizioneY = valore;
         if((valore+hitbox.y) > 0 &&(valore+hitbox.y+ hitbox.height) < maxPanelY&& toca()) {

@@ -32,12 +32,16 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         super.getContentPane().setBackground(Color.BLACK);
         initComponents();
         LabelNomeEroe.setText(er.getNome());
-        ProgressBarMana.setMaximum(er.getHp());
-        ProgressBarHP.setMaximum(er.getArcana());
-        ProgressBarMana.setValue(er.getHp());
-        ProgressBarHP.setValue(er.getArcana());
+        Updatebars();
+        jLabel2.setText(String.valueOf(er.getLv()));
     }
-
+    public void Updatebars(){
+        ProgressBarMana.setMaximum(er.getArcana());
+        ProgressBarHP.setMaximum(er.getHp());
+        ProgressBarMana.setValue(er.getArcana());
+        ProgressBarHP.setValue(er.getHp());
+        jLabel2.setText(String.valueOf(er.getLv()));
+    }
     private void starLoop(){
         loop = new Thread(this);
         loop.start();
@@ -83,6 +87,8 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ButtonOpzioni = new javax.swing.JButton();
         LabelNomeEroe = new javax.swing.JLabel();
         ProgressBarEXP = new javax.swing.JProgressBar();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("La Terrra dei Fiordalsi");
@@ -166,6 +172,12 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ProgressBarEXP.setToolTipText("");
         ProgressBarEXP.setStringPainted(true);
 
+        jLabel1.setForeground(new java.awt.Color(232, 232, 232));
+        jLabel1.setText("LV:");
+
+        jLabel2.setForeground(new java.awt.Color(232, 232, 232));
+        jLabel2.setText("jLabel2");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -185,11 +197,16 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                     .addComponent(LabelHP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(ProgressBarHP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                    .addComponent(ProgressBarHP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE)
                     .addComponent(ProgressBarEXP, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ProgressBarMana, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LabelNomeEroe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(132, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(LabelNomeEroe, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(83, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -206,12 +223,14 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelName)
-                            .addComponent(LabelNomeEroe))
+                            .addComponent(LabelNomeEroe)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2))
                         .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelMana)
                             .addComponent(ProgressBarMana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelHP)
                             .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -227,7 +246,11 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonDoungeonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonDoungeonActionPerformed
         // TODO add your handling code here:
-        ProgressBarEXP.setValue(23);
+        LevelUp LU = new LevelUp();
+        LU.SetFrameMap(this);
+        LU.setEr(er);
+        LU.setVisible(true);
+
     }//GEN-LAST:event_ButtonDoungeonActionPerformed
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
@@ -291,5 +314,11 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private javax.swing.JProgressBar ProgressBarEXP;
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+
+    public void setEr(Eroe er) {
+        this.er = er;
+    }
     // End of variables declaration//GEN-END:variables
 }
