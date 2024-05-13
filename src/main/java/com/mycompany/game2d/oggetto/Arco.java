@@ -12,6 +12,6 @@ public class Arco extends Oggetto {
 
 
     public Arco(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/arco/arco_01.png");
+        super(nome, quatita, "src/main/resources/imag/arco/arco_01.png",10);
     }
 }

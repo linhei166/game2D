@@ -9,9 +9,8 @@ package com.mycompany.game2d.oggetto;
  * @author Esposito.Lorenzo
  */
 public class pozionecura  extends Oggetto {
-
     public pozionecura(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/pozioni/pozionecura.png");
+        super(nome, quatita, "src/main/resources/imag/pozioni/pozionecura.png",30);
     }
 
 }

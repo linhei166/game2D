@@ -27,15 +27,20 @@ public abstract class Oggetto {
         this.quatita = quatita;
     }
 
-    public Oggetto(String nome, int quatita, String texture) {
+    public Oggetto(String nome, int quatita, String texture,int id) {
         this.nome = nome;
         this.quatita = quatita;
         this.texture = texture;
+        this.id=id;
     }
     protected String nome;
-    protected int quatita;
+    protected int quatita,id;
     protected final String texture;
     public String getTexture() {
         return texture;
+    }
+
+    public String toFile(){
+        return "\n"+id + "\n" +nome+ "\n"+quatita;
     }
 }

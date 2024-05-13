@@ -296,6 +296,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         /* Create and display the form */
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonDoungeon;
     private javax.swing.JButton ButtonInventario;

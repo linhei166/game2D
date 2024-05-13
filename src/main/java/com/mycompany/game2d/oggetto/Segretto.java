@@ -11,8 +11,7 @@ import com.mycompany.game2d.oggetto.Oggetto;
  * @author Esposito.Lorenzo
  */
 public class Segretto extends Oggetto {
-
     public Segretto(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/segreto/segreto_01.png");
+        super(nome, quatita, "src/main/resources/imag/segreto/segreto_01.png",40);
     }
 }

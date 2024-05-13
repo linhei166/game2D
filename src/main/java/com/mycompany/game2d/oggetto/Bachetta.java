@@ -11,7 +11,7 @@ package com.mycompany.game2d.oggetto;
 public class Bachetta extends Oggetto {
 
     public Bachetta(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/bachetta/bachetta_01.png");
+        super(nome, quatita, "src/main/resources/imag/bachetta/bachetta_01.png",20);
     }
 
 }

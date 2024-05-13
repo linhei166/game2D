@@ -27,7 +27,7 @@ public class Entita {
     }
     protected String nome;
     protected int forza,velocita,arcana, destrezza, hp, mana;
-    private int lv;
+    protected int lv;
     protected Oggetto Mano;
    
     public void printShet(){

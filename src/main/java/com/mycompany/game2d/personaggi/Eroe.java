@@ -37,6 +37,12 @@ public class Eroe extends Entita {
         IMG = LoadSeve.GetFileIMG(FileMap);
         invetario.add(new pozionecura("Cura10",10));
     }
+    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Game2dForm game2dForm, Oggetto og,ArrayList<Oggetto> Inv) {
+        super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
+        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
+        IMG = LoadSeve.GetFileIMG(FileMap);
+        this.invetario=Inv;
+    }
 
     public void movimentoY(int valore ){
         posizioneY = valore;
@@ -110,5 +116,12 @@ public class Eroe extends Entita {
         movimeto();
         g.drawImage(IMG.getSubimage(0, 0, 16, 16),hitbox.x, hitbox.y, 36, 36, null);
     }
-
+    public String toFile(){
+        String file = nome + "\n" + forza + "\n" + velocita + "\n" + arcana + "\n" + destrezza + "\n" + hp + "\n" + mana + "\n" + lv;
+        file = file + Mano.toFile();
+        for (int i=0;i<invetario.size();i++){
+            file=file+invetario.get(i).toFile();
+        }
+        return file;
+    }
 }
