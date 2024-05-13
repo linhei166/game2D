@@ -1,43 +1,37 @@
 package com.mycompany.game2d.input;
 
+import com.mycompany.game2d.Combattimento.PanelCompat;
+
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 
-public class CompatInput implements MouseListener , MouseMotionListener {
+public class CompatInput implements KeyListener {
+
+    PanelCompat compat;
+
+    public CompatInput(PanelCompat compat){
+        this.compat = compat;
+    }
 
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void keyTyped(KeyEvent e) {
 
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
+    public void keyPressed(KeyEvent e) {
 
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
+    public void keyReleased(KeyEvent e) {
 
-    }
+        switch (e.getKeyCode()){
+            case KeyEvent.VK_A -> compat.comand(-1);
+            case KeyEvent.VK_D -> compat.comand(+1);
+            //case KeyEvent.VK_ENTER ->
 
-    @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
+        }
 
     }
 }

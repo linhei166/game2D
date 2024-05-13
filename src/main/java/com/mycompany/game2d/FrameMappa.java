@@ -6,6 +6,7 @@ package com.mycompany.game2d;
 
 import com.mycompany.game2d.Combattimento.FrameCompat;
 import com.mycompany.game2d.Combattimento.PanelCompat;
+import com.mycompany.game2d.input.CompatInput;
 import com.mycompany.game2d.personaggi.Eroe;
 
 import javax.swing.*;
@@ -281,7 +282,9 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
-        frameCompat = new FrameCompat(new PanelCompat());
+        frameCompat = new FrameCompat(new PanelCompat(er));
+        frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
+        frameCompat.requestFocus();
         starLoop();
         this.setVisible(false);
     }//GEN-LAST:event_ButtonOpzioniActionPerformed
