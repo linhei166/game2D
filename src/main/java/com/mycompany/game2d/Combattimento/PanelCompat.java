@@ -9,10 +9,12 @@ import java.awt.image.BufferedImage;
 
 public class PanelCompat extends JPanel {
     private CompatInput compatInput;
+    private BufferedImage IMGBotton;
     private BufferedImage IMG;
     private JLabel comento;
     private final int posizioneC_x_1 = 50 , posizioneC_y_1 = 468 ,posizioneC_x_2 = 1200 ,posizioneC_y_2 = 588;
     private final int posizioneS_x_1 = 90 , posizioneS_y_1 = 430 ,posizioneM_x_1 = 300 ,posizioneM_y_1 = 430;
+    private int scelt = 0;
 
     public PanelCompat(){
         Dimesione();
@@ -27,14 +29,20 @@ public class PanelCompat extends JPanel {
         setMinimumSize(size);
         setPreferredSize(size);
         setBackground(Color.black);
-        compatInput = new CompatInput();
-        addMouseListener(compatInput);
-        addMouseMotionListener(compatInput);
         IMG = LoadSeve.GetFileIMG("/personagi/personaggi_02.png");
+
     }
-    @Override
-    public void paint(Graphics g){
-        super.paintComponent(g);
+    public void comand(int i){
+        if (scelt + i >=0 && scelt+ i <=2)
+            scelt = scelt + i;
+    }
+
+    private void Updet(Graphics g){
+        Updetarea(g);
+        Updetbotton(g);
+    }
+
+    private void Updetarea(Graphics g){
         g.clearRect(posizioneC_x_1,posizioneC_y_1,1150,5);
         g.clearRect(posizioneC_x_1,posizioneC_y_1,5,125);
         g.clearRect(posizioneC_x_1,posizioneC_y_2,1150,5);
@@ -54,6 +62,39 @@ public class PanelCompat extends JPanel {
         g.fillRect(posizioneM_x_1-5,posizioneM_y_1+25,210,5);
         g.setColor(Color.blue);
         g.fillRect(posizioneM_x_1,posizioneM_y_1,200,25);
+    }
+
+    private void Updetbotton(Graphics g){
+        if (scelt == 0) {
+            IMGBotton = LoadSeve.GetFileCombat("/atacco_Ativ.png");
+            g.drawImage(IMGBotton, 200, 620, 150, 75, null);
+        }
+        else {
+            IMGBotton = LoadSeve.GetFileCombat("/atacco_nonAtiv.png");
+            g.drawImage(IMGBotton, 200, 620, 150, 75, null);
+        }
+        if (scelt == 1) {
+            IMGBotton = LoadSeve.GetFileCombat("/magia_Ativ.png");
+            g.drawImage(IMGBotton, 555, 620, 150, 75, null);
+        }
+        else {
+            IMGBotton = LoadSeve.GetFileCombat("/magia_nonAtiv.png");
+            g.drawImage(IMGBotton, 555, 620, 150, 75, null);
+        }
+        if (scelt == 2) {
+            IMGBotton = LoadSeve.GetFileCombat("/inventario_Ativ.png");
+            g.drawImage(IMGBotton, 950, 620, 150, 75, null);
+        }
+        else {
+            IMGBotton = LoadSeve.GetFileCombat("/inventario_nonAtiv.png");
+            g.drawImage(IMGBotton, 950, 620, 150, 75, null);
+        }
+    }
+
+    @Override
+    public void paint(Graphics g){
+        super.paintComponent(g);
+        Updet(g);
 
     }
 

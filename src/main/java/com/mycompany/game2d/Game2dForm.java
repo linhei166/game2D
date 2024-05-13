@@ -21,7 +21,7 @@ public class Game2dForm extends JFrame implements Runnable{
     private int Creation=20;
     protected Eroe er;
     private FrameMappa mappa;
-    private Thread gameThread,gameInpu1,gameInpu2,gameInpu3,gameInpu4;
+    private Thread gameThread;
     private final int gameTime = 120;
     private final int gameSistema = 200;
     boolean secretNo=true;
