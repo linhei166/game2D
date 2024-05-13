@@ -2,21 +2,23 @@ package com.mycompany.game2d.Combattimento;
 
 import com.mycompany.game2d.input.CompatInput;
 import com.mycompany.game2d.input.LoadSeve;
+import com.mycompany.game2d.personaggi.Eroe;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
 public class PanelCompat extends JPanel {
-    private CompatInput compatInput;
     private BufferedImage IMGBotton;
     private BufferedImage IMG;
     private JLabel comento;
     private final int posizioneC_x_1 = 50 , posizioneC_y_1 = 468 ,posizioneC_x_2 = 1200 ,posizioneC_y_2 = 588;
     private final int posizioneS_x_1 = 90 , posizioneS_y_1 = 430 ,posizioneM_x_1 = 300 ,posizioneM_y_1 = 430;
     private int scelt = 0;
+    private Eroe er;
 
-    public PanelCompat(){
+    public PanelCompat( Eroe er){
+        this.er = er;
         Dimesione();
         comento = new JLabel("prova");
         comento.setForeground(Color.white);
@@ -88,6 +90,18 @@ public class PanelCompat extends JPanel {
         else {
             IMGBotton = LoadSeve.GetFileCombat("/inventario_nonAtiv.png");
             g.drawImage(IMGBotton, 950, 620, 150, 75, null);
+        }
+    }
+
+    public void comandaccet(){
+        if (scelt == 0) {
+
+        }
+        if (scelt == 1){
+
+        }
+        if (scelt == 2){
+
         }
     }
 

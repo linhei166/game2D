@@ -262,7 +262,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
-        frameCompat = new FrameCompat(new PanelCompat());
+        frameCompat = new FrameCompat(new PanelCompat(er));
         frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
         frameCompat.requestFocus();
         starLoop();
