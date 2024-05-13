@@ -599,30 +599,31 @@ public class Game2dForm extends JFrame implements Runnable{
 
     private void ButtonConfremaCreaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonConfremaCreaActionPerformed
         // TODO add your handling code here:
-        int forz=Integer.parseInt(LabelValFor.getText());
-        int vel=Integer.parseInt(LabelValVel.getText());
-        int arc=Integer.parseInt(LabelValArc.getText());
-        int des=Integer.parseInt(LabelValDes.getText());
-        int hp=Integer.parseInt(LabelValHP.getText());
-        int mana=Integer.parseInt(LabelValMana.getText());
-        int ogg=jComboBox1.getSelectedIndex();
-        Oggetto og = switch (ogg) {
-            case 0 -> ((Oggetto) new Spada("Spada", 1));
-            case 1 -> ((Oggetto) new Bachetta("Bachetta", 1));
-            case 2 -> ((Oggetto) new Arco("Arco", 1));
-            case 3 -> ((Oggetto) new Segretto("RPG", 1));
-            default -> null;
-        };
-        String nom = TextFieldNome.getText();
-        er = new Eroe(nom,forz,vel,arc,des,hp,mana,this,og);
-        mappa = new FrameMappa(this,er);
-        mappa.addKeyListener(new GameInput(er));
-        mappa.setVisible(true);
-        mappa.requestFocus();
-        gamestart();
-        this.setVisible(false);
-        FrameCreazione.setVisible(false);
-
+        if(Creation==0) {
+            int forz = Integer.parseInt(LabelValFor.getText());
+            int vel = Integer.parseInt(LabelValVel.getText());
+            int arc = Integer.parseInt(LabelValArc.getText());
+            int des = Integer.parseInt(LabelValDes.getText());
+            int hp = Integer.parseInt(LabelValHP.getText());
+            int mana = Integer.parseInt(LabelValMana.getText());
+            int ogg = jComboBox1.getSelectedIndex();
+            Oggetto og = switch (ogg) {
+                case 0 -> ((Oggetto) new Spada("Spada", 1));
+                case 1 -> ((Oggetto) new Bachetta("Bachetta", 1));
+                case 2 -> ((Oggetto) new Arco("Arco", 1));
+                case 3 -> ((Oggetto) new Segretto("RPG", 1));
+                default -> null;
+            };
+            String nom = TextFieldNome.getText();
+            er = new Eroe(nom, forz, vel, arc, des, hp, mana, this, og);
+            mappa = new FrameMappa(this, er);
+            mappa.addKeyListener(new GameInput(er));
+            mappa.setVisible(true);
+            mappa.requestFocus();
+            gamestart();
+            this.setVisible(false);
+            FrameCreazione.setVisible(false);
+        }
         
     }//GEN-LAST:event_ButtonConfremaCreaActionPerformed
 
