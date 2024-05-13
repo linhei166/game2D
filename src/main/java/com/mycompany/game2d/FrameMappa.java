@@ -10,6 +10,10 @@ import com.mycompany.game2d.personaggi.Eroe;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -23,6 +27,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private final int gameTime = 120;
     private final int gameSistema = 200;
     private FrameCompat frameCompat;
+    private File f=new File("src" + File.separator +"save.txt");
     /**
      * Creates new form FrameMappa
      */
@@ -89,6 +94,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ProgressBarEXP = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("La Terrra dei Fiordalsi");
@@ -178,6 +184,17 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         jLabel2.setForeground(new java.awt.Color(232, 232, 232));
         jLabel2.setText("jLabel2");
 
+        jButton1.setText("Salva");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -206,7 +223,9 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,11 +245,12 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                             .addComponent(LabelNomeEroe)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
-                        .addGap(6, 6, 6)
+                        .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelMana)
-                            .addComponent(ProgressBarMana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(12, 12, 12)
+                            .addComponent(ProgressBarMana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
+                        .addGap(6, 6, 6)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelHP)
                             .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -265,6 +285,14 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         starLoop();
         this.setVisible(false);
     }//GEN-LAST:event_ButtonOpzioniActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        FileWriter fw = new FileWriter(f);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(er.toFile());
+        bw.flush();
+    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -310,11 +338,8 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private javax.swing.JProgressBar ProgressBarEXP;
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-
-    public void setEr(Eroe er) {
-        this.er = er;
-    }
     // End of variables declaration//GEN-END:variables
 }

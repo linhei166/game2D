@@ -7,7 +7,9 @@ import com.mycompany.game2d.personaggi.Eroe;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.InputMethodEvent;
+import java.io.*;
 import java.lang.Thread;
+import java.util.ArrayList;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -128,7 +130,6 @@ public class Game2dForm extends JFrame implements Runnable{
 
         FrameCreazione.setTitle("La Terrra dei Fiordalsi");
         FrameCreazione.setBackground(new java.awt.Color(0, 0, 0));
-        FrameCreazione.setPreferredSize(new java.awt.Dimension(400, 500));
 
         LabelNome.setForeground(new java.awt.Color(232, 232, 232));
         LabelNome.setText("Nome:");
@@ -533,6 +534,15 @@ public class Game2dForm extends JFrame implements Runnable{
         ButtonContinuaPartita.setBackground(new java.awt.Color(84, 84, 84));
         ButtonContinuaPartita.setForeground(new java.awt.Color(232, 232, 232));
         ButtonContinuaPartita.setText("Continua Partita");
+        ButtonContinuaPartita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                try {
+                    ButtonContinuaPartitaActionPerformed(evt);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
 
         ButtonOpzione.setBackground(new java.awt.Color(84, 84, 84));
         ButtonOpzione.setForeground(new java.awt.Color(232, 232, 232));
@@ -712,6 +722,51 @@ public class Game2dForm extends JFrame implements Runnable{
             secretNo=false;
        }
     }//GEN-LAST:event_jComboBox1MouseClicked
+
+    private void ButtonContinuaPartitaActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_ButtonContinuaPartitaActionPerformed
+        // TODO add your handling code here:
+        File f =new File("src" + File.separator +"save.txt");
+        FileReader fr= new FileReader(f);
+        BufferedReader br = new BufferedReader(fr);
+        //var per eroe
+        int forza,velocita,arcana,destrezza,hp,mana,lv;
+        String nome;
+        //var per oggetto mano
+        int id,quantita;
+        String StringManog;
+        Oggetto og=null;
+        //var per inventario
+        ArrayList<Oggetto> Inv=new ArrayList<Oggetto>();
+        int idInv,quantitaInv;
+        String NomeInv;
+        if((nome = br.readLine())!=null){
+            //CARIVAMNETO PER EROE
+            forza = Integer.parseInt(br.readLine());
+            velocita = Integer.parseInt(br.readLine());
+            arcana = Integer.parseInt(br.readLine());
+            destrezza = Integer.parseInt(br.readLine());
+            hp = Integer.parseInt(br.readLine());
+            mana = Integer.parseInt(br.readLine());
+            lv = Integer.parseInt(br.readLine());
+            //cARICAMNETO PER OGGETO MANO
+            id = Integer.parseInt(br.readLine());
+            StringManog = br.readLine();
+            quantita = Integer.parseInt(br.readLine());
+            //INVETANRARIO
+            String ids;
+            while((ids = br.readLine())!=null){
+                id = Integer.parseInt(ids);
+                NomeInv = br.readLine();
+                quantitaInv = Integer.parseInt(br.readLine());
+                if(id<10){
+
+                }else if(id<20){
+
+                }else if(id<30);
+            }
+        }
+       // Eroe er = new Eroe();
+    }//GEN-LAST:event_ButtonContinuaPartitaActionPerformed
     private void aumenta(javax.swing.JLabel la){
         if(Creation>0){
             int a = Integer.parseInt(la.getText());
