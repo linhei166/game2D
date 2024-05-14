@@ -729,13 +729,14 @@ public class Game2dForm extends JFrame implements Runnable{
         FileReader fr= new FileReader(f);
         BufferedReader br = new BufferedReader(fr);
         //var per eroe
-        int forza,velocita,arcana,destrezza,hp,mana,lv;
+        int forza,velocita,arcana,destrezza,hp,mana,lv,y,x;
         String nome;
         //var per oggetto mano
         int id,quantita;
         String StringManog;
-        Oggetto og=null;
+        Oggetto ogm=null;
         //var per inventario
+        Oggetto og=null;
         ArrayList<Oggetto> Inv=new ArrayList<Oggetto>();
         int idInv,quantitaInv;
         String NomeInv;
@@ -752,6 +753,17 @@ public class Game2dForm extends JFrame implements Runnable{
             id = Integer.parseInt(br.readLine());
             StringManog = br.readLine();
             quantita = Integer.parseInt(br.readLine());
+            if(id<10){
+                ogm = new Spada(StringManog,quantita);
+            }else if(id<20){
+                ogm =new Arco(StringManog,quantita);
+            }else if(id<30){
+                ogm = new Bachetta(StringManog,quantita);
+            }else if(id<30){
+                ogm = new pozionecura(StringManog,quantita);
+            }else {
+                ogm = new Segretto(StringManog,quantita);
+            }
             //INVETANRARIO
             String ids;
             while((ids = br.readLine())!=null){
@@ -759,13 +771,28 @@ public class Game2dForm extends JFrame implements Runnable{
                 NomeInv = br.readLine();
                 quantitaInv = Integer.parseInt(br.readLine());
                 if(id<10){
-
+                    og = new Spada(NomeInv,quantitaInv);
                 }else if(id<20){
-
-                }else if(id<30);
+                    og =new Arco(NomeInv,quantitaInv);
+                }else if(id<30){
+                    og = new Bachetta(NomeInv,quantitaInv);
+                }else if(id<40){
+                    og = new pozionecura(NomeInv,quantitaInv);
+                }else {
+                    og = new Segretto(NomeInv,quantitaInv);
+                }
+                Inv.add(og);
             }
+            x = Integer.parseInt(br.readLine());
+            y = Integer.parseInt(br.readLine());
+            er = new Eroe(nome,forza,velocita,arcana,destrezza,hp,mana,lv,this,ogm,Inv);
+            mappa = new FrameMappa(this, er);
+            mappa.addKeyListener(new GameInput(er));
+            mappa.setVisible(true);
+            mappa.requestFocus();
+            gamestart();
+            this.setVisible(false);
         }
-       // Eroe er = new Eroe();
     }//GEN-LAST:event_ButtonContinuaPartitaActionPerformed
     private void aumenta(javax.swing.JLabel la){
         if(Creation>0){
