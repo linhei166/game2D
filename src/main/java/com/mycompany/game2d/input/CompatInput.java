@@ -29,7 +29,7 @@ public class CompatInput implements KeyListener {
         switch (e.getKeyCode()){
             case KeyEvent.VK_A -> compat.comand(-1);
             case KeyEvent.VK_D -> compat.comand(+1);
-            //case KeyEvent.VK_ENTER ->
+            case KeyEvent.VK_ENTER -> compat.comandaccet();
 
         }
 

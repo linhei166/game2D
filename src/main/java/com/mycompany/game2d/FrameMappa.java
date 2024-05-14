@@ -39,6 +39,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         initComponents();
         LabelNomeEroe.setText(er.getNome());
         Updatebars();
+        updetIventtario();
         jLabel2.setText(String.valueOf(er.getLv()));
     }
     public void Updatebars(){
@@ -71,6 +72,14 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                 deltaF--;
             }
         }
+    }
+
+    public FrameInventario getInventario() {
+        return Inventario;
+    }
+
+    private void updetIventtario(){
+        Inventario = new FrameInventario(er);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -276,13 +285,12 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         // TODO add your handling code here:
-        Inventario = new FrameInventario(er);
         Inventario.setVisible(true);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
-        frameCompat = new FrameCompat(new PanelCompat(er));
+        frameCompat = new FrameCompat(new PanelCompat(er,this));
         frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
         frameCompat.requestFocus();
         starLoop();
