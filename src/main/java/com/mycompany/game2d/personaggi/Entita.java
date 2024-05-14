@@ -14,6 +14,7 @@ public class Entita {
         this.mana = mana;
         this.Mano = Mano;
         this.lv=0;
+        modificHPMAX();
     }
     public Entita(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,int lv, Oggetto Mano) {
         this.nome = nome;
@@ -25,6 +26,7 @@ public class Entita {
         this.mana = mana;
         this.Mano = Mano;
         this.lv=lv;
+        modificHPMAX();
     }
     public void levelUp(int forza, int velocita, int arcana, int destrezza, int hp, int mana){
         this.forza = forza;
@@ -33,14 +35,24 @@ public class Entita {
         this.destrezza = destrezza;
         this.hp = hp;
         this.mana = mana;
+        modificHPMAX();
         lv++;
 
     }
+
+    private void modificHPMAX(){
+        hpMax = hp;
+    }
+
     protected String nome;
-    protected int forza,velocita,arcana, destrezza, hp, mana;
+    protected int forza,velocita,arcana, destrezza, hp, mana ,hpMax;
     protected int lv;
     protected Oggetto Mano;
-   
+
+    public int getHpMax() {
+        return hpMax;
+    }
+
     public void printShet(){
         System.out.println("Des\n"+destrezza+"hp"+hp);
     }
