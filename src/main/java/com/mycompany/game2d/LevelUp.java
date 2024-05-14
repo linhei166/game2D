@@ -589,7 +589,5 @@ private void aumenta(javax.swing.JLabel la){
     private javax.swing.JLabel LabelVelocita;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-
-
     // End of variables declaration//GEN-END:variables
 }

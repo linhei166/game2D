@@ -764,6 +764,9 @@ public class Game2dForm extends JFrame implements Runnable{
             }else {
                 ogm = new Segretto(StringManog,quantita);
             }
+            //Posizione personagio
+            x = Integer.parseInt(br.readLine());
+            y = Integer.parseInt(br.readLine());
             //INVETANRARIO
             String ids;
             while((ids = br.readLine())!=null){
@@ -783,9 +786,8 @@ public class Game2dForm extends JFrame implements Runnable{
                 }
                 Inv.add(og);
             }
-            x = Integer.parseInt(br.readLine());
-            y = Integer.parseInt(br.readLine());
-            er = new Eroe(nome,forza,velocita,arcana,destrezza,hp,mana,lv,this,ogm,Inv);
+
+            er = new Eroe(nome,forza,velocita,arcana,destrezza,hp,mana,lv,this,ogm,Inv,x,y);
             mappa = new FrameMappa(this, er);
             mappa.addKeyListener(new GameInput(er));
             mappa.setVisible(true);

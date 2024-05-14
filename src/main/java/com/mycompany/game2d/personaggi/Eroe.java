@@ -37,9 +37,9 @@ public class Eroe extends Entita {
         IMG = LoadSeve.GetFileIMG(FileMap);
         invetario.add(new pozionecura("Cura10",10));
     }
-    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,int lv, Game2dForm game2dForm, Oggetto og,ArrayList<Oggetto> Inv) {
+    public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,int lv, Game2dForm game2dForm, Oggetto og,ArrayList<Oggetto> Inv, int x, int y) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,lv,og);
-        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
+        hitbox = new Rectangle(x,y,grandeza,grandeza);
         IMG = LoadSeve.GetFileIMG(FileMap);
         this.invetario=Inv;
     }
@@ -119,10 +119,10 @@ public class Eroe extends Entita {
     public String toFile(){
         String file = nome + "\n" + forza + "\n" + velocita + "\n" + arcana + "\n" + destrezza + "\n" + hp + "\n" + mana + "\n" + lv;
         file = file + Mano.toFile();
+        file=file + "\n" + hitbox.x + "\n" + hitbox.y;
         for (int i=0;i<invetario.size();i++){
             file=file+invetario.get(i).toFile();
         }
-        file=file + "\n" + hitbox.x + "\n" + hitbox.y;
         return file;
     }
 }

@@ -282,11 +282,14 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
-        frameCompat = new FrameCompat(new PanelCompat(er));
+        /*frameCompat = new FrameCompat(new PanelCompat(er));
         frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
         frameCompat.requestFocus();
         starLoop();
-        this.setVisible(false);
+        this.setVisible(false);*/
+        Opzioni op = new Opzioni(er);
+        op.setVisible(true);
+        
     }//GEN-LAST:event_ButtonOpzioniActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
