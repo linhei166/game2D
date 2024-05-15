@@ -4,14 +4,22 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Eroe;
+
 /**
  *
  * @author Esposito.Lorenzo
  */
 public class Arco extends Oggetto {
 
+    private final int NDanno=40;
 
     public Arco(String nome, int quatita) {
         super(nome, quatita, "src/main/resources/imag/arco/arco_01.png",10);
+    }
+
+    @Override
+    public int Danno(Eroe er) {
+        return NDanno + er.getDestrezza()/10;
     }
 }

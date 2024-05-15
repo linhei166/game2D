@@ -4,6 +4,8 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Eroe;
+
 /**
  *
  * @author Esposito.Lorenzo
@@ -11,6 +13,7 @@ package com.mycompany.game2d.oggetto;
 
 public abstract class Oggetto {
 
+    public abstract int  Danno(Eroe er);
     public String getNome() {
         return nome;
     }
