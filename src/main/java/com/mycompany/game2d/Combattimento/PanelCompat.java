@@ -18,8 +18,9 @@ public class PanelCompat extends JPanel {
     private int scelt = 0;
     private Eroe er;
     private FrameMappa mappa;
-    private int hp;
-    private final int hpMaxVisiv = 200;
+    private int hp,mana;
+    private final int hpMaxVisiv = 200,manaMaxVIsiv = 200;
+
 
     public PanelCompat(Eroe er , FrameMappa mappa){
         this.er = er;
@@ -29,6 +30,7 @@ public class PanelCompat extends JPanel {
         comento.setForeground(Color.white);
         comento.setVisible(true);
         HPmodific();
+        ManaModific();
     }
 
     private void Dimesione(){
@@ -53,7 +55,9 @@ public class PanelCompat extends JPanel {
     private void HPmodific(){
         hp = (er.getHp()/er.getHpMax())*hpMaxVisiv;
     }
-
+    private void ManaModific(){
+        mana = (er.getMana()/er.getManaMax())*manaMaxVIsiv;
+    }
     private void Updetarea(Graphics g){
         g.clearRect(posizioneC_x_1,posizioneC_y_1,1150,5);
         g.clearRect(posizioneC_x_1,posizioneC_y_1,5,125);
@@ -65,7 +69,13 @@ public class PanelCompat extends JPanel {
         g.fillRect(posizioneS_x_1-5,posizioneS_y_1-5,5,30);
         g.fillRect(posizioneS_x_1+200,posizioneS_y_1-5,5,30);
         g.fillRect(posizioneS_x_1-5,posizioneS_y_1+25,210,5);
+        g.fillRect(posizioneM_x_1-5,posizioneM_y_1-5,210,5);
+        g.fillRect(posizioneM_x_1-5,posizioneM_y_1-5,5,30);
+        g.fillRect(posizioneM_x_1+200,posizioneM_y_1-5,5,30);
+        g.fillRect(posizioneM_x_1-5,posizioneM_y_1+25,210,5);
         g.setColor(Color.red);
+        g.fillRect(90,430,hp,25);
+        g.setColor(Color.blue);
         g.fillRect(90,430,hp,25);
         }
 
@@ -97,7 +107,11 @@ public class PanelCompat extends JPanel {
     }
 
     private void evantAtac(){
+
+
+
         HPmodific();
+        ManaModific();
     }
     private void eventIvent(){
         mappa.getInventario().setVisible(true);
@@ -122,7 +136,6 @@ public class PanelCompat extends JPanel {
     public void paint(Graphics g){
         super.paintComponent(g);
         Updet(g);
-
     }
 
 }
