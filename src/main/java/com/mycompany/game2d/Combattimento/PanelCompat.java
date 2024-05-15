@@ -20,17 +20,22 @@ public class PanelCompat extends JPanel {
     private FrameMappa mappa;
     private int hp,mana;
     private final int hpMaxVisiv = 200,manaMaxVIsiv = 200;
+    private FrameCompat frameCompat;
 
 
     public PanelCompat(Eroe er , FrameMappa mappa){
         this.er = er;
         this.mappa = mappa;
+        this.frameCompat = frameCompat;
         Dimesione();
         comento = new JLabel("prova");
         comento.setForeground(Color.white);
         comento.setVisible(true);
         HPmodific();
         ManaModific();
+    }
+    public void setFrameCompat(FrameCompat frameCompat){
+        this.frameCompat = frameCompat;
     }
 
     private void Dimesione(){
@@ -74,9 +79,9 @@ public class PanelCompat extends JPanel {
         g.fillRect(posizioneM_x_1+200,posizioneM_y_1-5,5,30);
         g.fillRect(posizioneM_x_1-5,posizioneM_y_1+25,210,5);
         g.setColor(Color.red);
-        g.fillRect(90,430,hp,25);
+        g.fillRect(posizioneS_x_1,430,hp,25);
         g.setColor(Color.blue);
-        g.fillRect(90,430,hp,25);
+        g.fillRect(posizioneM_x_1,430,hp,25);
         }
 
     private void Updetbotton(Graphics g){
@@ -107,17 +112,15 @@ public class PanelCompat extends JPanel {
     }
 
     private void evantAtac(){
-
-
-
         HPmodific();
         ManaModific();
     }
     private void eventIvent(){
         mappa.getInventario().setVisible(true);
     }
-    private void eventScap(){
-
+    private void eventScap() {
+        mappa.setVisible(true);
+        frameCompat.dispose();
     }
 
     public void comandaccet(){
@@ -128,7 +131,7 @@ public class PanelCompat extends JPanel {
             eventIvent();
         }
         if (scelt == 2){
-
+            eventScap();
         }
     }
 
