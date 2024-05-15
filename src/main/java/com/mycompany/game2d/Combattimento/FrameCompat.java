@@ -13,6 +13,7 @@ public class FrameCompat extends JFrame {
         super.pack();
         super.setDefaultCloseOperation(EXIT_ON_CLOSE);
         super.setVisible(true);
+        panelCompat.setFrameCompat(this);
     }
 
     public PanelCompat getPanelCompat() {
