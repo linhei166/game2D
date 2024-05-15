@@ -2,6 +2,12 @@ package com.mycompany.game2d;
 
 import com.mycompany.game2d.personaggi.Eroe;
 
+import java.awt.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -12,14 +18,17 @@ import com.mycompany.game2d.personaggi.Eroe;
  * @author Esposito.lorenzo
  */
 public class Opzioni extends javax.swing.JFrame {
-
+    File f =new File("src" + File.separator +"save.txt");
+    Eroe er;
     /**
      * Creates new form Opzioni
      */
     public Opzioni(Eroe er) {
         initComponents();
+        this.er=er;
+        super.getContentPane().setBackground(Color.BLACK);
         jLabelValLv.setText(String.valueOf(er.getLv()));
-        LabelNome.setText(er.getNome());
+        LabelValNome.setText(er.getNome());
         LabelValVel.setText(String.valueOf(er.getVelocita()));
         LabelValDes.setText(String.valueOf(er.getDestrezza()));
         LabelValArc.setText(String.valueOf(er.getArcana()));
@@ -41,7 +50,7 @@ public class Opzioni extends javax.swing.JFrame {
         ComboLingue = new javax.swing.JComboBox<>();
         ButtonSelezionaLIngua = new javax.swing.JButton();
         LabelTitoloOpzione = new javax.swing.JLabel();
-        ButtonSelezionaLIngua1 = new javax.swing.JButton();
+        ButtonSalvataggio = new javax.swing.JButton();
         LabelNome = new javax.swing.JLabel();
         LabelValNome = new javax.swing.JLabel();
         jLabelLv = new javax.swing.JLabel();
@@ -83,12 +92,16 @@ public class Opzioni extends javax.swing.JFrame {
         LabelTitoloOpzione.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelTitoloOpzione.setText("Opzioni Lingua");
 
-        ButtonSelezionaLIngua1.setBackground(new java.awt.Color(84, 84, 84));
-        ButtonSelezionaLIngua1.setForeground(new java.awt.Color(232, 232, 232));
-        ButtonSelezionaLIngua1.setText("Salva");
-        ButtonSelezionaLIngua1.addActionListener(new java.awt.event.ActionListener() {
+        ButtonSalvataggio.setBackground(new java.awt.Color(84, 84, 84));
+        ButtonSalvataggio.setForeground(new java.awt.Color(232, 232, 232));
+        ButtonSalvataggio.setText("Salva");
+        ButtonSalvataggio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ButtonSelezionaLIngua1ActionPerformed(evt);
+                try {
+                    ButtonSalvataggioActionPerformed(evt);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -157,7 +170,7 @@ public class Opzioni extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ButtonSelezionaLIngua1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ButtonSalvataggio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelLv, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -206,7 +219,7 @@ public class Opzioni extends javax.swing.JFrame {
                     .addComponent(ComboLingue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonSelezionaLIngua))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ButtonSelezionaLIngua1)
+                .addComponent(ButtonSalvataggio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelLv)
@@ -251,9 +264,13 @@ public class Opzioni extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ButtonSelezionaLInguaActionPerformed
 
-    private void ButtonSelezionaLIngua1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSelezionaLIngua1ActionPerformed
+    private void ButtonSalvataggioActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_ButtonSalvataggioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ButtonSelezionaLIngua1ActionPerformed
+        FileWriter fw = new FileWriter(f);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(er.toFile());
+        bw.flush();
+    }//GEN-LAST:event_ButtonSalvataggioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,8 +308,8 @@ public class Opzioni extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonSalvataggio;
     private javax.swing.JButton ButtonSelezionaLIngua;
-    private javax.swing.JButton ButtonSelezionaLIngua1;
     private javax.swing.JComboBox<String> ComboLingue;
     private javax.swing.JLabel LabelArcana;
     private javax.swing.JLabel LabelDestrzza;
