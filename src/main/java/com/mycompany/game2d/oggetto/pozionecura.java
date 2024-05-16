@@ -4,6 +4,8 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Eroe;
+
 /**
  *
  * @author Esposito.Lorenzo
@@ -13,6 +15,10 @@ public class pozionecura  extends Oggetto {
         super(nome, quatita, "src/main/resources/imag/pozioni/pozionecura.png",30);
     }
 
+    @Override
+    public int Danno(Eroe er) {
+        return 0;
+    }
 }
 //hpm=hpm-dannno
 //barra mostro.sethpm

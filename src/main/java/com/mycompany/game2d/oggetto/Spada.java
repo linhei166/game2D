@@ -4,6 +4,8 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Eroe;
+
 /**
  *
  * @author Esposito.Lorenzo
@@ -11,5 +13,10 @@ package com.mycompany.game2d.oggetto;
 public class Spada extends Oggetto {
     public Spada(String nome, int quantita) {
         super(nome, quantita, "src/main/resources/imag/spada/spada_01.png",0);
+    }
+
+    @Override
+    public int Danno(Eroe er) {
+        return 0;
     }
 }

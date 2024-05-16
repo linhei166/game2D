@@ -26,7 +26,6 @@ public class PanelCompat extends JPanel {
     public PanelCompat(Eroe er , FrameMappa mappa){
         this.er = er;
         this.mappa = mappa;
-        this.frameCompat = frameCompat;
         Dimesione();
         comento = new JLabel("prova");
         comento.setForeground(Color.white);
@@ -45,7 +44,6 @@ public class PanelCompat extends JPanel {
         setPreferredSize(size);
         setBackground(Color.black);
         IMG = LoadSeve.GetFileIMG("/personagi/personaggi_02.png");
-
     }
     public void comand(int i){
         if (scelt + i >=0 && scelt+ i <=2)
