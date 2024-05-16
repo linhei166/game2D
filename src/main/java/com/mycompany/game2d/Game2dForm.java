@@ -63,6 +63,19 @@ public class Game2dForm extends JFrame implements Runnable{
             mappa.CotrolorCombat();
             mappa.dispose();
         }
+        if (er.getHitbox().x+er.getHitbox().width > nemico.getHitbox().x+er.getHitbox().width && er.getHitbox().y+er.getHitbox().width> nemico.getHitbox().y && er.getHitbox().y+er.getHitbox().width < nemico.getHitbox().width+nemico.getHitbox().y && er.getHitbox().x+er.getHitbox().width < nemico.getHitbox().x+nemico.getHitbox().width){
+            mappa.CotrolorCombat();
+            mappa.dispose();
+        }
+        if (er.getHitbox().x+er.getHitbox().width > nemico.getHitbox().x && er.getHitbox().y> nemico.getHitbox().y && er.getHitbox().y < nemico.getHitbox().width+nemico.getHitbox().y && er.getHitbox().x+er.getHitbox().width < nemico.getHitbox().x+nemico.getHitbox().width){
+            mappa.CotrolorCombat();
+            mappa.dispose();
+        }
+        if (er.getHitbox().x> nemico.getHitbox().x && er.getHitbox().y+er.getHitbox().width > nemico.getHitbox().y && er.getHitbox().y+er.getHitbox().width  < nemico.getHitbox().width+nemico.getHitbox().y && er.getHitbox().x< nemico.getHitbox().x+nemico.getHitbox().width){
+            mappa.CotrolorCombat();
+            mappa.dispose();
+        }
+
     }
 
     @Override
