@@ -4,6 +4,7 @@ import com.mycompany.game2d.FrameMappa;
 import com.mycompany.game2d.input.CompatInput;
 import com.mycompany.game2d.input.LoadSeve;
 import com.mycompany.game2d.personaggi.Eroe;
+import com.mycompany.game2d.personaggi.Nemico;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,9 +22,11 @@ public class PanelCompat extends JPanel {
     private int hp,mana;
     private final int hpMaxVisiv = 200,manaMaxVIsiv = 200;
     private FrameCompat frameCompat;
+    private Nemico nemico;
 
 
-    public PanelCompat(Eroe er , FrameMappa mappa){
+    public PanelCompat(Eroe er , FrameMappa mappa, Nemico nemico){
+        this.nemico = nemico;
         this.er = er;
         this.mappa = mappa;
         Dimesione();
@@ -43,7 +46,7 @@ public class PanelCompat extends JPanel {
         setMinimumSize(size);
         setPreferredSize(size);
         setBackground(Color.black);
-        IMG = LoadSeve.GetFileIMG("/personagi/personaggi_02.png");
+        IMG = nemico.getIMG();
     }
     public void comand(int i){
         if (scelt + i >=0 && scelt+ i <=2)
@@ -81,7 +84,6 @@ public class PanelCompat extends JPanel {
         g.setColor(Color.blue);
         g.fillRect(posizioneM_x_1,430,hp,25);
         }
-
     private void Updetbotton(Graphics g){
         if (scelt == 0) {
             IMGBotton = LoadSeve.GetFileCombat("/atacco_Ativ.png");
@@ -117,6 +119,7 @@ public class PanelCompat extends JPanel {
         mappa.getInventario().setVisible(true);
     }
     private void eventScap() {
+        er.getHitbox().x = er.getHitbox().x-(er.getHitbox().x+er.getHitbox().height - nemico.getHitbox().x);
         mappa.setVisible(true);
         frameCompat.dispose();
     }

@@ -94,6 +94,7 @@ public class GamePanel extends JPanel {
                 g.drawImage(codeMap[i][k].getImg().getSubimage(0, 0, 16, 16), k * 36, i * 36, 36, 36, null);
             }
         game.gameRead(g);
+        game.CotorloCombat();
     }
 
     }

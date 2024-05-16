@@ -8,6 +8,7 @@ import com.mycompany.game2d.Combattimento.FrameCompat;
 import com.mycompany.game2d.Combattimento.PanelCompat;
 import com.mycompany.game2d.input.CompatInput;
 import com.mycompany.game2d.personaggi.Eroe;
+import com.mycompany.game2d.personaggi.Nemico;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,15 +25,17 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private FrameInventario Inventario;
     private Game2dForm game2dForm;
     private Eroe er;
-    private Thread loop;
+    private FrameCompat frameCompat;
+    private Nemico nemico;
     private final int gameTime = 120;
     private final int gameSistema = 200;
-    private FrameCompat frameCompat;
     private File f=new File("src" + File.separator +"save.txt");
+    private Thread thread;
     /**
      * Creates new form FrameMappa
      */
-    public FrameMappa(Game2dForm game2dForm ,Eroe er) {
+    public FrameMappa(Game2dForm game2dForm ,Eroe er,Nemico nemico) {
+        this.nemico = nemico;
         this.game2dForm = game2dForm;
         this.er = er;
         super.getContentPane().setBackground(Color.BLACK);
@@ -47,30 +50,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ProgressBarMana.setValue(er.getArcana());
         ProgressBarHP.setValue(er.getHp());
         jLabel2.setText(String.valueOf(er.getLv()));
-    }
-    private void starLoop(){
-        loop = new Thread(this);
-        loop.start();
-    }
-    @Override
-    public void run() {
-        double timeFreme = 1000000000.0/gameTime;
-        double timeSistema = 1000000000.0/gameSistema;
-        long lastTime = System.nanoTime();
-        double deltaU = 0;
-        double deltaF = 0;
-        while (true){
-            long currentTime = System.nanoTime();
-            deltaU += (currentTime - lastTime)/timeSistema;
-            deltaF += (currentTime - lastTime)/timeFreme;
-            if (deltaU >= 1){
-                deltaU--;
-            }
-            if(deltaF >= 1){
-                frameCompat.repaint();
-                deltaF--;
-            }
-        }
+        updetIventtario();
     }
     public FrameInventario getInventario() {
         return Inventario;
@@ -289,15 +269,43 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
-        /*frameCompat = new FrameCompat(new PanelCompat(er));
-        frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
-        frameCompat.requestFocus();
-        starLoop();
-        this.setVisible(false);*/
+        this.setVisible(false);
         Opzioni op = new Opzioni(er);
         op.setVisible(true);
         
     }//GEN-LAST:event_ButtonOpzioniActionPerformed
+
+    public void CotrolorCombat(){
+        er.setOffComand(false);
+        frameCompat = new FrameCompat(new PanelCompat(er,this,nemico));
+        frameCompat.addKeyListener(new CompatInput(frameCompat.getPanelCompat()));
+        frameCompat.requestFocus();
+        starLoop();
+    }
+    private void starLoop(){
+        thread = new Thread(this);
+        thread.start();
+    }
+    @Override
+    public void run() {
+        double timeFreme = 1000000000.0/gameTime;
+        double timeSistema = 1000000000.0/gameSistema;
+        long lastTime = System.nanoTime();
+        double deltaU = 0;
+        double deltaF = 0;
+        while (true){
+            long currentTime = System.nanoTime();
+            deltaU += (currentTime - lastTime)/timeSistema;
+            deltaF += (currentTime - lastTime)/timeFreme;
+            if (deltaU >= 1){
+                deltaU--;
+            }
+            if(deltaF >= 1){
+                frameCompat.getPanelCompat().repaint();
+                deltaF--;
+            }
+        }
+    }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -354,5 +362,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+
+
     // End of variables declaration//GEN-END:variables
 }

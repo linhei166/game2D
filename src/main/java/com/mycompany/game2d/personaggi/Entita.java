@@ -2,7 +2,12 @@ package com.mycompany.game2d.personaggi;
 
 import com.mycompany.game2d.oggetto.Oggetto;
 
+import java.awt.*;
+
 public class Entita {
+
+    protected final int grandeza = 36;
+    protected Rectangle hitbox;
 
     public Entita(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Oggetto Mano) {
         this.nome = nome;
@@ -143,4 +148,13 @@ public class Entita {
     public void setLv(int lv) {
         this.lv = lv;
     }
+
+    public int getGrandeza() {
+        return grandeza;
+    }
+
+    public Rectangle getHitbox() {
+        return hitbox;
+    }
+
 }

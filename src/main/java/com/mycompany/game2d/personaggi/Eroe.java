@@ -21,9 +21,7 @@ public class Eroe extends Entita {
     private final int Yposizione = 50;
     private final int Xposizione = 50;
     private final int maxPanelY = 648,maxPanelX = 1260;
-    private final int grandeza = 36;
     private BufferedImage IMG;
-    private Rectangle hitbox;
     private CadiceMap[][] codemap;
     private final String FileMap ="/personagi/personaggi_01.png";
     private int posizioneX,posizioneY;
@@ -33,15 +31,18 @@ public class Eroe extends Entita {
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Game2dForm game2dForm, Oggetto og) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
-        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
+        UpdetEr();
         IMG = LoadSeve.GetFileIMG(FileMap);
         invetario.add(new pozionecura("Cura10",10));
     }
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,int lv, Game2dForm game2dForm, Oggetto og,ArrayList<Oggetto> Inv, int x, int y) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,lv,og);
-        hitbox = new Rectangle(x,y,grandeza,grandeza);
+        UpdetEr();
         IMG = LoadSeve.GetFileIMG(FileMap);
         this.invetario=Inv;
+    }
+    private void UpdetEr(){
+        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
     }
 
     public void movimentoY(int valore ){
@@ -92,26 +93,20 @@ public class Eroe extends Entita {
     }
 
 
-    private boolean toca(){
+    private boolean toca() {
         int areaX = hitbox.x + hitbox.width;
         int areaY = hitbox.y + hitbox.height;
-        if(!codemap[(hitbox.y+posizioneY)/36][(hitbox.x+posizioneX)/36].isNonPassa()){
+        if (!codemap[(hitbox.y + posizioneY) / 36][(hitbox.x + posizioneX) / 36].isNonPassa()) {
             return false;
-        }
-        else if(!codemap[(areaY+posizioneY)/36][(hitbox.x+posizioneX)/36].isNonPassa()){
+        } else if (!codemap[(areaY + posizioneY) / 36][(hitbox.x + posizioneX) / 36].isNonPassa()) {
             return false;
-        }
-        else if(!codemap[(hitbox.y+posizioneY)/36][(areaX+posizioneX)/36].isNonPassa()){
+        } else if (!codemap[(hitbox.y + posizioneY) / 36][(areaX + posizioneX) / 36].isNonPassa()) {
             return false;
-        }
-        else if(!codemap[(areaY+posizioneY)/36][(areaX+posizioneX)/36].isNonPassa()){
+        } else if (!codemap[(areaY + posizioneY) / 36][(areaX + posizioneX) / 36].isNonPassa()) {
             return false;
         }
         return true;
     }
-
-
-
     public void getIMGpley(Graphics g){
         movimeto();
         g.drawImage(IMG.getSubimage(0, 0, 16, 16),hitbox.x, hitbox.y, 36, 36, null);

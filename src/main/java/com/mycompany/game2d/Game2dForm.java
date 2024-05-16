@@ -1,8 +1,12 @@
 package com.mycompany.game2d;
 
+import com.mycompany.game2d.Combattimento.FrameCompat;
+import com.mycompany.game2d.Combattimento.PanelCompat;
+import com.mycompany.game2d.Nemico.Goblin;
 import com.mycompany.game2d.input.GameInput;
 import com.mycompany.game2d.oggetto.*;
 import com.mycompany.game2d.personaggi.Eroe;
+import com.mycompany.game2d.personaggi.Nemico;
 
 import javax.swing.*;
 import java.awt.*;
@@ -27,6 +31,7 @@ public class Game2dForm extends JFrame implements Runnable{
     private final int gameTime = 120;
     private final int gameSistema = 200;
     boolean secretNo=true;
+    protected Nemico nemico;
     /**
      * Creates new form Game2dForm
      */
@@ -38,8 +43,6 @@ public class Game2dForm extends JFrame implements Runnable{
         super.setSize(400,300);
         FrameOpzione.setSize(300,200);
         FrameOpzione.getContentPane().setBackground(Color.BLACK);
-
-
     }
     private void gamestart(){
         gameThread = new Thread(this);
@@ -50,7 +53,18 @@ public class Game2dForm extends JFrame implements Runnable{
     }
     public void gameRead(Graphics g){
         er.getIMGpley(g);
+        nemico.getregenerImg(g);
+        }
+    private void generetorNemico(){
+        nemico = new Nemico(Goblin.Nome,Goblin.Forza,Goblin.Velocita,Goblin.Arcana,Goblin.Destrezza,Goblin.HP,Goblin.Mana,new Spada("Spada",1));
     }
+    public void CotorloCombat(){
+        if (er.getHitbox().x > nemico.getHitbox().x && er.getHitbox().y> nemico.getHitbox().y && er.getHitbox().y < nemico.getHitbox().width+nemico.getHitbox().y && er.getHitbox().x < nemico.getHitbox().x+nemico.getHitbox().width){
+            mappa.CotrolorCombat();
+            mappa.dispose();
+        }
+    }
+
     @Override
     protected void processInputMethodEvent(InputMethodEvent e) {
         super.processInputMethodEvent(e);
@@ -626,7 +640,8 @@ public class Game2dForm extends JFrame implements Runnable{
             };
             String nom = TextFieldNome.getText();
             er = new Eroe(nom, forz, vel, arc, des, hp, mana, this, og);
-            mappa = new FrameMappa(this, er);
+            generetorNemico();
+            mappa = new FrameMappa(this, er,nemico);
             mappa.addKeyListener(new GameInput(er));
             mappa.setVisible(true);
             mappa.requestFocus();
@@ -788,7 +803,8 @@ public class Game2dForm extends JFrame implements Runnable{
             }
 
             er = new Eroe(nome,forza,velocita,arcana,destrezza,hp,mana,lv,this,ogm,Inv,x,y);
-            mappa = new FrameMappa(this, er);
+            generetorNemico();
+            mappa = new FrameMappa(this, er,nemico);
             mappa.addKeyListener(new GameInput(er));
             mappa.setVisible(true);
             mappa.requestFocus();
