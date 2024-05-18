@@ -19,7 +19,7 @@ public class Arco extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er) {
+    public int Danno(Eroe er,Oggetto og) {
         return NDanno + er.getDestrezza()/10;
     }
 }

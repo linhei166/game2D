@@ -17,7 +17,7 @@ public class Segretto extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er) {
-        return 0;
+    public int Danno(Eroe er,Oggetto og) {
+        return 100;
     }
 }

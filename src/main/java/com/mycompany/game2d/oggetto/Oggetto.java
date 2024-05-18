@@ -13,7 +13,7 @@ import com.mycompany.game2d.personaggi.Eroe;
 
 public abstract class Oggetto {
 
-    public abstract int  Danno(Eroe er);
+    public abstract int  Danno(Eroe er,Oggetto og);
     public String getNome() {
         return nome;
     }

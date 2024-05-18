@@ -16,9 +16,21 @@ public class pozionecura  extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er) {
+    public int Danno(Eroe er,Oggetto og) {
+        int qua=og.getQuatita();
+        int hp=er.getHp();
+        int missHp0=er.getHpMax()-10;
+        if(missHp0<hp){
+             er.setHp(er.getHpMax());
+        }else{
+             hp+=10;
+             er.setHp(hp);
+        }
+        qua--;
+        og.setQuatita(qua--);
         return 0;
     }
+
 }
 //hpm=hpm-dannno
 //barra mostro.sethpm

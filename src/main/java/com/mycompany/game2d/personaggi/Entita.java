@@ -136,7 +136,7 @@ public class Entita {
     }
     public int Danno(int danno){
         hp=hp-danno;
-        if(hp>0){
+        if(hp<0){
             return 0;
         }
         return hp;

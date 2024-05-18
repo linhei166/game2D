@@ -18,22 +18,31 @@ import javax.swing.ImageIcon;
  */
 public class FrameInventario extends javax.swing.JFrame {
     private Eroe er;
+    private int FocusIndex;
     private javax.swing.JLabel SlotInventario[];
+    ImageIcon icona;
     /**
      * Creates new form FrameInventario
      */
     public FrameInventario(Eroe er) {
         initComponents();
-         this.SlotInventario = new javax.swing.JLabel[]{Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9};
+         SlotInventario = new javax.swing.JLabel[]{Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9};
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,350);
         this.er = er;
-        ImageIcon icona = sclareImagni(er.getMano().getTexture());
+        icona = sclareImagni(er.getMano().getTexture());
         SlotInventario[0].setIcon(icona);
         for(int i=1;i<=er.getInvetario().size()&&i<7;i++){
              icona = sclareImagni(er.getInvetario().get(i-1).getTexture());
             SlotInventario[i].setIcon(icona);
         }
+    }
+    public void reload(){
+       /* icona = sclareImagni(er.getMano().getTexture());
+        SlotInventario[0].setIcon(icona);
+        for(int i=1;i<=er.getInvetario().size()&&i<7;i++){
+            icona = sclareImagni(er.getInvetario().get(i-1).getTexture());
+            SlotInventario[i].setIcon(icona);*/
     }
 
     /**
@@ -65,6 +74,8 @@ public class FrameInventario extends javax.swing.JFrame {
         ButtonIndietro = new javax.swing.JButton();
         ButtonAvanti = new javax.swing.JButton();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
         Slot1.setBackground(new java.awt.Color(71, 45, 60));
         Slot1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Slot1.setAutoscrolls(true);
@@ -90,6 +101,11 @@ public class FrameInventario extends javax.swing.JFrame {
         ButtonUtilizza.setBackground(new java.awt.Color(84, 84, 84));
         ButtonUtilizza.setForeground(new java.awt.Color(232, 232, 232));
         ButtonUtilizza.setText("UTILLIZA");
+        ButtonUtilizza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonUtilizzaActionPerformed(evt);
+            }
+        });
 
         ButtonEquipaggia.setBackground(new java.awt.Color(84, 84, 84));
         ButtonEquipaggia.setForeground(new java.awt.Color(232, 232, 232));
@@ -338,6 +354,12 @@ public class FrameInventario extends javax.swing.JFrame {
 
     private void ButtonEquipaggiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonEquipaggiaActionPerformed
         // TODO add your handling code here:
+        Oggetto og;
+        og= er.getMano();
+        er.setMano(er.getInvetario().get(FocusIndex));
+        er.getInvetario().remove(FocusIndex);
+        er.getInvetario().add(og);
+  
     }//GEN-LAST:event_ButtonEquipaggiaActionPerformed
 
     private void Slot1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Slot1FocusGained
@@ -348,6 +370,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot1.getIcon()!=null){
             ImagFocus(er.getMano());
+            FocusIndex=-1;
         }
     }//GEN-LAST:event_Slot1MouseClicked
 
@@ -355,6 +378,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(Slot2.getIcon()!=null){
             ImagFocus(er.getInvetario().get(0));
+            FocusIndex=0;
         }
     }//GEN-LAST:event_Slot2MouseClicked
 
@@ -362,6 +386,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(Slot3.getIcon()!=null){
              ImagFocus(er.getInvetario().get(1));
+             FocusIndex=1;
         }
     }//GEN-LAST:event_Slot3MouseClicked
 
@@ -369,6 +394,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
          if(Slot4.getIcon()!=null){
              ImagFocus(er.getInvetario().get(2));
+             FocusIndex=2;
         }
     }//GEN-LAST:event_Slot4MouseClicked
 
@@ -376,6 +402,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot5.getIcon()!=null){
              ImagFocus(er.getInvetario().get(3));
+             FocusIndex=3;
         }
     }//GEN-LAST:event_Slot5MouseClicked
 
@@ -383,6 +410,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot6.getIcon()!=null){
              ImagFocus(er.getInvetario().get(4));
+             FocusIndex=4;
         }
     }//GEN-LAST:event_Slot6MouseClicked
 
@@ -390,6 +418,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot7.getIcon()!=null){
              ImagFocus(er.getInvetario().get(5));
+             FocusIndex=5;
         }
     }//GEN-LAST:event_Slot7MouseClicked
 
@@ -397,6 +426,7 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot7.getIcon()!=null){
              ImagFocus(er.getInvetario().get(6));
+             FocusIndex=6;
         }
     }//GEN-LAST:event_Slot8MouseClicked
 
@@ -404,12 +434,27 @@ public class FrameInventario extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Slot9.getIcon()!=null){
              ImagFocus(er.getInvetario().get(7));
+             FocusIndex=7;
         }
     }//GEN-LAST:event_Slot9MouseClicked
+
+    private void ButtonUtilizzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonUtilizzaActionPerformed
+        // TODO add your handling code here:
+        if(FocusIndex==-1&&er.getMano()!=null){
+            er.getMano().Danno(er,er.getMano());
+        }else if(er.getInvetario().get(FocusIndex)!=null){
+            er.getInvetario().get(FocusIndex).Danno(er,er.getInvetario().get(FocusIndex));
+            if(er.getInvetario().get(FocusIndex).getQuatita()==0){
+                er.getInvetario().remove(FocusIndex);
+
+            }
+        }
+
+    }//GEN-LAST:event_ButtonUtilizzaActionPerformed
     private ImageIcon sclareImagni(String path){
         ImageIcon icona = new ImageIcon(path); // load the image to a imageIcon
-        Image imagineog = icona.getImage(); // transform it 
-        Image imagineinven = imagineog.getScaledInstance(32, 32,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way  
+        Image imagineog = icona.getImage(); // transform it
+        Image imagineinven = imagineog.getScaledInstance(32, 32,  java.awt.Image.SCALE_SMOOTH); // scale it the smooth way
         return icona = new ImageIcon(imagineinven);  // transform it back
     }
     private void ImagFocus(Oggetto og){
@@ -423,7 +468,7 @@ public class FrameInventario extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

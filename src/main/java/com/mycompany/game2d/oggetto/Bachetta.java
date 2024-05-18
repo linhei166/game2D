@@ -19,7 +19,7 @@ public class Bachetta extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er) {
+    public int Danno(Eroe er,Oggetto og) {
         int mana=er.getMana();
         mana-=6;
         er.setMana(mana);
