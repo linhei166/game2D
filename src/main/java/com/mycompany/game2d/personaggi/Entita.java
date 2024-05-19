@@ -134,13 +134,9 @@ public class Entita {
     public Oggetto getMano() {
         return Mano;
     }
-    public int Danno(int danno){
+    public void Danno(int danno){
         hp=hp-danno;
-        if(hp<0){
-            return 0;
         }
-        return hp;
-    }
     public int getLv() {
         return lv;
     }

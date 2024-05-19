@@ -5,6 +5,7 @@
 package com.mycompany.game2d.oggetto;
 
 import com.mycompany.game2d.oggetto.Oggetto;
+import com.mycompany.game2d.personaggi.Entita;
 import com.mycompany.game2d.personaggi.Eroe;
 
 /**
@@ -17,7 +18,7 @@ public class Segretto extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er,Oggetto og) {
+    public int Danno(Entita er, Oggetto og) {
         return 100;
     }
 }

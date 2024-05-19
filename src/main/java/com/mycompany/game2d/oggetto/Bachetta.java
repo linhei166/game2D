@@ -4,6 +4,7 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Entita;
 import com.mycompany.game2d.personaggi.Eroe;
 
 /**
@@ -12,17 +13,18 @@ import com.mycompany.game2d.personaggi.Eroe;
  */
 public class Bachetta extends Oggetto {
 
-    private final int NDanno=50;
+    private final int NDanno = 50;
 
     public Bachetta(String nome, int quatita) {
-        super(nome, quatita, "src/main/resources/imag/bachetta/bachetta_01.png",20);
+        super(nome, quatita, "src/main/resources/imag/bachetta/bachetta_01.png", 20);
     }
 
     @Override
-    public int Danno(Eroe er,Oggetto og) {
-        int mana=er.getMana();
-        mana-=6;
+    public int Danno(Entita er, Oggetto og) {
+        int mana = er.getMana();
+        mana -= 6;
         er.setMana(mana);
-        return NDanno + er.getArcana()/10;
+        return NDanno + er.getArcana() / 10;
     }
+
 }

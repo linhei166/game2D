@@ -4,6 +4,7 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Entita;
 import com.mycompany.game2d.personaggi.Eroe;
 
 /**
@@ -16,7 +17,7 @@ public class pozionecura  extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er,Oggetto og) {
+    public int Danno(Entita er, Oggetto og) {
         int qua=og.getQuatita();
         int hp=er.getHp();
         int missHp0=er.getHpMax()-10;

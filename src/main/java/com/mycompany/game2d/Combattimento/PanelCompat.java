@@ -59,10 +59,10 @@ public class PanelCompat extends JPanel {
     }
 
     private void HPmodific(){
-        hp = (er.getHp()/er.getHpMax())*hpMaxVisiv;
+        hp = er.getHp()*hpMaxVisiv/er.getHpMax();
     }
     private void ManaModific(){
-        mana = (er.getMana()/er.getManaMax())*manaMaxVIsiv;
+        mana = er.getMana()*manaMaxVIsiv/er.getManaMax();
     }
     private void Updetarea(Graphics g){
         g.clearRect(posizioneC_x_1,posizioneC_y_1,1150,5);
@@ -82,7 +82,7 @@ public class PanelCompat extends JPanel {
         g.setColor(Color.red);
         g.fillRect(posizioneS_x_1,430,hp,25);
         g.setColor(Color.blue);
-        g.fillRect(posizioneM_x_1,430,hp,25);
+        g.fillRect(posizioneM_x_1,430,mana,25);
         }
     private void Updetbotton(Graphics g){
         if (scelt == 0) {
@@ -110,8 +110,22 @@ public class PanelCompat extends JPanel {
             g.drawImage(IMGBotton, 950, 620, 150, 75, null);
         }
     }
+    public void Atac(){
+        er.Danno(nemico.getForza()+nemico.getMano().Danno(nemico,nemico.getMano()));
+        if (nemico.getHp() <= 0 ){
+            eventScap();
+            er.setHp(1);
+        }
+        else {
+            nemico.Danno((er.getForza() + er.getMano().Danno(er, er.getMano())));
+            if (er.getHp() <= 0) {
+                eventScap();
+            }
+        }
+    }
 
     private void evantAtac(){
+        Atac();
         HPmodific();
         ManaModific();
     }

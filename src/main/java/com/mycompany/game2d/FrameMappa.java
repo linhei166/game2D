@@ -258,7 +258,6 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         LU.SetFrameMap(this);
         LU.setEr(er);
         LU.setVisible(true);
-
     }//GEN-LAST:event_ButtonDoungeonActionPerformed
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed

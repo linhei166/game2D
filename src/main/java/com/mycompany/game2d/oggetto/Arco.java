@@ -4,6 +4,7 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Entita;
 import com.mycompany.game2d.personaggi.Eroe;
 
 /**
@@ -19,7 +20,8 @@ public class Arco extends Oggetto {
     }
 
     @Override
-    public int Danno(Eroe er,Oggetto og) {
+    public int Danno(Entita er,Oggetto og) {
         return NDanno + er.getDestrezza()/10;
     }
+
 }

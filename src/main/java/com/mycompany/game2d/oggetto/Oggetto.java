@@ -4,6 +4,7 @@
  */
 package com.mycompany.game2d.oggetto;
 
+import com.mycompany.game2d.personaggi.Entita;
 import com.mycompany.game2d.personaggi.Eroe;
 
 /**
@@ -13,7 +14,7 @@ import com.mycompany.game2d.personaggi.Eroe;
 
 public abstract class Oggetto {
 
-    public abstract int  Danno(Eroe er,Oggetto og);
+    public abstract int  Danno(Entita er, Oggetto og);
     public String getNome() {
         return nome;
     }
