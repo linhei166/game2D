@@ -86,27 +86,27 @@ public class PanelCompat extends JPanel {
         }
     private void Updetbotton(Graphics g){
         if (scelt == 0) {
-            IMGBotton = LoadSeve.GetFileIMG("/atacco_Ativ.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/atacco_Ativ.png");
             g.drawImage(IMGBotton, 200, 620, 150, 75, null);
         }
         else {
-            IMGBotton = LoadSeve.GetFileIMG("/atacco_nonAtiv.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/atacco_nonAtiv.png");
             g.drawImage(IMGBotton, 200, 620, 150, 75, null);
         }
         if (scelt == 1) {
-            IMGBotton = LoadSeve.GetFileIMG("/inventario_Ativ.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/inventario_Ativ.png");
             g.drawImage(IMGBotton, 555, 620, 150, 75, null);
         }
         else {
-            IMGBotton = LoadSeve.GetFileIMG("/inventario_nonAtiv.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/inventario_nonAtiv.png");
             g.drawImage(IMGBotton, 555, 620, 150, 75, null);
         }
         if (scelt == 2) {
-            IMGBotton = LoadSeve.GetFileIMG("/scapa_Ativ.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/scapa_Ativ.png");
             g.drawImage(IMGBotton, 950, 620, 150, 75, null);
         }
         else {
-            IMGBotton = LoadSeve.GetFileIMG("/scapa_nonAtiv.png");
+            IMGBotton = LoadSeve.GetFileIMG("/UI_Combat/scapa_nonAtiv.png");
             g.drawImage(IMGBotton, 950, 620, 150, 75, null);
         }
     }
