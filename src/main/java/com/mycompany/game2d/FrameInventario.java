@@ -21,17 +21,20 @@ public class FrameInventario extends javax.swing.JFrame {
     private int FocusIndex;
     private javax.swing.JLabel SlotInventario[];
     ImageIcon icona;
+    private FrameMappa frameMappa;
     /**
      * Creates new form FrameInventario
      */
-    public FrameInventario(Eroe er) {
+    public FrameInventario(Eroe er,FrameMappa frameMappa) {
         initComponents();
+        this.frameMappa = frameMappa;
          SlotInventario = new javax.swing.JLabel[]{Slot1,Slot2,Slot3,Slot4,Slot5,Slot6,Slot7,Slot8,Slot9};
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,350);
         this.er = er;
         updetIvent();
     }
+
 
     private void updetIvent(){
         icona = sclareImagni(er.getMano().getTexture());
@@ -446,6 +449,7 @@ public class FrameInventario extends javax.swing.JFrame {
 
             }
         }
+        frameMappa.Updatebars();
 
     }//GEN-LAST:event_ButtonUtilizzaActionPerformed
     private ImageIcon sclareImagni(String path){

@@ -51,14 +51,15 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ProgressBarHP.setValue(er.getHp());
         jLabel2.setText(String.valueOf(er.getLv()));
         updetIventtario();
+
     }
     public FrameInventario getInventario() {
         return Inventario;
     }
 
     private void updetIventtario(){
-        Inventario = new FrameInventario(er);
-    }
+        Inventario = new FrameInventario(er,this);
+        }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -83,7 +84,6 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         ProgressBarEXP = new javax.swing.JProgressBar();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -179,17 +179,6 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
         jLabel2.setForeground(new java.awt.Color(232, 232, 232));
         jLabel2.setText("jLabel2");
 
-        jButton1.setText("Salva");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-                    jButton1ActionPerformed(evt);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
-
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("W : sale ");
 
@@ -230,9 +219,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel4)
@@ -258,13 +245,12 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
                             .addComponent(LabelNomeEroe)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
-                        .addGap(1, 1, 1)
+                        .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelMana)
                             .addComponent(ProgressBarMana, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1)
                             .addComponent(jLabel3))
-                        .addGap(6, 6, 6)
+                        .addGap(8, 8, 8)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LabelHP)
                             .addComponent(ProgressBarHP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,7 +278,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
 
     private void ButtonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInventarioActionPerformed
         // TODO add your handling code here:
-        Inventario = new FrameInventario(er);
+        updetIventtario();
         Inventario.setVisible(true);
     }//GEN-LAST:event_ButtonInventarioActionPerformed
 
@@ -335,14 +321,6 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
             }
         }
     }
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws IOException {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        FileWriter fw = new FileWriter(f);
-        BufferedWriter bw = new BufferedWriter(fw);
-        bw.write(er.toFile());
-        bw.flush();
-    }//GEN-LAST:event_jButton1ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -388,7 +366,6 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private javax.swing.JProgressBar ProgressBarEXP;
     private javax.swing.JProgressBar ProgressBarHP;
     private javax.swing.JProgressBar ProgressBarMana;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

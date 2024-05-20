@@ -31,18 +31,19 @@ public class Eroe extends Entita {
 
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana, Game2dForm game2dForm, Oggetto og) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,og);
-        UpdetEr();
+        UpdetEr(Xposizione,Yposizione);
         IMG = LoadSeve.GetFileIMG(FileMap);
         invetario.add(new pozionecura("Cura10",10));
     }
     public Eroe(String nome, int forza, int velocita, int arcana, int destrezza, int hp, int mana,int lv, Game2dForm game2dForm, Oggetto og,ArrayList<Oggetto> Inv, int x, int y) {
         super(nome, forza, velocita, arcana, destrezza, hp, mana,lv,og);
-        UpdetEr();
+        UpdetEr(x, y);
         IMG = LoadSeve.GetFileIMG(FileMap);
         this.invetario=Inv;
+
     }
-    private void UpdetEr(){
-        hitbox = new Rectangle(Xposizione,Yposizione,grandeza,grandeza);
+    private void UpdetEr(int x,int y){
+        hitbox = new Rectangle(x,y,grandeza,grandeza);
     }
 
     public void movimentoY(int valore ){

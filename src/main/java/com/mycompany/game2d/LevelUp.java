@@ -36,8 +36,8 @@ public class LevelUp extends javax.swing.JFrame {
         LabelValFor.setText(String.valueOf(er.getForza()));
         LabelValArc.setText(String.valueOf(er.getArcana()));
         LabelValDes.setText(String.valueOf(er.getDestrezza()));
-        LabelValHP.setText(String.valueOf(er.getHp()));
-        LabelValMana.setText(String.valueOf(er.getMana()));
+        LabelValHP.setText(String.valueOf(er.getHpMax()));
+        LabelValMana.setText(String.valueOf(er.getManaMax()));
         LabelValArc.setText(String.valueOf(er.getArcana()));
     }
     public void SetFrameMap(FrameMappa fM){

@@ -33,8 +33,8 @@ public class Opzioni extends javax.swing.JFrame {
         LabelValDes.setText(String.valueOf(er.getDestrezza()));
         LabelValArc.setText(String.valueOf(er.getArcana()));
         LabelValFor.setText(String.valueOf(er.getForza()));
-        LabelValHP.setText(String.valueOf(er.getHp()));
-        LabelValMana.setText(String.valueOf(er.getMana()));
+        LabelValHP.setText(String.valueOf(er.getHpMax()));
+        LabelValMana.setText(String.valueOf(er.getManaMax()));
     }
 
     /**
