@@ -30,10 +30,14 @@ public class FrameInventario extends javax.swing.JFrame {
         super.getContentPane().setBackground(Color.BLACK);
         super.setSize(400,350);
         this.er = er;
+        updetIvent();
+    }
+
+    private void updetIvent(){
         icona = sclareImagni(er.getMano().getTexture());
         SlotInventario[0].setIcon(icona);
         for(int i=1;i<=er.getInvetario().size()&&i<7;i++){
-             icona = sclareImagni(er.getInvetario().get(i-1).getTexture());
+            icona = sclareImagni(er.getInvetario().get(i-1).getTexture());
             SlotInventario[i].setIcon(icona);
         }
     }
@@ -359,7 +363,7 @@ public class FrameInventario extends javax.swing.JFrame {
         er.setMano(er.getInvetario().get(FocusIndex));
         er.getInvetario().remove(FocusIndex);
         er.getInvetario().add(og);
-  
+        updetIvent();
     }//GEN-LAST:event_ButtonEquipaggiaActionPerformed
 
     private void Slot1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Slot1FocusGained
