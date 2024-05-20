@@ -20,10 +20,11 @@ import java.io.IOException;
 public class Opzioni extends javax.swing.JFrame {
     File f =new File("src" + File.separator +"save.txt");
     Eroe er;
+    FrameMappa mappa;
     /**
      * Creates new form Opzioni
      */
-    public Opzioni(Eroe er) {
+    public Opzioni(Eroe er,FrameMappa map) {
         initComponents();
         this.er=er;
         super.getContentPane().setBackground(Color.BLACK);
@@ -35,6 +36,7 @@ public class Opzioni extends javax.swing.JFrame {
         LabelValFor.setText(String.valueOf(er.getForza()));
         LabelValHP.setText(String.valueOf(er.getHpMax()));
         LabelValMana.setText(String.valueOf(er.getManaMax()));
+        this.mappa=map;
     }
 
     /**
@@ -270,6 +272,8 @@ public class Opzioni extends javax.swing.JFrame {
         BufferedWriter bw = new BufferedWriter(fw);
         bw.write(er.toFile());
         bw.flush();
+        mappa.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_ButtonSalvataggioActionPerformed
 
     /**

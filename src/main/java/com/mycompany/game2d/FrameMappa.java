@@ -285,7 +285,7 @@ public class FrameMappa extends javax.swing.JFrame implements Runnable {
     private void ButtonOpzioniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonOpzioniActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        Opzioni op = new Opzioni(er);
+        Opzioni op = new Opzioni(er,this);
         op.setVisible(true);
         
     }//GEN-LAST:event_ButtonOpzioniActionPerformed
