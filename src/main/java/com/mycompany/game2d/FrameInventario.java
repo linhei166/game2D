@@ -41,13 +41,6 @@ public class FrameInventario extends javax.swing.JFrame {
             SlotInventario[i].setIcon(icona);
         }
     }
-    public void reload(){
-       /* icona = sclareImagni(er.getMano().getTexture());
-        SlotInventario[0].setIcon(icona);
-        for(int i=1;i<=er.getInvetario().size()&&i<7;i++){
-            icona = sclareImagni(er.getInvetario().get(i-1).getTexture());
-            SlotInventario[i].setIcon(icona);*/
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
